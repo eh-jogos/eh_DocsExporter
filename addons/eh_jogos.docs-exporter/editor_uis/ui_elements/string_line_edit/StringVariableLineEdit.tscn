@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/string_line_edit/StringVariableLineEdit.gd" type="Script" id=1]
+[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/stylebox_editable_panel.tres" type="StyleBox" id=2]
+
+[node name="StringVariableLineEdit" type="LineEdit"]
+margin_right = 507.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 0, 22 )
+size_flags_horizontal = 3
+custom_styles/focus = ExtResource( 2 )
+custom_styles/normal = ExtResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="text_changed" from="." to="." method="_on_StringVariableLineEdit_text_changed"]
+[connection signal="text_entered" from="." to="." method="_on_StringVariableLineEdit_text_entered"]

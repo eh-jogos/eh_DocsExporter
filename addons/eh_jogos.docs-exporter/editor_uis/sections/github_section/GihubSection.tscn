@@ -1,0 +1,84 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://addons/eh_jogos.docs-exporter/shared_variables/string_github_export_path.tres" type="Resource" id=1]
+[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/sections/github_section/GihubSection.gd" type="Script" id=2]
+[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/path_line_edit/DirectorySystemPathLineEdit.tscn" type="PackedScene" id=3]
+[ext_resource path="res://addons/eh_jogos.docs-exporter/shared_variables/string_json_export_path.tres" type="Resource" id=4]
+[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/resizable_text_edit/ResizableTextEdit.tscn" type="PackedScene" id=5]
+[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/sections/hugo_section/SidebarPrependField.gd" type="Script" id=6]
+[ext_resource path="res://addons/eh_jogos.docs-exporter/shared_variables/string_sidebar_prepend_content.tres" type="Resource" id=7]
+[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/editor_button_theme.tres" type="Theme" id=12]
+
+
+[node name="GithubSection" type="VBoxContainer"]
+margin_right = 1018.0
+margin_bottom = 216.0
+custom_constants/separation = 8
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResourcePreloader" type="ResourcePreloader" parent="."]
+resources = [ PoolStringArray( "github_export_path", "save_path", "sidebar_prepend_content" ), [ ExtResource( 1 ), ExtResource( 4 ), ExtResource( 7 ) ] ]
+
+[node name="SectionTitle" type="Label" parent="."]
+margin_right = 1018.0
+margin_bottom = 14.0
+text = "Export to Github Wiki Parameters"
+
+[node name="SectionTitleBG" type="ColorRect" parent="SectionTitle"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -2.0
+margin_top = -2.0
+margin_right = 2.0
+margin_bottom = 2.0
+color = Color( 1, 1, 1, 0.121569 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExportPathRow" type="HBoxContainer" parent="."]
+margin_top = 22.0
+margin_right = 1018.0
+margin_bottom = 44.0
+
+[node name="Label" type="Label" parent="ExportPathRow"]
+margin_right = 507.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 0, 22 )
+size_flags_horizontal = 3
+text = "Gihub Wiki export folder path"
+valign = 1
+
+[node name="DirectorySystemPathLineEdit" parent="ExportPathRow" instance=ExtResource( 3 )]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_top = 52.0
+margin_right = 1018.0
+margin_bottom = 170.0
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 1018.0
+margin_bottom = 14.0
+text = "Prepend to Sidebar"
+
+[node name="SidebarPrependField" parent="VBoxContainer" instance=ExtResource( 5 )]
+margin_left = 0.0
+margin_top = 18.0
+margin_right = 1018.0
+margin_bottom = 118.0
+script = ExtResource( 6 )
+
+[node name="ExportGihubWiki" type="Button" parent="."]
+margin_left = 768.0
+margin_top = 178.0
+margin_right = 1018.0
+margin_bottom = 207.0
+rect_min_size = Vector2( 250, 0 )
+size_flags_horizontal = 8
+theme = ExtResource( 12 )
+text = "Export Github Wiki Docs Pages"
+[connection signal="pressed" from="ExportGihubWiki" to="." method="_on_ExportGihubWiki_pressed"]
