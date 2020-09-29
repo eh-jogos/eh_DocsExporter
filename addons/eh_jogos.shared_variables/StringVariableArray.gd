@@ -30,7 +30,8 @@ func push(element) -> void:
 		return
 	
 	if element is String:
-		string_variable = StringVariable.new(element)
+		string_variable = StringVariable.new()
+		string_variable.value = element
 	elif element is StringVariable:
 		string_variable = element
 	
