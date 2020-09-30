@@ -35,13 +35,20 @@ export var value: Dictionary = {} setget _set_value
 
 
 func _set_value(p_value: Dictionary) -> void:
-	value.clear()
+	var keys_to_delete = value.keys()
 	for key in p_value:
 		var category_data: CategoryOptionalData = p_value[key]
 		if category_data != null:
 			value[key] = category_data
 			if not category_data.is_connected("struct_updated", self, "_on_key_struct_updated"):
 				category_data.connect("struct_updated", self, "_on_key_struct_updated")
+			
+			if keys_to_delete.has(key):
+				keys_to_delete.erase(key)
+	
+	if keys_to_delete.size() > 0:
+		for key in keys_to_delete:
+			value.erase(key)
 	
 	_save_and_notify()
 

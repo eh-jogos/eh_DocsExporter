@@ -53,18 +53,19 @@ func _ready() -> void:
 func _populate_category_details_ui() -> void:
 	_clear_category_list()
 	var valid_keys = _categories_db.value.keys()
-	if valid_keys.empty():
+	if valid_keys.empty() or _optional_data_db.value.empty():
 		_category_button.hide()
 	else:
 		_category_button.show()
 		valid_keys.sort()
 		for key in valid_keys:
-			var options_node: CategoryOptions = _category_options_packed_scene.instance()
-			_category_list.add_child(options_node, true)
-			
-			options_node.populate_category_entry(key, _optional_data_db.value[key])
-			
-#			print("%s: %s"%[key, JSON.print(_optional_data_db.value[key], " ")])
+			if _optional_data_db.value.has(key):
+				var options_node: CategoryOptions = _category_options_packed_scene.instance()
+				_category_list.add_child(options_node, true)
+				
+				options_node.populate_category_entry(key, _optional_data_db.value[key])
+				
+	#			print("%s: %s"%[key, JSON.print(_optional_data_db.value[key], " ")])
 
 
 
