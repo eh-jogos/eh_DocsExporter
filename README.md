@@ -1,4 +1,7 @@
+<img src="https://raw.githubusercontent.com/eh-jogos/eh_DocsExporter/master/addons/eh_jogos.docs-exporter/docs_exporter_icon.png" width="150px" alt="eh_DocsExporter logo">
+
 # eh_DocsExporter
+
 Godot Plugin to export documentation directly from comments in your code to Github Wikis and/or Hugo sites.
 
 It's partly based on GDQuest's docs maker, but works entirely inside Godot, and tries to follow godot's official docs styling for exported pages.
