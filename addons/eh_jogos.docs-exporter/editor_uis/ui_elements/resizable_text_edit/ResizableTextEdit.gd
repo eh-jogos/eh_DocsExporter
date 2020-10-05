@@ -1,4 +1,6 @@
-# Write your doc string for this file here
+# TextEdit with a corner that can be dragged and resized. Used in different parts of the Docs 
+# Exporter tab in the Project Settings.
+# @category: UI Elements
 tool
 class_name ResizableTextEdit
 extends TextEdit

@@ -1,7 +1,7 @@
+# Finds and generates a code reference from gdscript files.
+# Original file from [GDQuest Docs Makes](https://github.com/GDQuest/gdscript-docs-maker/blob/master/godot-scripts/Collector.gd)
 tool
 extends SceneTree
-# Finds and generates a code reference from gdscript files.
-
 
 # Returns a list of file paths found in the directory.
 #
@@ -88,6 +88,6 @@ func get_reference(files := PoolStringArray(), refresh_cache := false) -> Dictio
 		data["classes"].append(symbols)
 	return data
 
-
+# Prints dictionary in json format, with proper identation
 func print_pretty_json(reference: Dictionary) -> String:
 	return JSON.print(reference, "  ")

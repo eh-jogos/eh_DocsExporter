@@ -1,6 +1,9 @@
+# LineEdit for receiving file or folder paths. Has a small customization just to scroll the text
+# to the end whenever a file or folder is selected through the File Explorer instead of typed in.
+# @category: UI Elements
 tool
+class_name PathLineEdit
 extends LineEdit
-# Write your doc striing for this file here
 
 ### Member Variables and Dependencies -----
 # signals 
@@ -18,6 +21,7 @@ extends LineEdit
 
 ### Public Methods ------------------------
 
+# Sets the text and scrolls it to the end position.
 func set_text(string: String) -> void:
 	text = string
 	var total_chars = text.length()

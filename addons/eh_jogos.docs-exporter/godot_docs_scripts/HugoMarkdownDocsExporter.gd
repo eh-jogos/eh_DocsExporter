@@ -1,13 +1,23 @@
+# Exports md files configured to work with Hugo. It's supposed to work with any theme, but it was
+# only tested with hugo-theme-learn. It's recommended to export the whole reference into a folder
+# inside the "content" folder of your hugo site, but not directly in content, without any 
+# subfolder.
+#
+# In addition to that, if you use @category, a subfolder with it's own _index.md will be created
+# for each category. You can order them and add descriptions to this pages in the Docs Exporter tab
+# in the Project Settings.
 tool
 class_name HugoMarkdownDocsExporter
 extends MarkdownDocsExporter
-# Write your doc striing for this file here
 
-### Member Variables and Dependencies -----
-# signals 
-# enums
-# constants
+### Member Variables and Dependencies -------------------------------------------------------------
+#--- signals --------------------------------------------------------------------------------------
 
+#--- enums ----------------------------------------------------------------------------------------
+
+#--- constants ------------------------------------------------------------------------------------
+
+# Front matter that will be used to default pages.
 const HUGO_DEFAULT_FRONT_MATTER = ""\
 		+"---  \n"\
 		+"title: {title}  \n"\
@@ -16,6 +26,7 @@ const HUGO_DEFAULT_FRONT_MATTER = ""\
 		+"weight: 1  \n"\
 		+"---  \n"  
 
+# Front matter that will be used for category pages.
 const HUGO_CHAPTER_FRONT_MATTER = ""\
 		+"---  \n"\
 		+"title: {title}  \n"\
@@ -24,43 +35,36 @@ const HUGO_CHAPTER_FRONT_MATTER = ""\
 		+"weight: {weight}  \n"\
 		+"---  \n"  
 
-const HUGO_BLOCK_PROPERTY = ""\
-		+"### {name} \n"\
-		+"- {property_signature}  \n"\
-		+"  \n"\
-		+"{table}"\
-		+"{description}  \n"\
-		+"---------\n"
+#--- public variables - order: export > normal var > onready --------------------------------------
 
-# public variables - order: export > normal var > onready 
-
-var author: = "eh-jogos"
-var date: = ""
+# Author to be used across the site's front matters.
+var author: String = "eh-jogos"
+# Enables / Disables table of contents in category pages.
 var should_create_toc_on_category_pages: = true
 
-# private variables - order: export > normal var > onready 
+#--- private variables - order: export > normal var > onready -------------------------------------
 
-### ---------------------------------------
+var _date: String = ""
+
+### -----------------------------------------------------------------------------------------------
 
 
-### Built in Engine Methods ---------------
+### Built in Engine Methods -----------------------------------------------------------------------
 
 func _init():
 	key_to_use_for_link = "full_path"
 
-
-func _run() -> void:
-	export_hugo_site_pages("res://reference.json", "res://.docs-site/content/reference/")
-
-### ---------------------------------------
+### -----------------------------------------------------------------------------------------------
 
 
-### Public Methods ------------------------
+### Public Methods --------------------------------------------------------------------------------
 
+# Takes in the reference json file path and an export path and generates and exports hugo 
+# formatted .md files.
 func export_hugo_site_pages(reference_json_path: String, export_path: String) -> void:
 	build_category_db(reference_json_path, export_path)
 	
-	var reference_dict : = _get_dictionary_from_file(reference_json_path)
+	var reference_dict : = get_dictionary_from_file(reference_json_path)
 	if reference_dict.has("error"):
 		push_error(reference_dict.error)
 		return
@@ -91,10 +95,11 @@ func export_hugo_site_pages(reference_json_path: String, export_path: String) ->
 	
 	print("Success!")
 
-### ---------------------------------------
+### -----------------------------------------------------------------------------------------------
 
 
-### Private Methods -----------------------
+### Private Methods -------------------------------------------------------------------------------
+
 func _build_and_save_md(docs_entry: Dictionary, export_path: String) -> void:
 	var category: String = docs_entry.category if docs_entry.has("category") else ""
 	_add_to_category_db(category, docs_entry.name, export_path)
@@ -130,7 +135,7 @@ func _get_md_content(docs_entry: Dictionary) -> String:
 
 
 func _get_hugo_front_matter(title: String, is_category: = false, weight: = 0) -> String:
-	var formated_date = date
+	var formated_date = _date
 	if formated_date == "":
 		var datetime: = OS.get_datetime()
 		var timezone: String = OS.get_time_zone_info().name
@@ -234,6 +239,4 @@ func _get_property_details_table(property: Dictionary) -> String:
 	
 	return table
 
-### ---------------------------------------
-
-
+### -----------------------------------------------------------------------------------------------

@@ -1,37 +1,46 @@
+# Boolean that can be saved in disk like a custom resource. 
+# Used as [Shared Variables] so that the data it holds can be accessed and modified from multiple 
+# parts of the code. Based on the idea of Unity's Scriptable Objects and Ryan Hipple's Unite Talk.
+# @category: Shared Variables
 tool
 class_name BoolVariable
 extends Resource
-# Write your doc striing for this file here
 
-### Member Variables and Dependencies -----
-# signals 
+### Member Variables and Dependencies -------------------------------------------------------------
+#--- signals --------------------------------------------------------------------------------------
 
+# Signal emitted when the Variable's value is updated.
 signal value_updated
 
-# enums
-# constants
-# public variables - order: export > normal var > onready 
+#--- enums ----------------------------------------------------------------------------------------
 
-export var value: = true setget _set_value
+#--- constants ------------------------------------------------------------------------------------
 
-# private variables - order: export > normal var > onready 
-### ---------------------------------------
+#--- public variables - order: export > normal var > onready --------------------------------------
 
+# Shared Variable value
+export var value: bool = true setget _set_value
 
-### Built in Engine Methods ---------------
+#--- private variables - order: export > normal var > onready -------------------------------------
 
-### ---------------------------------------
-
-
-### Public Methods ------------------------
-### ---------------------------------------
+### -----------------------------------------------------------------------------------------------
 
 
-### Private Methods -----------------------
+### Built in Engine Methods -----------------------------------------------------------------------
+
+### -----------------------------------------------------------------------------------------------
+
+
+### Public Methods --------------------------------------------------------------------------------
+
+### -----------------------------------------------------------------------------------------------
+
+
+### Private Methods -------------------------------------------------------------------------------
 
 func _set_value(p_value: bool) -> void:
 	value = p_value
 	ResourceSaver.save(resource_path, self)
 	emit_signal("value_updated")
 
-### ---------------------------------------
+### -----------------------------------------------------------------------------------------------

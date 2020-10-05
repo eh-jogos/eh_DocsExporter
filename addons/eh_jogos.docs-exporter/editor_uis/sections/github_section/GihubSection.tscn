@@ -9,7 +9,6 @@
 [ext_resource path="res://addons/eh_jogos.docs-exporter/shared_variables/string_sidebar_prepend_content.tres" type="Resource" id=7]
 [ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/editor_button_theme.tres" type="Theme" id=12]
 
-
 [node name="GithubSection" type="VBoxContainer"]
 margin_right = 1018.0
 margin_bottom = 216.0

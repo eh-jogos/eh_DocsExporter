@@ -1,4 +1,4 @@
-# Write your doc string for this file here
+# Field used to save Github Sidebar contents which are not auto generated.
 tool
 extends ResizableTextEdit
 

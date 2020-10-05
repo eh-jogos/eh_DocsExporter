@@ -121,6 +121,5 @@ size_flags_horizontal = 8
 theme = ExtResource( 12 )
 text = "Export Hugo Docs Pages"
 [connection signal="focus_entered" from="." to="." method="_on_HugoSection_focus_entered"]
-[connection signal="pressed" from="Categories" to="Categories/Collapsible" method="toggle_collapse"]
 [connection signal="pressed" from="BuildCategoryDb" to="." method="_on_BuildCategoryDb_pressed"]
 [connection signal="pressed" from="ExportHugoContent" to="." method="_on_ExportHugoContent_pressed"]

@@ -1,4 +1,5 @@
-# Write your doc string for this file here
+# Category Name button. The text with the name is set dinamically but should also be handled
+# by the collapsible component, that's why I did this simple script
 tool
 extends Button
 
@@ -19,10 +20,6 @@ onready var _collapsible: Collapsible = $Collapsible
 
 
 ### Built in Engine Methods -----------------------------------------------------------------------
-
-func _pressed() -> void:
-	_collapsible.toggle_collapse()
-	pass
 
 ### -----------------------------------------------------------------------------------------------
 

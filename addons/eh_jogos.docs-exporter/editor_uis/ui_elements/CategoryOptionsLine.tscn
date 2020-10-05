@@ -107,4 +107,3 @@ margin_bottom = 156.0
 custom_constants/margin_left = 30
 
 [node name="ResizableTextEdit" parent="OptionsContent/MainColumn/DescriptionContent" instance=ExtResource( 1 )]
-[connection signal="toggled" from="OptionsContent/MainColumn/DescriptionButton" to="OptionsContent/MainColumn/DescriptionButton/Collapsible" method="toggle_collapse"]

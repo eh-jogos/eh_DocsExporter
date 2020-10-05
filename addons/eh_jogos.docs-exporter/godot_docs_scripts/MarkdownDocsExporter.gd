@@ -1,66 +1,103 @@
+# Main markdown exporter. It exports using github flavor markdown. These .md files can be used
+# anywhere, but the links and the _Sidebar.md are configured to work best with github wiki 
+# format.
 tool
-# Write your doc striing for this file here
 class_name MarkdownDocsExporter
 extends JsonIO
 
-### Member Variables and Dependencies -----
-# signals 
-# enums
-# constants
+### Member Variables and Dependencies -------------------------------------------------------------
+#--- signals --------------------------------------------------------------------------------------
 
+#--- enums ----------------------------------------------------------------------------------------
+
+#--- constants ------------------------------------------------------------------------------------
+
+# Defines the "ineritance" block content model and styling for the exported .md file.
 const MD_BLOCK_INHERITANCE = ""\
 		+"**Inherits:** _{inheritance}_  \n"
+
+# Defines the "inerited by" block content model and styling for the exported .md file.
 const MD_BLOCK_INHERITED_BY = ""\
 		+"**Inherited by:** _{inherited_by}_  \n"\
 		+"  \n"
+
+# Defines the "Description" block content model and styling for the exported .md file.
 const MD_BLOCK_DESCRIPTION = ""\
 		+"## Description  \n"\
 		+"{description}"\
 		+"  \n"
+
+# Defines the "Properties" table header content model and styling for the exported .md file.
 const MD_BLOCK_PROPERTIES_TABLE_TITLE = ""\
 		+"## Properties \n"\
 		+"  \n"\
 		+"| type | property | default value |  \n"\
 		+"| ---- | -------- | ------------- |  \n" 
+
+# Defines the property table lines content model and styling for the exported .md file.
 const MD_BLOCK_PROPERTIES_TABLE_LINE = ""\
 		+"| {type} | {name} | {default_value} |  \n"
+
+# Defines the "Methods" table header content model and styling for the exported .md file.
 const MD_BLOCK_METHODS_TABLE_TITLE = ""\
 		+"  \n"\
 		+"## Methods \n"\
 		+"  \n"\
 		+"| return type | method signature |  \n"\
 		+"| ----------- | ---------------- |  \n" 
+
+# Defines the method table lines content model and styling for the exported .md file.
 const MD_BLOCK_METHOD_TABLE_LINE = ""\
 		+"| {type} | {siganture} |  \n"
+
+# Defines the "Signals" header content model and styling for the exported .md file.
 const MD_BLOCK_SIGNALS_TITLE = ""\
 		+"  \n"\
 		+"## Signals  \n"\
 		+"  \n"
+
+# Defines the individial signal content model and styling for the exported .md file.
 const MD_BLOCK_SIGNALS_LINE = ""\
 		+"- **{name}**({arguments}) \n"\
 		+"  \n"\
 		+"{description}  \n"\
 		+"---------\n"
+
+# Defines the "Enumerations" header content model and styling for the exported .md file.
 const MD_BLOCK_ENUMS_TITLE = ""\
 		+"  \n"\
 		+"## Enumerations  \n"\
 		+"  \n"
+
+# Defines the individial enum name content model and styling for the exported .md file.
 const MD_BLOCK_ENUM_NAME_LINE = ""\
 		+"  \n"\
 		+"enum **{name}**: \n"\
 		+"  \n"
+
+# Defines the individial enum keys content model and styling for the exported .md file.
 const MD_BLOCK_ENUM_KEY_LINE = ""\
 		+"- **{signature}**  \n"
+
+# Defines the "Constants" header content model and styling for the exported .md file.
 const MD_BLOCK_CONSTANTS_TITLE = ""\
 		+"  \n"\
 		+"## Constants  \n"\
 		+"  \n"
+
+# Defines the individial constant content model and styling for the exported .md file.
 const MD_BLOCK_CONSTANTS_LINE = ""\
 		+"- **{signature}** --- {description} \n"
+
+# Defines the "Properties Descriptions" header content model and styling for the exported
+# .md file.
 const MD_BLOCK_PROPERTIES_DESCRIPTION = ""\
 		+"  \n"\
 		+"## Properties Descriptions  \n"\
 		+"  \n"
+
+# Defines the individial property definition content model and styling for the exported
+# .md file.
 const MD_BLOCK_PROPERTY = ""\
 		+"### {name} \n"\
 		+"- {property_signature}  \n"\
@@ -68,9 +105,15 @@ const MD_BLOCK_PROPERTY = ""\
 		+"{table}"\
 		+"{description}  \n"\
 		+"---------\n"
+
+# Defines the "Method Descriptions" header content model and styling for the exported
+# .md file.
 const MD_BLOCK_METHOD_DESCRIPTION = ""\
 		+"## Method Descriptions  \n"\
 		+"  \n"
+
+# Defines the individial method definition content model and styling for the exported
+# .md file.
 const MD_BLOCK_METHOD = ""\
 		+"### {name} \n"\
 		+"- {method_signature} \n"\
@@ -78,17 +121,24 @@ const MD_BLOCK_METHOD = ""\
 		+"{description}  \n"\
 		+"---------\n"
 
-
+# Godot's Documentatiion base url for forming links.
 const GODOT_DOCS_BASE_URL = "https://docs.godotengine.org/en/stable/classes/class_%s.html"
 
-# public variables - order: export > normal var > onready 
+#--- public variables - order: export > normal var > onready --------------------------------------
 
-var links_db: = {}
-var signatures_db: = {}
+# Dictionary that serves as database for links and is built during the json export process
+var links_db: Dictionary = {}
+
+# Dictionary that serves as database for properties and methods signatures and is built during 
+# the json export process
+var signatures_db: Dictionary = {}
+
+# If which key from the links database the exporter should use. Github exporter will use 
+# "local_path" which just consists of repeating the file name, without extesnion. 
+# Hugo exporter will use "full_path" which will take folder structure into account.
 var key_to_use_for_link: String
-var property_block: String
 
-# private variables - order: export > normal var > onready 
+#--- private variables - order: export > normal var > onready -------------------------------------
 
 var _shared_variables_path = "res://addons/eh_jogos.docs-exporter/shared_variables/"
 var _custom_class_db : DictionaryVariable
@@ -98,10 +148,10 @@ var _category_optional_data: CategoryOptionalDataDict
 var _category_db: DictionaryVariable
 var _sidebar_prepend: StringVariable
 
-### ---------------------------------------
+### -----------------------------------------------------------------------------------------------
 
 
-### Built in Engine Methods ---------------
+### Built in Engine Methods -----------------------------------------------------------------------
 
 func _init():
 	_custom_class_db = load(_shared_variables_path + "dict_custom_class_db.tres")
@@ -112,21 +162,18 @@ func _init():
 	_sidebar_prepend = load(_shared_variables_path + "string_sidebar_prepend_content.tres")
 	
 	key_to_use_for_link = "local_path"
-	property_block = MD_BLOCK_PROPERTY
+
+### -----------------------------------------------------------------------------------------------
 
 
-func _run() -> void:
-	export_github_wiki_pages("res://reference.json", "res://.github-wiki/")
+### Public Methods --------------------------------------------------------------------------------
 
-### ---------------------------------------
-
-
-### Public Methods ------------------------
-
+# Reads json reference and creates a category database with the current user defined categories 
+# in use.
 func build_category_db(reference_json_path: String, export_path: String):
 	var keys_start = _category_db.value.keys()
 	var keys_end: = []
-	var reference_dict : = _get_dictionary_from_file(reference_json_path)
+	var reference_dict : = get_dictionary_from_file(reference_json_path)
 	if reference_dict.has("error"):
 		push_error(reference_dict.error)
 		return
@@ -142,10 +189,12 @@ func build_category_db(reference_json_path: String, export_path: String):
 #	print("PRINTING _category_db: %s"%[JSON.print(_category_db.value, "  ")])
 
 
+# Takes in the reference json file path and an export path and generates and exports github wiki 
+# formatted .md files.
 func export_github_wiki_pages(reference_json_path: String, export_path: String) -> void:
 	build_category_db(reference_json_path, export_path)
 	
-	var reference_dict : = _get_dictionary_from_file(reference_json_path)
+	var reference_dict : = get_dictionary_from_file(reference_json_path)
 	if reference_dict.has("error"):
 		push_error(reference_dict.error)
 		return
@@ -165,10 +214,10 @@ func export_github_wiki_pages(reference_json_path: String, export_path: String) 
 	
 	print("Success!")
 
-### ---------------------------------------
+### -----------------------------------------------------------------------------------------------
 
 
-### Private Methods -----------------------
+### Private Methods -------------------------------------------------------------------------------
 
 #--------------------------------------------------------------------------------------------------
 #---LINKS AND SIGNATURES --------------------------------------------------------------------------
@@ -412,7 +461,7 @@ func _write_documentation_file(p_content: String, p_file_path: String) -> void:
 	var docs_file := File.new()
 	var error = docs_file.open(p_file_path, File.WRITE)
 	if error != OK:
-		_push_reading_file_error(error, p_file_path)
+		push_reading_file_error(error, p_file_path)
 		return
 	docs_file.store_string(p_content)
 	docs_file.close()
@@ -748,7 +797,7 @@ func _get_properties_block(docs_entry: Dictionary) -> String:
 			
 			var table = _get_property_details_table(property)
 			
-			content += property_block.format({
+			content += MD_BLOCK_PROPERTY.format({
 				name = property.name,
 				property_signature = property_signature,
 				table = table,
@@ -802,4 +851,4 @@ func _get_method_block(docs_entry: Dictionary) -> String:
 
 #--- INNER MD BLOCKS END --------------------------------------------------------------------------
 
-### ---------------------------------------
+### -----------------------------------------------------------------------------------------------

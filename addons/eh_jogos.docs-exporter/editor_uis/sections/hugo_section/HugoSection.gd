@@ -1,13 +1,17 @@
+# Hugo Section of the Project Settings Doc Exporter Tab.
 tool
 extends VBoxContainer
-# Write your doc striing for this file here
 
-### Member Variables and Dependencies -----
-# signals 
-# enums
-# constants
-# public variables - order: export > normal var > onready 
-# private variables - order: export > normal var > onready 
+### Member Variables and Dependencies -------------------------------------------------------------
+#--- signals --------------------------------------------------------------------------------------
+
+#--- enums ----------------------------------------------------------------------------------------
+
+#--- constants ------------------------------------------------------------------------------------
+
+#--- public variables - order: export > normal var > onready --------------------------------------
+
+#--- private variables - order: export > normal var > onready -------------------------------------
 
 var _hugo_exporter: HugoMarkdownDocsExporter
 
@@ -22,10 +26,12 @@ onready var _hugo_path_selector = $ExportPathRow/DirectorySystemPathLineEdit
 onready var _category_button = $Categories
 onready var _category_list = $CategoriesBlockIdent/CategoriesList
 
-### ---------------------------------------
+### -----------------------------------------------------------------------------------------------
 
 
-### Built in Engine Methods ---------------
+### Built in Engine Methods -----------------------------------------------------------------------
+
+### -----------------------------------------------------------------------------------------------
 
 func _ready() -> void:
 	_hugo_exporter = HugoMarkdownDocsExporter.new()
@@ -41,14 +47,15 @@ func _ready() -> void:
 	_hugo_path_selector.set_string_variable(_export_path)
 	_populate_category_details_ui()
 
-### ---------------------------------------
+### -----------------------------------------------------------------------------------------------
 
 
-### Public Methods ------------------------
-### ---------------------------------------
+### Public Methods --------------------------------------------------------------------------------
+
+### -----------------------------------------------------------------------------------------------
 
 
-### Private Methods -----------------------
+### Private Methods -------------------------------------------------------------------------------
 
 func _populate_category_details_ui() -> void:
 	_clear_category_list()
@@ -66,7 +73,6 @@ func _populate_category_details_ui() -> void:
 				options_node.populate_category_entry(key, _optional_data_db.value[key])
 				
 	#			print("%s: %s"%[key, JSON.print(_optional_data_db.value[key], " ")])
-
 
 
 func _clear_category_list():
@@ -87,4 +93,4 @@ func _on_BuildCategoryDb_pressed() -> void:
 func _on_HugoSection_focus_entered():
 	_populate_category_details_ui()
 
-### ---------------------------------------
+### -----------------------------------------------------------------------------------------------

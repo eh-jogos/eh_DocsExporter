@@ -1,50 +1,51 @@
+# Sweepes the project and generates the json reference for the codebase. Started this based on 
+# ReferenceCollector.gd from GDQuest's docs maker, but customized it to add to the json some more
+# information I wanted to use.
 tool
 class_name ReferenceFormatter
 extends JsonIO
-# Write your doc striing for this file here
 
-### Member Variables and Dependencies -----
-# signals 
-# enums
-# constants
+### Member Variables and Dependencies -------------------------------------------------------------
+#--- signals --------------------------------------------------------------------------------------
+
+#--- enums ----------------------------------------------------------------------------------------
+
+#--- constants ------------------------------------------------------------------------------------
+
+# Currently recognized metadata that you can use in the comments, while documenting your code.
+# `@category:` - will group pages during export, and save them together in a folder with the same
+# name as the category. If you want to use subcategories you can treat it as path. For example
+# `# @category: CategoryA/SubcategoryB` will generate a folder named "CategoryA" and inside it 
+# a folder named "SubcategoryB". Only works in the main description for the file.
 const METADATA = {
-	category = "\n @category:"
+	category = "@category:"
 }
 
-# public variables - order: export > normal var > onready 
+#--- public variables - order: export > normal var > onready --------------------------------------
 
-# A list of directories to collect files from.
-var directories := ["res://addons/eh_jogos_game_jolt_api"]
-# If true, explore each directory recursively
-var is_recursive: = true
-# A list of patterns to filter files.
-var patterns := ["*.gd"]
-# Output path to save the class reference.
-var save_path := "res://formated_reference.json"
-
-# private variables - order: export > normal var > onready 
+#--- private variables - order: export > normal var > onready -------------------------------------
 
 var _shared_variables_path = "res://addons/eh_jogos.docs-exporter/shared_variables/"
 var _custom_class_db : DictionaryVariable
 var _custom_inheritance_db : DictionaryVariable
 
-### ---------------------------------------
+### -----------------------------------------------------------------------------------------------
 
 
-### Built in Engine Methods ---------------
+### Built in Engine Methods -----------------------------------------------------------------------
+
 func _init():
 	_custom_class_db = load(_shared_variables_path + "dict_custom_class_db.tres")
 	_custom_inheritance_db = load(_shared_variables_path + "dict_custom_inheritance_db.tres")
 
-
-func _run() -> void:
-	export_formatted_reference_json(directories, patterns, is_recursive, save_path)
-
-### ---------------------------------------
+### -----------------------------------------------------------------------------------------------
 
 
-### Public Methods ------------------------
+### Public Methods --------------------------------------------------------------------------------
 
+# Sweepes the folders you set in `directories` looking for files that matches the provided 
+# `patterns`. It can search the folders recursively or not, and resulting json is exported 
+# to save_path.
 func export_formatted_reference_json(
 		directories: Array, 
 		patterns: Array, 
@@ -83,12 +84,12 @@ func export_formatted_reference_json(
 		
 		formatted_reference.classes.append(class_entry)
 	
-	_write_dictionary_to_file(formatted_reference, save_path)
+	write_dictionary_to_file(formatted_reference, save_path)
 
-### ---------------------------------------
+### -----------------------------------------------------------------------------------------------
 
 
-### Private Methods -----------------------
+### Private Methods -------------------------------------------------------------------------------
 
 func _build_custom_class_dbs() -> void:
 	_custom_class_db.value.clear()
@@ -150,9 +151,9 @@ func _handle_metadata(class_entry: Dictionary) -> void:
 		if metadata_index != -1:
 			var end_index = description.find("\n", metadata_index+1)
 			var metadata_substring = description.substr(metadata_index, end_index-metadata_index)
-			var metadata_value = metadata_substring.lstrip(METADATA[key])
+			var metadata_value = metadata_substring.lstrip(METADATA[key]).strip_edges()
 			
 			class_entry[key] = metadata_value
 			class_entry.description = class_entry.description.replace(metadata_substring, "")
 
-### ---------------------------------------
+### -----------------------------------------------------------------------------------------------

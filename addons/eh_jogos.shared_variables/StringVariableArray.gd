@@ -1,27 +1,37 @@
+# Array of [StringVariable] that can be saved in disk like a custom resource. 
+# Used as [Shared Variables] so that the data it holds can be accessed and modified from multiple 
+# parts of the code. Based on the idea of Unity's Scriptable Objects and Ryan Hipple's Unite Talk.
+# @category: Shared Variables
 tool
 class_name StringVariableArray
 extends Resource
-# Write your doc striing for this file here
 
-### Member Variables and Dependencies -----
-# signals
+### Member Variables and Dependencies -------------------------------------------------------------
+#--- signals --------------------------------------------------------------------------------------
 
+# Signal emitted when the Variable's value is updated.
 signal value_updated
 
-# enums
-# constants
-# public variables - order: export > normal var > onready 
-export(Array, Resource) var value: = [] setget _set_value, _get_value
- 
-# private variables - order: export > normal var > onready 
-### ---------------------------------------
+#--- enums ----------------------------------------------------------------------------------------
+
+#--- constants ------------------------------------------------------------------------------------
+
+#--- public variables - order: export > normal var > onready --------------------------------------
+
+# Shared Variable value
+export(Array, Resource) var value: Array = [] setget _set_value, _get_value
+
+#--- private variables - order: export > normal var > onready -------------------------------------
+
+### -----------------------------------------------------------------------------------------------
 
 
-### Built in Engine Methods ---------------
+### Built in Engine Methods -----------------------------------------------------------------------
 
-### ---------------------------------------
+### -----------------------------------------------------------------------------------------------
 
-### Public Methods ------------------------
+
+### Public Methods --------------------------------------------------------------------------------
 
 func push(element) -> void:
 	var string_variable: StringVariable = null
@@ -39,6 +49,15 @@ func push(element) -> void:
 		string_variable.connect("value_updated", self, "_on_array_element_updated")
 	
 	value.push_back(string_variable)
+	
+	_save()
+
+
+func erase(element: StringVariable) -> void:
+	if value.has(element):
+		value.erase(element)
+	
+	_save()
 
 
 func get_string_array() -> Array:
@@ -47,10 +66,10 @@ func get_string_array() -> Array:
 		array.push_back(string_variable.value)
 	return array
 
-### ---------------------------------------
+### -----------------------------------------------------------------------------------------------
 
 
-### Private Methods -----------------------
+### Private Methods -------------------------------------------------------------------------------
 
 func _set_value(p_value) -> void:
 	var old_array: =  value.duplicate()
@@ -70,8 +89,8 @@ func _set_value(p_value) -> void:
 		for element in p_value:
 			if element is StringVariable or element is String:
 				push(element)
-			else:
-				push(StringVariable.new())
+	
+	_save()
 
 
 func _get_value() -> Array:
@@ -83,8 +102,13 @@ func _get_value() -> Array:
 	return value
 
 
+func _save() -> void:
+	ResourceSaver.save(resource_path, self)
+	emit_signal("value_updated")
+
+
 func _on_array_element_updated() -> void:
 	ResourceSaver.save(resource_path, self)
 	emit_signal("value_updated")
 
-### ---------------------------------------
+### -----------------------------------------------------------------------------------------------

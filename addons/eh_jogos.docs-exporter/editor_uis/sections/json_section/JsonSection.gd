@@ -1,13 +1,17 @@
+# Json Section of the Project Settings Doc Exporter Tab.
 tool
 extends VBoxContainer
-# Write your doc striing for this file here
 
-### Member Variables and Dependencies -----
-# signals 
-# enums
-# constants
-# public variables - order: export > normal var > onready 
-# private variables - order: export > normal var > onready 
+### Member Variables and Dependencies -------------------------------------------------------------
+#--- signals --------------------------------------------------------------------------------------
+
+#--- enums ----------------------------------------------------------------------------------------
+
+#--- constants ------------------------------------------------------------------------------------
+
+#--- public variables - order: export > normal var > onready --------------------------------------
+
+#--- private variables - order: export > normal var > onready -------------------------------------
 
 var _reference_formatter: ReferenceFormatter
 
@@ -20,10 +24,11 @@ onready var _directories_column = $DirectoriesRow/DirectoriesColum
 onready var _filters_column = $FiltersRow/FilterColumn
 onready var _json_path_selector = $JsonReferenceRow/JsonPathSelector
 onready var _resource_preloader = $ResourcePreloader
-### ---------------------------------------
+
+### -----------------------------------------------------------------------------------------------
 
 
-### Built in Engine Methods ---------------
+### Built in Engine Methods -----------------------------------------------------------------------
 
 func _ready() -> void:
 	_reference_formatter = ReferenceFormatter.new()
@@ -37,14 +42,15 @@ func _ready() -> void:
 	_filters_column.populate_editor_fields(_filters)
 	_json_path_selector.set_string_variable(_save_path)
 
-### ---------------------------------------
+### -----------------------------------------------------------------------------------------------
 
 
-### Public Methods ------------------------
-### ---------------------------------------
+### Public Methods --------------------------------------------------------------------------------
+
+### -----------------------------------------------------------------------------------------------
 
 
-### Private Methods -----------------------
+### Private Methods -------------------------------------------------------------------------------
 
 func _on_ExportJson_pressed() -> void:
 	_reference_formatter.export_formatted_reference_json(
@@ -54,4 +60,4 @@ func _on_ExportJson_pressed() -> void:
 			_save_path.value
 	)
 
-### ---------------------------------------
+### -----------------------------------------------------------------------------------------------
