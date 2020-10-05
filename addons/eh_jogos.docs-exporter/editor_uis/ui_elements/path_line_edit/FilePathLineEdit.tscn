@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/path_line_edit/FileExplorerButton.gd" type="Script" id=1]
 [ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/icons/icon_folder.svg" type="Texture" id=2]
 [ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/path_line_edit/PathLineEdit.gd" type="Script" id=3]
 [ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/path_line_edit/FilePathLineEdit.gd" type="Script" id=4]
 [ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/stylebox_editable_panel.tres" type="StyleBox" id=5]
+[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/icons/icon_close.svg" type="Texture" id=6]
 
 [node name="FilePathLineEdit" type="HBoxContainer"]
 margin_left = 511.0
@@ -16,6 +17,12 @@ script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="DeleteButton" type="Button" parent="."]
+visible = false
+margin_right = 28.0
+margin_bottom = 22.0
+icon = ExtResource( 6 )
 
 [node name="PathLineEdit" type="LineEdit" parent="."]
 margin_right = 474.0
@@ -52,12 +59,12 @@ margin_right = -76.0
 margin_bottom = 451.0
 window_title = "Select where to save json reference"
 mode_overrides_title = false
-mode = 0
 access = 2
 show_hidden_files = true
-current_dir = "/mnt/24847D5F847D3500/Daniel/ProjetosGames/_00_MyToolsAndLibraries/GameJoltApi/demo-project"
-current_path = "/mnt/24847D5F847D3500/Daniel/ProjetosGames/_00_MyToolsAndLibraries/GameJoltApi/demo-project/"
+current_dir = "/mnt/24847D5F847D3500/Daniel/ProjetosGames/_00_MyToolsAndLibraries/eh_DocsExporter/DocsExporterProject"
+current_path = "/mnt/24847D5F847D3500/Daniel/ProjetosGames/_00_MyToolsAndLibraries/eh_DocsExporter/DocsExporterProject/"
+[connection signal="pressed" from="DeleteButton" to="." method="_on_DeleteButton_pressed"]
 [connection signal="text_changed" from="PathLineEdit" to="." method="_on_LineEdit_text_changed"]
 [connection signal="text_entered" from="PathLineEdit" to="." method="_on_LineEdit_text_entered"]
-[connection signal="file_selected" from="FileExplorerButton/FileDialog" to="." method="_on_FileDialog_file_selected"]
 [connection signal="file_selected" from="FileExplorerButton/FileDialog" to="PathLineEdit" method="_on_FileDialog_file_selected"]
+[connection signal="file_selected" from="FileExplorerButton/FileDialog" to="." method="_on_FileDialog_file_selected"]

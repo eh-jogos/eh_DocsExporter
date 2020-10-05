@@ -13,7 +13,6 @@
 [ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/string_line_edit/StringVariableLineEdit.tscn" type="PackedScene" id=11]
 [ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/editor_button_theme.tres" type="Theme" id=12]
 
-
 [node name="JsonSection" type="VBoxContainer"]
 margin_right = 1018.0
 margin_bottom = 216.0
@@ -48,7 +47,7 @@ __meta__ = {
 [node name="DirectoriesRow" type="HBoxContainer" parent="."]
 margin_top = 22.0
 margin_right = 1018.0
-margin_bottom = 79.0
+margin_bottom = 105.0
 
 [node name="Label" type="Label" parent="DirectoriesRow"]
 margin_right = 507.0
@@ -62,7 +61,7 @@ valign = 1
 [node name="DirectoriesColum" type="VBoxContainer" parent="DirectoriesRow"]
 margin_left = 511.0
 margin_right = 1018.0
-margin_bottom = 57.0
+margin_bottom = 83.0
 size_flags_horizontal = 3
 script = ExtResource( 5 )
 
@@ -71,13 +70,13 @@ resources = [ PoolStringArray( "editor_field" ), [ ExtResource( 9 ) ] ]
 
 [node name="Fields" type="VBoxContainer" parent="DirectoriesRow/DirectoriesColum"]
 margin_right = 507.0
-margin_bottom = 22.0
+margin_bottom = 48.0
 
 [node name="AddMore" type="Button" parent="DirectoriesRow/DirectoriesColum"]
 margin_left = 405.0
-margin_top = 26.0
+margin_top = 52.0
 margin_right = 507.0
-margin_bottom = 57.0
+margin_bottom = 83.0
 size_flags_horizontal = 8
 theme = ExtResource( 12 )
 custom_constants/hseparation = 10
@@ -85,9 +84,9 @@ text = "Add folder"
 icon = ExtResource( 10 )
 
 [node name="FiltersRow" type="HBoxContainer" parent="."]
-margin_top = 87.0
+margin_top = 113.0
 margin_right = 1018.0
-margin_bottom = 144.0
+margin_bottom = 170.0
 
 [node name="Label" type="Label" parent="FiltersRow"]
 margin_right = 507.0
@@ -127,9 +126,9 @@ text = "Add filter"
 icon = ExtResource( 10 )
 
 [node name="RecursiveRow" type="HBoxContainer" parent="."]
-margin_top = 152.0
+margin_top = 178.0
 margin_right = 1018.0
-margin_bottom = 176.0
+margin_bottom = 202.0
 
 [node name="Label" type="Label" parent="RecursiveRow"]
 margin_right = 507.0
@@ -145,9 +144,9 @@ text = "On"
 _bool_variable = ExtResource( 8 )
 
 [node name="JsonReferenceRow" type="HBoxContainer" parent="."]
-margin_top = 184.0
+margin_top = 210.0
 margin_right = 1018.0
-margin_bottom = 206.0
+margin_bottom = 232.0
 
 [node name="Label" type="Label" parent="JsonReferenceRow"]
 margin_right = 507.0
@@ -162,13 +161,15 @@ file_dialog_filter = "*.json"
 
 [node name="ExportJson" type="Button" parent="."]
 margin_left = 768.0
-margin_top = 214.0
+margin_top = 240.0
 margin_right = 1018.0
-margin_bottom = 243.0
+margin_bottom = 269.0
 rect_min_size = Vector2( 250, 0 )
 size_flags_horizontal = 8
 theme = ExtResource( 12 )
 text = "Generate Json Reference"
+[connection signal="pressed" from="DirectoriesRow/DirectoriesColum/AddMore" to="DirectoriesRow/DirectoriesColum" method="_on_AddMore_pressed"]
 [connection signal="text_changed" from="FiltersRow/FilterColumn/Fields/StringVariableLineEdit" to="FiltersRow/FilterColumn/Fields/StringVariableLineEdit" method="_on_StringVariableLineEdit_text_changed"]
 [connection signal="text_entered" from="FiltersRow/FilterColumn/Fields/StringVariableLineEdit" to="FiltersRow/FilterColumn/Fields/StringVariableLineEdit" method="_on_StringVariableLineEdit_text_entered"]
+[connection signal="pressed" from="FiltersRow/FilterColumn/AddMore" to="FiltersRow/FilterColumn" method="_on_AddMore_pressed"]
 [connection signal="pressed" from="ExportJson" to="." method="_on_ExportJson_pressed"]

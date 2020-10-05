@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/string_line_edit/StringVariableLineEdit.gd" type="Script" id=1]
 [ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/stylebox_editable_panel.tres" type="StyleBox" id=2]
+[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/icons/icon_close.svg" type="Texture" id=3]
 
 [node name="StringVariableLineEdit" type="LineEdit"]
 margin_right = 507.0
@@ -14,5 +15,12 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="DeleteButton" type="Button" parent="."]
+visible = false
+margin_right = 28.0
+margin_bottom = 22.0
+icon = ExtResource( 3 )
 [connection signal="text_changed" from="." to="." method="_on_StringVariableLineEdit_text_changed"]
 [connection signal="text_entered" from="." to="." method="_on_StringVariableLineEdit_text_entered"]
+[connection signal="pressed" from="DeleteButton" to="." method="_on_DeleteButton_pressed"]

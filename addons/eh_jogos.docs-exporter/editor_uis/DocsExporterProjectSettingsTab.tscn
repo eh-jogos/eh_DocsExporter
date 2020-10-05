@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/DocsExporterProjectSettingsTab.gd" type="Script" id=1]
 [ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/sections/github_section/GihubSection.tscn" type="PackedScene" id=2]
 [ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/sections/hugo_section/HugoSection.tscn" type="PackedScene" id=3]
 [ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/sections/json_section/JsonSection.tscn" type="PackedScene" id=11]
@@ -16,7 +15,6 @@ border_color = Color( 0, 0, 0, 1 )
 [node name="DocsExporter" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -43,7 +41,7 @@ __meta__ = {
 
 [node name="ContentList" type="VBoxContainer" parent="Panel/ScrollContainer"]
 margin_right = 1010.0
-margin_bottom = 626.0
+margin_bottom = 1056.0
 size_flags_horizontal = 3
 custom_constants/separation = 25
 __meta__ = {
@@ -52,17 +50,17 @@ __meta__ = {
 
 [node name="JsonSection" parent="Panel/ScrollContainer/ContentList" instance=ExtResource( 11 )]
 margin_right = 1010.0
-margin_bottom = 243.0
+margin_bottom = 269.0
 
 [node name="GithubSection" parent="Panel/ScrollContainer/ContentList" instance=ExtResource( 2 )]
-margin_top = 268.0
+margin_top = 294.0
 margin_right = 1010.0
-margin_bottom = 475.0
+margin_bottom = 501.0
 
 [node name="HugoSection" parent="Panel/ScrollContainer/ContentList" instance=ExtResource( 3 )]
-margin_top = 500.0
+margin_top = 526.0
 margin_right = 1010.0
-margin_bottom = 626.0
+margin_bottom = 1056.0
 
 [node name="Outline" type="Panel" parent="."]
 anchor_right = 1.0
