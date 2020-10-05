@@ -5,10 +5,6 @@
     <link>https://eh-jogos.github.io/eh_DocsExporter/tags/</link>
     <description>Recent content in Tags on eh_jogos Godot Docs Exporter</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="https://eh-jogos.github.io/eh_DocsExporter/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language><atom:link href="https://eh-jogos.github.io/eh_DocsExporter/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

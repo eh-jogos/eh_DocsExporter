@@ -6,9 +6,217 @@
     <description>Recent content on eh_jogos Godot Docs Exporter</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Mon, 05 Oct 2020 07:30:54 -0300</lastBuildDate><atom:link href="https://eh-jogos.github.io/eh_DocsExporter/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ArrayVariable</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/arrayvariable/</link>
+      <pubDate>Mon, 05 Oct 2020 07:30:54 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/arrayvariable/</guid>
+      <description>Inherits: Resource &amp;gt; Reference &amp;gt; Object
+Description Array that can be saved in disk like a custom resource. Used as [Shared Variables] so that the data it holds can be accessed and modified from multiple parts of the code. Based on the idea of Unity&amp;rsquo;s Scriptable Objects and Ryan Hipple&amp;rsquo;s Unite Talk.
+Properties    type property default value     Array value []    Signals  value_updated()  Signal emitted when the Variable&amp;rsquo;s value is updated.</description>
+    </item>
     
-	<atom:link href="https://eh-jogos.github.io/eh_DocsExporter/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>BoolVariable</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/boolvariable/</link>
+      <pubDate>Mon, 05 Oct 2020 07:30:54 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/boolvariable/</guid>
+      <description>Inherits: Resource &amp;gt; Reference &amp;gt; Object
+Description Boolean that can be saved in disk like a custom resource. Used as [Shared Variables] so that the data it holds can be accessed and modified from multiple parts of the code. Based on the idea of Unity&amp;rsquo;s Scriptable Objects and Ryan Hipple&amp;rsquo;s Unite Talk.
+Properties    type property default value     bool value True    Signals  value_updated()  Signal emitted when the Variable&amp;rsquo;s value is updated.</description>
+    </item>
     
+    <item>
+      <title>BoolVariableCheckbox</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/boolvariablecheckbox/</link>
+      <pubDate>Mon, 05 Oct 2020 07:30:54 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/boolvariablecheckbox/</guid>
+      <description>Inherits: CheckBox &amp;gt; Button &amp;gt; BaseButton &amp;gt; Control &amp;gt; CanvasItem &amp;gt; Node &amp;gt; Object
+Description Editor Field for checkbox, associated with a respective BoolVariable, used by the Docs Exporter tab in the Project Settings.
+Properties    type property default value     BoolVariable bool_reference Null    Properties Descriptions bool_reference  BoolVariable bool_reference  BoolVariable responsible for serving as a shared variable for this option.</description>
+    </item>
+    
+    <item>
+      <title>CategoryOptionalData</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/reference/custom-resources/categoryoptionaldata/</link>
+      <pubDate>Mon, 05 Oct 2020 07:30:54 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/reference/custom-resources/categoryoptionaldata/</guid>
+      <description>Inherits: Resource &amp;gt; Reference &amp;gt; Object
+Description Struct to hold optional data for categories, like descriptions or weight to be used in HUGO
+Properties    type property default value     int weight 0   String description &amp;quot;&amp;quot;    Signals  struct_updated()  Signal emitted whenever any struct variable is changed.
+ Properties Descriptions weight  int weight           Default 0   Setter _set_weight    Value hugo will use to order categories in the side menu.</description>
+    </item>
+    
+    <item>
+      <title>CategoryOptionalDataDict</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/reference/custom-resources/categoryoptionaldatadict/</link>
+      <pubDate>Mon, 05 Oct 2020 07:30:54 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/reference/custom-resources/categoryoptionaldatadict/</guid>
+      <description>Inherits: Resource &amp;gt; Reference &amp;gt; Object
+Description Dictionary of CategoryOptionalData, to be saved in disk and used somewhat like a database by the plugin. This is what allows it to show the relevant fields in the Docs Exporter tab.
+If you rename a category and the description disappears, look for the file in res://addons/eh_jogos.docs-exporter/shared_variables/dict_categories_optional_data.tres and it will still hold the description inside a key with the name of the old category.</description>
+    </item>
+    
+    <item>
+      <title>CategoryOptions</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/categoryoptions/</link>
+      <pubDate>Mon, 05 Oct 2020 07:30:54 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/categoryoptions/</guid>
+      <description>Inherits: VBoxContainer &amp;gt; BoxContainer &amp;gt; Container &amp;gt; Control &amp;gt; CanvasItem &amp;gt; Node &amp;gt; Object
+Description UI Element for the category optional data used by the Docs Exporter tab. It&amp;rsquo;s through these that the user of the addon will be able to customize the weight and description of the Hugo export for each category they create.
+This element will be populated by a CategoryOptionalData resource which will handle the persistence and the sharing of this data with any part of the code that needs it.</description>
+    </item>
+    
+    <item>
+      <title>Collapsible</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/reference/components/collapsible/</link>
+      <pubDate>Mon, 05 Oct 2020 07:30:54 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/reference/components/collapsible/</guid>
+      <description>Inherits: Node &amp;gt; Object
+Description Component with collapsible behavior to easily be attached to any UI needs. It takes two variables, the NodePath for a text element which will be handled to give feedback for collapsible options or state, and a NodePath for the node that must be toggled when collapsed.
+If attached directly to a Button of any kind, it will auto connect with the &amp;ldquo;pressed&amp;rdquo; signal. If this behavior is not desirable, just uncheck the option should_auto_connect</description>
+    </item>
+    
+    <item>
+      <title>DictionaryVariable</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/dictionaryvariable/</link>
+      <pubDate>Mon, 05 Oct 2020 07:30:54 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/dictionaryvariable/</guid>
+      <description>Inherits: Resource &amp;gt; Reference &amp;gt; Object
+Description Dictionary that can be saved in disk like a custom resource. Used as [Shared Variables] so that the data it holds can be accessed and modified from multiple parts of the code. Based on the idea of Unity&amp;rsquo;s Scriptable Objects and Ryan Hipple&amp;rsquo;s Unite Talk.
+Properties    type property default value     Dictionary value {}    Signals  value_updated()  Signal emitted when the Variable&amp;rsquo;s value is updated.</description>
+    </item>
+    
+    <item>
+      <title>FilePathLineEdit</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/filepathlineedit/</link>
+      <pubDate>Mon, 05 Oct 2020 07:30:54 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/filepathlineedit/</guid>
+      <description>Inherits: HBoxContainer &amp;gt; BoxContainer &amp;gt; Container &amp;gt; Control &amp;gt; CanvasItem &amp;gt; Node &amp;gt; Object
+Description Base class for any kind of PathLineEdit field. Receives a StringVariable, which will be responsible not only for the persistence of the data as well as sharing it with any part of the project that needs it.
+In the addon there are 3 Scenes for different kind of paths that are used in the Docs Exporter tab, one for file paths in the file system, one for directories in the project, and another for directories in the file system.</description>
+    </item>
+    
+    <item>
+      <title>HugoMarkdownDocsExporter</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/reference/hugomarkdowndocsexporter/</link>
+      <pubDate>Mon, 05 Oct 2020 07:30:54 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/reference/hugomarkdowndocsexporter/</guid>
+      <description>Inherits: MarkdownDocsExporter &amp;gt; JsonIO &amp;gt; Reference &amp;gt; Object
+Description Exports md files configured to work with Hugo. It&amp;rsquo;s supposed to work with any theme, but it was only tested with hugo-theme-learn. It&amp;rsquo;s recommended to export the whole reference into a folder inside the &amp;ldquo;content&amp;rdquo; folder of your hugo site, but not directly in content, without any subfolder.
+In addition to that, if you use @category, a subfolder with it&amp;rsquo;s own _index.</description>
+    </item>
+    
+    <item>
+      <title>JsonIO</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/reference/jsonio/</link>
+      <pubDate>Mon, 05 Oct 2020 07:30:54 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/reference/jsonio/</guid>
+      <description>Inherits: Reference &amp;gt; Object
+Inherited by: MarkdownDocsExporter, ReferenceFormatter
+Description Helper Class to read and write JSON files.
+Methods    return type method signature     String push_reading_file_error(Variant error, Variant p_file_path)   String push_parsing_file_error(Variant error, Variant p_file_path)   Dictionary get_dictionary_from_file(Variant p_file_path)   null write_dictionary_to_file(Dictionary content, String p_file_path)    Method Descriptions push_reading_file_error  String push_reading_file_error(Variant error, Variant p_file_path)  Pushes error to Godot&amp;rsquo;s debugger when there&amp;rsquo;s a file reading error.</description>
+    </item>
+    
+    <item>
+      <title>MarkdownDocsExporter</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/reference/markdowndocsexporter/</link>
+      <pubDate>Mon, 05 Oct 2020 07:30:54 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/reference/markdowndocsexporter/</guid>
+      <description>Inherits: JsonIO &amp;gt; Reference &amp;gt; Object
+Inherited by: HugoMarkdownDocsExporter
+Description Main markdown exporter. It exports using github flavor markdown. These .md files can be used anywhere, but the links and the _Sidebar.md are configured to work best with github wiki format.
+Properties    type property default value     Dictionary links_db Null   Dictionary signatures_db Null   String key_to_use_for_link Null    Methods    return type method signature     Variant build_category_db(String reference_json_path, String export_path)   null export_github_wiki_pages(String reference_json_path, String export_path)    Constants  MD_BLOCK_INHERITANCE = &amp;quot; Inherits: {inheritance} &amp;ldquo; &amp;mdash; Defines the &amp;ldquo;inheritance&amp;rdquo; block content model and styling for the exported .</description>
+    </item>
+    
+    <item>
+      <title>PathLineEdit</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/pathlineedit/</link>
+      <pubDate>Mon, 05 Oct 2020 07:30:54 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/pathlineedit/</guid>
+      <description>Inherits: LineEdit &amp;gt; Control &amp;gt; CanvasItem &amp;gt; Node &amp;gt; Object
+Description LineEdit for receiving file or folder paths. Has a small customization just to scroll the text to the end whenever a file or folder is selected through the File Explorer instead of typed in.
+Methods    return type method signature     null set_text(String string)    Method Descriptions set_text  void set_text(String string)  Sets the text and scrolls it to the end position.</description>
+    </item>
+    
+    <item>
+      <title>ReferenceFormatter</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/reference/referenceformatter/</link>
+      <pubDate>Mon, 05 Oct 2020 07:30:54 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/reference/referenceformatter/</guid>
+      <description>Inherits: JsonIO &amp;gt; Reference &amp;gt; Object
+Description Sweepes the project and generates the json reference for the codebase. Started this based on ReferenceCollector.gd from GDQuest&amp;rsquo;s docs maker, but customized it to add to the json some more information I wanted to use.
+Methods    return type method signature     null export_formatted_reference_json(Array directories, Array patterns, bool is_recursive, String save_path)    Constants  METADATA = {category:@category:} &amp;mdash; Currently recognized metadata that you can use in the comments, while documenting your code.</description>
+    </item>
+    
+    <item>
+      <title>ResizableTextEdit</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/resizabletextedit/</link>
+      <pubDate>Mon, 05 Oct 2020 07:30:54 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/resizabletextedit/</guid>
+      <description>Inherits: TextEdit &amp;gt; Control &amp;gt; CanvasItem &amp;gt; Node &amp;gt; Object
+Description TextEdit with a corner that can be dragged and resized. Used in different parts of the Docs Exporter tab in the Project Settings.</description>
+    </item>
+    
+    <item>
+      <title>StringArrayVariable</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/stringarrayvariable/</link>
+      <pubDate>Mon, 05 Oct 2020 07:30:54 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/stringarrayvariable/</guid>
+      <description>Inherits: Resource &amp;gt; Reference &amp;gt; Object
+Description Array of Strings that can be saved in disk like a custom resource. Used as [Shared Variables] so that the data it holds can be accessed and modified from multiple parts of the code. Based on the idea of Unity&amp;rsquo;s Scriptable Objects and Ryan Hipple&amp;rsquo;s Unite Talk.
+Properties    type property default value     Array value []    Signals  value_updated()  Signal emitted when the Variable&amp;rsquo;s value is updated.</description>
+    </item>
+    
+    <item>
+      <title>StringVariable</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/stringvariable/</link>
+      <pubDate>Mon, 05 Oct 2020 07:30:54 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/stringvariable/</guid>
+      <description>Inherits: Resource &amp;gt; Reference &amp;gt; Object
+Description String that can be saved in disk like a custom resource. Used as [Shared Variables] so that the data it holds can be accessed and modified from multiple parts of the code. Based on the idea of Unity&amp;rsquo;s Scriptable Objects and Ryan Hipple&amp;rsquo;s Unite Talk.
+Properties    type property default value     String value &amp;quot;&amp;quot;    Signals  value_updated()  Signal emitted when the Variable&amp;rsquo;s value is updated.</description>
+    </item>
+    
+    <item>
+      <title>StringVariableArray</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/stringvariablearray/</link>
+      <pubDate>Mon, 05 Oct 2020 07:30:54 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/stringvariablearray/</guid>
+      <description>Inherits: Resource &amp;gt; Reference &amp;gt; Object
+Description Array of StringVariable that can be saved in disk like a custom resource. Used as [Shared Variables] so that the data it holds can be accessed and modified from multiple parts of the code. Based on the idea of Unity&amp;rsquo;s Scriptable Objects and Ryan Hipple&amp;rsquo;s Unite Talk.
+Properties    type property default value     Array value []    Methods    return type method signature     null push(Variant element)   null erase(StringVariable element)   Array get_string_array()    Signals  value_updated()  Signal emitted when the Variable&amp;rsquo;s value is updated.</description>
+    </item>
+    
+    <item>
+      <title>StringVariableLineEdit</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/stringvariablelineedit/</link>
+      <pubDate>Mon, 05 Oct 2020 07:30:54 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/stringvariablelineedit/</guid>
+      <description>Inherits: LineEdit &amp;gt; Control &amp;gt; CanvasItem &amp;gt; Node &amp;gt; Object
+Description LineEdit Field for simple StringVariables.
+Properties    type property default value     bool is_removable False    Methods    return type method signature     null set_string_variable(StringVariable resource)    Signals  remove_string_variable(string_variable)   Properties Descriptions is_removable  bool is_removable           Default False   Setter _set_is_removable     Method Descriptions set_string_variable  void set_string_variable(StringVariable resource)  Sets the StringVariable this field will be attached to and populates the LineEdit with its value.</description>
+    </item>
     
   </channel>
 </rss>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>UI Elements on eh_jogos Godot Docs Exporter</title>
+    <link>https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/</link>
+    <description>Recent content in UI Elements on eh_jogos Godot Docs Exporter</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 05 Oct 2020 07:30:54 -0300</lastBuildDate><atom:link href="https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>BoolVariableCheckbox</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/boolvariablecheckbox/</link>
+      <pubDate>Mon, 05 Oct 2020 07:30:54 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/boolvariablecheckbox/</guid>
+      <description>Inherits: CheckBox &amp;gt; Button &amp;gt; BaseButton &amp;gt; Control &amp;gt; CanvasItem &amp;gt; Node &amp;gt; Object
+Description Editor Field for checkbox, associated with a respective BoolVariable, used by the Docs Exporter tab in the Project Settings.
+Properties    type property default value     BoolVariable bool_reference Null    Properties Descriptions bool_reference  BoolVariable bool_reference  BoolVariable responsible for serving as a shared variable for this option.</description>
+    </item>
+    
+    <item>
+      <title>CategoryOptions</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/categoryoptions/</link>
+      <pubDate>Mon, 05 Oct 2020 07:30:54 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/categoryoptions/</guid>
+      <description>Inherits: VBoxContainer &amp;gt; BoxContainer &amp;gt; Container &amp;gt; Control &amp;gt; CanvasItem &amp;gt; Node &amp;gt; Object
+Description UI Element for the category optional data used by the Docs Exporter tab. It&amp;rsquo;s through these that the user of the addon will be able to customize the weight and description of the Hugo export for each category they create.
+This element will be populated by a CategoryOptionalData resource which will handle the persistence and the sharing of this data with any part of the code that needs it.</description>
+    </item>
+    
+    <item>
+      <title>FilePathLineEdit</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/filepathlineedit/</link>
+      <pubDate>Mon, 05 Oct 2020 07:30:54 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/filepathlineedit/</guid>
+      <description>Inherits: HBoxContainer &amp;gt; BoxContainer &amp;gt; Container &amp;gt; Control &amp;gt; CanvasItem &amp;gt; Node &amp;gt; Object
+Description Base class for any kind of PathLineEdit field. Receives a StringVariable, which will be responsible not only for the persistence of the data as well as sharing it with any part of the project that needs it.
+In the addon there are 3 Scenes for different kind of paths that are used in the Docs Exporter tab, one for file paths in the file system, one for directories in the project, and another for directories in the file system.</description>
+    </item>
+    
+    <item>
+      <title>PathLineEdit</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/pathlineedit/</link>
+      <pubDate>Mon, 05 Oct 2020 07:30:54 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/pathlineedit/</guid>
+      <description>Inherits: LineEdit &amp;gt; Control &amp;gt; CanvasItem &amp;gt; Node &amp;gt; Object
+Description LineEdit for receiving file or folder paths. Has a small customization just to scroll the text to the end whenever a file or folder is selected through the File Explorer instead of typed in.
+Methods    return type method signature     null set_text(String string)    Method Descriptions set_text  void set_text(String string)  Sets the text and scrolls it to the end position.</description>
+    </item>
+    
+    <item>
+      <title>ResizableTextEdit</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/resizabletextedit/</link>
+      <pubDate>Mon, 05 Oct 2020 07:30:54 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/resizabletextedit/</guid>
+      <description>Inherits: TextEdit &amp;gt; Control &amp;gt; CanvasItem &amp;gt; Node &amp;gt; Object
+Description TextEdit with a corner that can be dragged and resized. Used in different parts of the Docs Exporter tab in the Project Settings.</description>
+    </item>
+    
+    <item>
+      <title>StringVariableLineEdit</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/stringvariablelineedit/</link>
+      <pubDate>Mon, 05 Oct 2020 07:30:54 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/stringvariablelineedit/</guid>
+      <description>Inherits: LineEdit &amp;gt; Control &amp;gt; CanvasItem &amp;gt; Node &amp;gt; Object
+Description LineEdit Field for simple StringVariables.
+Properties    type property default value     bool is_removable False    Methods    return type method signature     null set_string_variable(StringVariable resource)    Signals  remove_string_variable(string_variable)   Properties Descriptions is_removable  bool is_removable           Default False   Setter _set_is_removable     Method Descriptions set_string_variable  void set_string_variable(StringVariable resource)  Sets the StringVariable this field will be attached to and populates the LineEdit with its value.</description>
+    </item>
+    
+  </channel>
+</rss>

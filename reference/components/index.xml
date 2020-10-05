@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Components on eh_jogos Godot Docs Exporter</title>
+    <link>https://eh-jogos.github.io/eh_DocsExporter/reference/components/</link>
+    <description>Recent content in Components on eh_jogos Godot Docs Exporter</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 05 Oct 2020 07:30:54 -0300</lastBuildDate><atom:link href="https://eh-jogos.github.io/eh_DocsExporter/reference/components/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Collapsible</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/reference/components/collapsible/</link>
+      <pubDate>Mon, 05 Oct 2020 07:30:54 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/reference/components/collapsible/</guid>
+      <description>Inherits: Node &amp;gt; Object
+Description Component with collapsible behavior to easily be attached to any UI needs. It takes two variables, the NodePath for a text element which will be handled to give feedback for collapsible options or state, and a NodePath for the node that must be toggled when collapsed.
+If attached directly to a Button of any kind, it will auto connect with the &amp;ldquo;pressed&amp;rdquo; signal. If this behavior is not desirable, just uncheck the option should_auto_connect</description>
+    </item>
+    
+  </channel>
+</rss>

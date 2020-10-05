@@ -1,14 +1,182 @@
 [
 {
-	"uri": "https://eh-jogos.github.io/eh_DocsExporter/categories/",
-	"title": "Categories",
+	"uri": "https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/arrayvariable/",
+	"title": "ArrayVariable",
+	"tags": [],
+	"description": "",
+	"content": "Inherits: Resource \u0026gt; Reference \u0026gt; Object\nDescription Array that can be saved in disk like a custom resource. Used as [Shared Variables] so that the data it holds can be accessed and modified from multiple parts of the code. Based on the idea of Unity\u0026rsquo;s Scriptable Objects and Ryan Hipple\u0026rsquo;s Unite Talk.\nProperties    type property default value     Array value []    Signals  value_updated()  Signal emitted when the Variable\u0026rsquo;s value is updated.\n Properties Descriptions value  Array value           Default []   Setter _set_value    Shared Variable value\n "
+},
+{
+	"uri": "https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/boolvariable/",
+	"title": "BoolVariable",
+	"tags": [],
+	"description": "",
+	"content": "Inherits: Resource \u0026gt; Reference \u0026gt; Object\nDescription Boolean that can be saved in disk like a custom resource. Used as [Shared Variables] so that the data it holds can be accessed and modified from multiple parts of the code. Based on the idea of Unity\u0026rsquo;s Scriptable Objects and Ryan Hipple\u0026rsquo;s Unite Talk.\nProperties    type property default value     bool value True    Signals  value_updated()  Signal emitted when the Variable\u0026rsquo;s value is updated.\n Properties Descriptions value  Array value           Default True   Setter _set_value    Shared Variable value\n "
+},
+{
+	"uri": "https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/boolvariablecheckbox/",
+	"title": "BoolVariableCheckbox",
+	"tags": [],
+	"description": "",
+	"content": "Inherits: CheckBox \u0026gt; Button \u0026gt; BaseButton \u0026gt; Control \u0026gt; CanvasItem \u0026gt; Node \u0026gt; Object\nDescription Editor Field for checkbox, associated with a respective BoolVariable, used by the Docs Exporter tab in the Project Settings.\nProperties    type property default value     BoolVariable bool_reference Null    Properties Descriptions bool_reference  BoolVariable bool_reference  BoolVariable responsible for serving as a shared variable for this option.\n "
+},
+{
+	"uri": "https://eh-jogos.github.io/eh_DocsExporter/reference/custom-resources/categoryoptionaldata/",
+	"title": "CategoryOptionalData",
+	"tags": [],
+	"description": "",
+	"content": "Inherits: Resource \u0026gt; Reference \u0026gt; Object\nDescription Struct to hold optional data for categories, like descriptions or weight to be used in HUGO\nProperties    type property default value     int weight 0   String description \u0026quot;\u0026quot;    Signals  struct_updated()  Signal emitted whenever any struct variable is changed.\n Properties Descriptions weight  int weight           Default 0   Setter _set_weight    Value hugo will use to order categories in the side menu. \u0026ldquo;Heavier\u0026rdquo; categories will appear to the bottom and \u0026ldquo;lighter\u0026rdquo; ones will appear towards the top. Be careful though that \u0026ldquo;0\u0026rdquo; means \u0026ldquo;disabled\u0026rdquo; so if you start setting weights for some categories set the ones you want to be on top with at least a value of \u0026ldquo;1\u0026rdquo;\nCan be filled in through the Docs exporter tab, in the Project Settings.\n description  String description           Default \u0026quot;\u0026quot;   Setter _set_description    Each category page gets a TOC with all the links that are inside it. If you want this auto generated page to have a description as well, use this field.\nCan be filled in through the Docs exporter tab, in the Project Settings.\n "
+},
+{
+	"uri": "https://eh-jogos.github.io/eh_DocsExporter/reference/custom-resources/categoryoptionaldatadict/",
+	"title": "CategoryOptionalDataDict",
+	"tags": [],
+	"description": "",
+	"content": "Inherits: Resource \u0026gt; Reference \u0026gt; Object\nDescription Dictionary of CategoryOptionalData, to be saved in disk and used somewhat like a database by the plugin. This is what allows it to show the relevant fields in the Docs Exporter tab.\nIf you rename a category and the description disappears, look for the file in res://addons/eh_jogos.docs-exporter/shared_variables/dict_categories_optional_data.tres and it will still hold the description inside a key with the name of the old category.\nProperties    type property default value     Dictionary value {}    Signals  value_updated()  signal emitted whenever the dictionary changes.\n Properties Descriptions value  Array value           Default {}   Setter _set_value   Getter _get_value    Dictionary that only accepts [CategoryOptionalData] as values.\n "
+},
+{
+	"uri": "https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/categoryoptions/",
+	"title": "CategoryOptions",
+	"tags": [],
+	"description": "",
+	"content": "Inherits: VBoxContainer \u0026gt; BoxContainer \u0026gt; Container \u0026gt; Control \u0026gt; CanvasItem \u0026gt; Node \u0026gt; Object\nDescription UI Element for the category optional data used by the Docs Exporter tab. It\u0026rsquo;s through these that the user of the addon will be able to customize the weight and description of the Hugo export for each category they create.\nThis element will be populated by a CategoryOptionalData resource which will handle the persistence and the sharing of this data with any part of the code that needs it. Anything filled in the Docs Exporter tab will be saved in the file res://addons/eh_jogos.docs-exporter/shared_variables/dict_categories_optional_data.tres\nMethods    return type method signature     null populate_category_entry(String p_name, CategoryOptionalData p_data)    Method Descriptions populate_category_entry  void populate_category_entry(String p_name, CategoryOptionalData p_data)  Sets the [CategoryOptionalData] this element will be attached to and fill its fields with their value.\n "
+},
+{
+	"uri": "https://eh-jogos.github.io/eh_DocsExporter/reference/components/collapsible/",
+	"title": "Collapsible",
+	"tags": [],
+	"description": "",
+	"content": "Inherits: Node \u0026gt; Object\nDescription Component with collapsible behavior to easily be attached to any UI needs. It takes two variables, the NodePath for a text element which will be handled to give feedback for collapsible options or state, and a NodePath for the node that must be toggled when collapsed.\nIf attached directly to a Button of any kind, it will auto connect with the \u0026ldquo;pressed\u0026rdquo; signal. If this behavior is not desirable, just uncheck the option should_auto_connect\nProperties    type property default value     NodePath text_element_path \u0026quot;\u0026quot;   NodePath collapsible_node_path \u0026quot;\u0026quot;   bool should_auto_connect True    Methods    return type method signature     null toggle_collapse()   null handle_text()    Properties Descriptions text_element_path  NodePath text_element_path           Default \u0026quot;\u0026quot;    NodePath for the feedback text.\n collapsible_node_path  NodePath collapsible_node_path           Default \u0026quot;\u0026quot;    NodePath for the node that must be toggled on/off when collapsed.\n should_auto_connect  bool should_auto_connect           Default True    Turn this off if you don\u0026rsquo;t want the component to try to auto connect with the pressed signal of the parent, in case the parent is a Button.\n Method Descriptions toggle_collapse  void toggle_collapse()  Will collapse/expand the target node, and also trigger a change in the text as additional feedback\n handle_text  void handle_text()  Prepends a \u0026ldquo;+\u0026rdquo; to the text when the element is closed (collapsed) or a \u0026ldquo;-\u0026rdquo; when the element is visible (expanded).\n "
+},
+{
+	"uri": "https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/dictionaryvariable/",
+	"title": "DictionaryVariable",
+	"tags": [],
+	"description": "",
+	"content": "Inherits: Resource \u0026gt; Reference \u0026gt; Object\nDescription Dictionary that can be saved in disk like a custom resource. Used as [Shared Variables] so that the data it holds can be accessed and modified from multiple parts of the code. Based on the idea of Unity\u0026rsquo;s Scriptable Objects and Ryan Hipple\u0026rsquo;s Unite Talk.\nProperties    type property default value     Dictionary value {}    Signals  value_updated()  Signal emitted when the Variable\u0026rsquo;s value is updated.\n Properties Descriptions value  Array value           Default {}   Setter _set_value    Shared Variable value\n "
+},
+{
+	"uri": "https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/filepathlineedit/",
+	"title": "FilePathLineEdit",
+	"tags": [],
+	"description": "",
+	"content": "Inherits: HBoxContainer \u0026gt; BoxContainer \u0026gt; Container \u0026gt; Control \u0026gt; CanvasItem \u0026gt; Node \u0026gt; Object\nDescription Base class for any kind of PathLineEdit field. Receives a StringVariable, which will be responsible not only for the persistence of the data as well as sharing it with any part of the project that needs it.\nIn the addon there are 3 Scenes for different kind of paths that are used in the Docs Exporter tab, one for file paths in the file system, one for directories in the project, and another for directories in the file system.\nProperties    type property default value     String file_dialog_filter \u0026quot;\u0026quot;   bool is_removable False    Methods    return type method signature     null set_string_variable(StringVariable resource)    Signals  remove_string_variable(string_variable)   Properties Descriptions file_dialog_filter  String file_dialog_filter           Default \u0026quot;\u0026quot;    Filters for the File Explorer window.\n is_removable  bool is_removable           Default False   Setter _set_is_removable    Option to turn on/off the remove field button.\n Method Descriptions set_string_variable  void set_string_variable(StringVariable resource)  Sets the StringVariable this field will be attached to and populates the LineEdit with its value.\n "
+},
+{
+	"uri": "https://eh-jogos.github.io/eh_DocsExporter/reference/hugomarkdowndocsexporter/",
+	"title": "HugoMarkdownDocsExporter",
+	"tags": [],
+	"description": "",
+	"content": "Inherits: MarkdownDocsExporter \u0026gt; JsonIO \u0026gt; Reference \u0026gt; Object\nDescription Exports md files configured to work with Hugo. It\u0026rsquo;s supposed to work with any theme, but it was only tested with hugo-theme-learn. It\u0026rsquo;s recommended to export the whole reference into a folder inside the \u0026ldquo;content\u0026rdquo; folder of your hugo site, but not directly in content, without any subfolder.\nIn addition to that, if you use @category, a subfolder with it\u0026rsquo;s own _index.md will be created for each category. You can order them and add descriptions to this pages in the Docs Exporter tab in the Project Settings.\nProperties    type property default value     String author \u0026quot;eh-jogos\u0026quot;   bool should_create_toc_on_category_pages Null    Methods    return type method signature     null export_hugo_site_pages(String reference_json_path, String export_path)    Constants  HUGO_CHAPTER_FRONT_MATTER = \u0026ldquo;\u0026mdash; title: {title} author: {author} date: {datetime} weight: {weight} \u0026mdash; \u0026ldquo; \u0026mdash; Front matter that will be used for category pages. HUGO_DEFAULT_FRONT_MATTER = \u0026ldquo;\u0026mdash; title: {title} author: {author} date: {datetime} weight: 1 \u0026mdash; \u0026ldquo; \u0026mdash; Front matter that will be used to default pages.  Properties Descriptions author  String author           Default \u0026quot;eh-jogos\u0026quot;    Author to be used across the site\u0026rsquo;s front matters.\n should_create_toc_on_category_pages  bool should_create_toc_on_category_pages  Enables / Disables table of contents in category pages.\n Method Descriptions export_hugo_site_pages  void export_hugo_site_pages(String reference_json_path, String export_path)  Takes in the reference json file path and an export path and generates and exports hugo formatted .md files.\n "
+},
+{
+	"uri": "https://eh-jogos.github.io/eh_DocsExporter/reference/jsonio/",
+	"title": "JsonIO",
+	"tags": [],
+	"description": "",
+	"content": "Inherits: Reference \u0026gt; Object\nInherited by: MarkdownDocsExporter, ReferenceFormatter\nDescription Helper Class to read and write JSON files.\nMethods    return type method signature     String push_reading_file_error(Variant error, Variant p_file_path)   String push_parsing_file_error(Variant error, Variant p_file_path)   Dictionary get_dictionary_from_file(Variant p_file_path)   null write_dictionary_to_file(Dictionary content, String p_file_path)    Method Descriptions push_reading_file_error  String push_reading_file_error(Variant error, Variant p_file_path)  Pushes error to Godot\u0026rsquo;s debugger when there\u0026rsquo;s a file reading error.\n push_parsing_file_error  String push_parsing_file_error(Variant error, Variant p_file_path)  Pushes error to Godot\u0026rsquo;s debugger when there\u0026rsquo;s a file parsing error.\n get_dictionary_from_file  Dictionary get_dictionary_from_file(Variant p_file_path)  Reads json file and return a parsed dictionary\n write_dictionary_to_file  void write_dictionary_to_file(Dictionary content, String p_file_path)  Writes dictionary into a json file.\n "
+},
+{
+	"uri": "https://eh-jogos.github.io/eh_DocsExporter/reference/markdowndocsexporter/",
+	"title": "MarkdownDocsExporter",
+	"tags": [],
+	"description": "",
+	"content": "Inherits: JsonIO \u0026gt; Reference \u0026gt; Object\nInherited by: HugoMarkdownDocsExporter\nDescription Main markdown exporter. It exports using github flavor markdown. These .md files can be used anywhere, but the links and the _Sidebar.md are configured to work best with github wiki format.\nProperties    type property default value     Dictionary links_db Null   Dictionary signatures_db Null   String key_to_use_for_link Null    Methods    return type method signature     Variant build_category_db(String reference_json_path, String export_path)   null export_github_wiki_pages(String reference_json_path, String export_path)    Constants  MD_BLOCK_INHERITANCE = \u0026quot; Inherits: {inheritance} \u0026ldquo; \u0026mdash; Defines the \u0026ldquo;inheritance\u0026rdquo; block content model and styling for the exported .md file. MD_BLOCK_INHERITED_BY = \u0026quot; Inherited by: {inherited_by} \u0026ldquo; \u0026mdash; Defines the \u0026ldquo;inherited by\u0026rdquo; block content model and styling for the exported .md file. MD_BLOCK_DESCRIPTION = \u0026ldquo;## Description {description} \u0026ldquo; \u0026mdash; Defines the \u0026ldquo;Description\u0026rdquo; block content model and styling for the exported .md file. MD_BLOCK_PROPERTIES_TABLE_TITLE = \u0026ldquo;## Properties | type | property | default value | | \u0026mdash;- | \u0026mdash;\u0026mdash;\u0026ndash; | \u0026mdash;\u0026mdash;\u0026mdash;\u0026mdash;- | \u0026ldquo; \u0026mdash; Defines the \u0026ldquo;Properties\u0026rdquo; table header content model and styling for the exported .md file. MD_BLOCK_PROPERTIES_TABLE_LINE = \u0026ldquo;| {type} | {name} | {default_value} | \u0026ldquo; \u0026mdash; Defines the property table lines content model and styling for the exported .md file. MD_BLOCK_METHODS_TABLE_TITLE = \u0026ldquo;## Methods | return type | method signature | | \u0026mdash;\u0026mdash;\u0026mdash;\u0026ndash; | \u0026mdash;\u0026mdash;\u0026mdash;\u0026mdash;\u0026mdash;- | \u0026ldquo; \u0026mdash; Defines the \u0026ldquo;Methods\u0026rdquo; table header content model and styling for the exported .md file. MD_BLOCK_METHOD_TABLE_LINE = \u0026ldquo;| {type} | {siganture} | \u0026ldquo; \u0026mdash; Defines the method table lines content model and styling for the exported .md file. MD_BLOCK_SIGNALS_TITLE = \u0026ldquo;## Signals \u0026ldquo; \u0026mdash; Defines the \u0026ldquo;Signals\u0026rdquo; header content model and styling for the exported .md file. MD_BLOCK_SIGNALS_LINE = \u0026ldquo;- {name}({arguments}) {description} \u0026mdash;\u0026mdash;\u0026mdash; \u0026ldquo; \u0026mdash; Defines the individial signal content model and styling for the exported .md file. MD_BLOCK_ENUMS_TITLE = \u0026ldquo;## Enumerations \u0026ldquo; \u0026mdash; Defines the \u0026ldquo;Enumerations\u0026rdquo; header content model and styling for the exported .md file. MD_BLOCK_ENUM_NAME_LINE = \u0026ldquo;enum {name}: \u0026ldquo; \u0026mdash; Defines the individial enum name content model and styling for the exported .md file. MD_BLOCK_ENUM_KEY_LINE = \u0026ldquo;- {signature} \u0026ldquo; \u0026mdash; Defines the individial enum keys content model and styling for the exported .md file. MD_BLOCK_CONSTANTS_TITLE = \u0026ldquo;## Constants \u0026ldquo; \u0026mdash; Defines the \u0026ldquo;Constants\u0026rdquo; header content model and styling for the exported .md file. MD_BLOCK_CONSTANTS_LINE = \u0026ldquo;- {signature} \u0026mdash; {description} \\n\u0026rdquo; \u0026mdash; Defines the individial constant content model and styling for the exported .md file. MD_BLOCK_PROPERTY = \u0026ldquo;### {name} - {property_signature} {table} {description} \u0026mdash;\u0026mdash;\u0026mdash; \u0026mdash; Defines the individial property definition content model and styling for the exported .md file. MD_BLOCK_PROPERTIES_DESCRIPTION = \u0026ldquo;## Properties Descriptions \u0026ldquo; \u0026mdash; Defines the \u0026ldquo;Properties Descriptions\u0026rdquo; header content model and styling for the exported .md file. MD_BLOCK_METHOD = \u0026ldquo;### {name} - {method_signature} {description} \u0026mdash;\u0026mdash;\u0026mdash;\u0026quot; \u0026mdash; Defines the individial method definition content model and styling for the exported .md file. MD_BLOCK_METHOD_DESCRIPTION = \u0026ldquo;## Method Descriptions \u0026ldquo; \u0026mdash; Defines the \u0026ldquo;Method Descriptions\u0026rdquo; header content model and styling for the exported .md file. GODOT_DOCS_BASE_URL = \u0026ldquo;https://docs.godotengine.org/en/stable/classes/class_%s.html\u0026quot; \u0026mdash; Godot\u0026rsquo;s Documentatiion base url for forming links.  Properties Descriptions links_db  Dictionary links_db  Dictionary that serves as database for links and is built during the json export process\n signatures_db  Dictionary signatures_db  Dictionary that serves as database for properties and methods signatures and is built during the json export process\n key_to_use_for_link  String key_to_use_for_link  If which key from the links database the exporter should use. Github exporter will use \u0026ldquo;local_path\u0026rdquo; which just consists of repeating the file name, without extesnion. Hugo exporter will use \u0026ldquo;full_path\u0026rdquo; which will take folder structure into account.\n Method Descriptions build_category_db  Variant build_category_db(String reference_json_path, String export_path)  Reads json reference and creates a category database with the current user defined categories in use.\n export_github_wiki_pages  void export_github_wiki_pages(String reference_json_path, String export_path)  Takes in the reference json file path and an export path and generates and exports github wiki formatted .md files.\n "
+},
+{
+	"uri": "https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/pathlineedit/",
+	"title": "PathLineEdit",
+	"tags": [],
+	"description": "",
+	"content": "Inherits: LineEdit \u0026gt; Control \u0026gt; CanvasItem \u0026gt; Node \u0026gt; Object\nDescription LineEdit for receiving file or folder paths. Has a small customization just to scroll the text to the end whenever a file or folder is selected through the File Explorer instead of typed in.\nMethods    return type method signature     null set_text(String string)    Method Descriptions set_text  void set_text(String string)  Sets the text and scrolls it to the end position.\n "
+},
+{
+	"uri": "https://eh-jogos.github.io/eh_DocsExporter/reference/referenceformatter/",
+	"title": "ReferenceFormatter",
+	"tags": [],
+	"description": "",
+	"content": "Inherits: JsonIO \u0026gt; Reference \u0026gt; Object\nDescription Sweepes the project and generates the json reference for the codebase. Started this based on ReferenceCollector.gd from GDQuest\u0026rsquo;s docs maker, but customized it to add to the json some more information I wanted to use.\nMethods    return type method signature     null export_formatted_reference_json(Array directories, Array patterns, bool is_recursive, String save_path)    Constants  METADATA = {category:@category:} \u0026mdash; Currently recognized metadata that you can use in the comments, while documenting your code. @category: - will group pages during export, and save them together in a folder with the same name as the category. If you want to use subcategories you can treat it as path. For example # @category: CategoryA/SubcategoryB will generate a folder named \u0026ldquo;CategoryA\u0026rdquo; and inside it a folder named \u0026ldquo;SubcategoryB\u0026rdquo;. Only works in the main description for the file.  Method Descriptions export_formatted_reference_json  void export_formatted_reference_json(Array directories, Array patterns, bool is_recursive, String save_path)   "
+},
+{
+	"uri": "https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/resizabletextedit/",
+	"title": "ResizableTextEdit",
+	"tags": [],
+	"description": "",
+	"content": "Inherits: TextEdit \u0026gt; Control \u0026gt; CanvasItem \u0026gt; Node \u0026gt; Object\nDescription TextEdit with a corner that can be dragged and resized. Used in different parts of the Docs Exporter tab in the Project Settings.\n"
+},
+{
+	"uri": "https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/stringarrayvariable/",
+	"title": "StringArrayVariable",
+	"tags": [],
+	"description": "",
+	"content": "Inherits: Resource \u0026gt; Reference \u0026gt; Object\nDescription Array of Strings that can be saved in disk like a custom resource. Used as [Shared Variables] so that the data it holds can be accessed and modified from multiple parts of the code. Based on the idea of Unity\u0026rsquo;s Scriptable Objects and Ryan Hipple\u0026rsquo;s Unite Talk.\nProperties    type property default value     Array value []    Signals  value_updated()  Signal emitted when the Variable\u0026rsquo;s value is updated.\n Properties Descriptions value  Array value           Default []   Setter _set_value    Shared Variable value\n "
+},
+{
+	"uri": "https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/stringvariable/",
+	"title": "StringVariable",
+	"tags": [],
+	"description": "",
+	"content": "Inherits: Resource \u0026gt; Reference \u0026gt; Object\nDescription String that can be saved in disk like a custom resource. Used as [Shared Variables] so that the data it holds can be accessed and modified from multiple parts of the code. Based on the idea of Unity\u0026rsquo;s Scriptable Objects and Ryan Hipple\u0026rsquo;s Unite Talk.\nProperties    type property default value     String value \u0026quot;\u0026quot;    Signals  value_updated()  Signal emitted when the Variable\u0026rsquo;s value is updated.\n Properties Descriptions value  Array value           Default \u0026quot;\u0026quot;   Setter _set_value    Shared Variable value\n "
+},
+{
+	"uri": "https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/stringvariablearray/",
+	"title": "StringVariableArray",
+	"tags": [],
+	"description": "",
+	"content": "Inherits: Resource \u0026gt; Reference \u0026gt; Object\nDescription Array of StringVariable that can be saved in disk like a custom resource. Used as [Shared Variables] so that the data it holds can be accessed and modified from multiple parts of the code. Based on the idea of Unity\u0026rsquo;s Scriptable Objects and Ryan Hipple\u0026rsquo;s Unite Talk.\nProperties    type property default value     Array value []    Methods    return type method signature     null push(Variant element)   null erase(StringVariable element)   Array get_string_array()    Signals  value_updated()  Signal emitted when the Variable\u0026rsquo;s value is updated.\n Properties Descriptions value  Array value           Default []   Setter _set_value   Getter _get_value    Shared Variable value\n Method Descriptions push  void push(Variant element)   erase  void erase(StringVariable element)   get_string_array  Array get_string_array()   "
+},
+{
+	"uri": "https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/stringvariablelineedit/",
+	"title": "StringVariableLineEdit",
+	"tags": [],
+	"description": "",
+	"content": "Inherits: LineEdit \u0026gt; Control \u0026gt; CanvasItem \u0026gt; Node \u0026gt; Object\nDescription LineEdit Field for simple StringVariables.\nProperties    type property default value     bool is_removable False    Methods    return type method signature     null set_string_variable(StringVariable resource)    Signals  remove_string_variable(string_variable)   Properties Descriptions is_removable  bool is_removable           Default False   Setter _set_is_removable     Method Descriptions set_string_variable  void set_string_variable(StringVariable resource)  Sets the StringVariable this field will be attached to and populates the LineEdit with its value.\n "
+},
+{
+	"uri": "https://eh-jogos.github.io/eh_DocsExporter/reference/custom-resources/",
+	"title": "Custom Resources",
+	"tags": [],
+	"description": "",
+	"content": "Custom Resources used by the plugin.\n CategoryOptionalData CategoryOptionalDataDict  "
+},
+{
+	"uri": "https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/",
+	"title": "UI Elements",
+	"tags": [],
+	"description": "",
+	"content": "UI Elements used in the Docs Exporter tab.\n ResizableTextEdit StringVariableLineEdit BoolVariableCheckbox CategoryOptions PathLineEdit FilePathLineEdit  "
+},
+{
+	"uri": "https://eh-jogos.github.io/eh_DocsExporter/reference/components/",
+	"title": "Components",
+	"tags": [],
+	"description": "",
+	"content": "Custom compenents with logic that can be shared between different kinds of nodes.\n Collapsible  "
+},
+{
+	"uri": "https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/",
+	"title": "Shared Variables",
+	"tags": [],
+	"description": "",
+	"content": "Simple Custom Resources that can be saved to disk an represent only one variable of one type. Since Rsources are only loaded once and shared between all their references in code, it is used as some kind of shared variables so that the data it holds can be accessed and modified from multiple parts of the code and always stays in sync.\nThis ones are saved in a separate folder because they\u0026rsquo;re all custom resources that represent basic types and can be reused between projects and different plugins, so that If you already have this folder from another plugin, you won\u0026rsquo;t have any class_name conflicts and will only have to import the scripts you don\u0026rsquo;t have.\nIn this plugin it is basically used so that you can edit data in the Docs Exporter Tab and have this data easily accessible by the code.\nIt is based on the idea of Unity\u0026rsquo;s Scriptable Objects and Ryan Hipple\u0026rsquo;s Unite Talk about architeting games around scriptable objects.\nReference Links:\n Text How To Unite Talk Video Ryans Example Repository  TOC:\n ArrayVariable StringArrayVariable BoolVariable DictionaryVariable StringVariable StringVariableArray  "
+},
+{
+	"uri": "https://eh-jogos.github.io/eh_DocsExporter/",
+	"title": "eh_jogos Godot Docs Exporter",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://eh-jogos.github.io/eh_DocsExporter/",
-	"title": "eh_jogos Godot Docs Exporter",
+	"uri": "https://eh-jogos.github.io/eh_DocsExporter/reference/",
+	"title": "Reference",
+	"tags": [],
+	"description": "",
+	"content": " HugoMarkdownDocsExporter JsonIO MarkdownDocsExporter ReferenceFormatter Custom Resources  CategoryOptionalData CategoryOptionalDataDict   UI Elements  ResizableTextEdit StringVariableLineEdit BoolVariableCheckbox CategoryOptions PathLineEdit FilePathLineEdit   Components  Collapsible   Shared Variables  ArrayVariable StringArrayVariable BoolVariable DictionaryVariable StringVariable StringVariableArray    "
+},
+{
+	"uri": "https://eh-jogos.github.io/eh_DocsExporter/categories/",
+	"title": "Categories",
 	"tags": [],
 	"description": "",
 	"content": ""

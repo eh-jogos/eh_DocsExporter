@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shared Variables on eh_jogos Godot Docs Exporter</title>
+    <link>https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/</link>
+    <description>Recent content in Shared Variables on eh_jogos Godot Docs Exporter</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 05 Oct 2020 07:30:54 -0300</lastBuildDate><atom:link href="https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ArrayVariable</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/arrayvariable/</link>
+      <pubDate>Mon, 05 Oct 2020 07:30:54 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/arrayvariable/</guid>
+      <description>Inherits: Resource &amp;gt; Reference &amp;gt; Object
+Description Array that can be saved in disk like a custom resource. Used as [Shared Variables] so that the data it holds can be accessed and modified from multiple parts of the code. Based on the idea of Unity&amp;rsquo;s Scriptable Objects and Ryan Hipple&amp;rsquo;s Unite Talk.
+Properties    type property default value     Array value []    Signals  value_updated()  Signal emitted when the Variable&amp;rsquo;s value is updated.</description>
+    </item>
+    
+    <item>
+      <title>BoolVariable</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/boolvariable/</link>
+      <pubDate>Mon, 05 Oct 2020 07:30:54 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/boolvariable/</guid>
+      <description>Inherits: Resource &amp;gt; Reference &amp;gt; Object
+Description Boolean that can be saved in disk like a custom resource. Used as [Shared Variables] so that the data it holds can be accessed and modified from multiple parts of the code. Based on the idea of Unity&amp;rsquo;s Scriptable Objects and Ryan Hipple&amp;rsquo;s Unite Talk.
+Properties    type property default value     bool value True    Signals  value_updated()  Signal emitted when the Variable&amp;rsquo;s value is updated.</description>
+    </item>
+    
+    <item>
+      <title>DictionaryVariable</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/dictionaryvariable/</link>
+      <pubDate>Mon, 05 Oct 2020 07:30:54 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/dictionaryvariable/</guid>
+      <description>Inherits: Resource &amp;gt; Reference &amp;gt; Object
+Description Dictionary that can be saved in disk like a custom resource. Used as [Shared Variables] so that the data it holds can be accessed and modified from multiple parts of the code. Based on the idea of Unity&amp;rsquo;s Scriptable Objects and Ryan Hipple&amp;rsquo;s Unite Talk.
+Properties    type property default value     Dictionary value {}    Signals  value_updated()  Signal emitted when the Variable&amp;rsquo;s value is updated.</description>
+    </item>
+    
+    <item>
+      <title>StringArrayVariable</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/stringarrayvariable/</link>
+      <pubDate>Mon, 05 Oct 2020 07:30:54 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/stringarrayvariable/</guid>
+      <description>Inherits: Resource &amp;gt; Reference &amp;gt; Object
+Description Array of Strings that can be saved in disk like a custom resource. Used as [Shared Variables] so that the data it holds can be accessed and modified from multiple parts of the code. Based on the idea of Unity&amp;rsquo;s Scriptable Objects and Ryan Hipple&amp;rsquo;s Unite Talk.
+Properties    type property default value     Array value []    Signals  value_updated()  Signal emitted when the Variable&amp;rsquo;s value is updated.</description>
+    </item>
+    
+    <item>
+      <title>StringVariable</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/stringvariable/</link>
+      <pubDate>Mon, 05 Oct 2020 07:30:54 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/stringvariable/</guid>
+      <description>Inherits: Resource &amp;gt; Reference &amp;gt; Object
+Description String that can be saved in disk like a custom resource. Used as [Shared Variables] so that the data it holds can be accessed and modified from multiple parts of the code. Based on the idea of Unity&amp;rsquo;s Scriptable Objects and Ryan Hipple&amp;rsquo;s Unite Talk.
+Properties    type property default value     String value &amp;quot;&amp;quot;    Signals  value_updated()  Signal emitted when the Variable&amp;rsquo;s value is updated.</description>
+    </item>
+    
+    <item>
+      <title>StringVariableArray</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/stringvariablearray/</link>
+      <pubDate>Mon, 05 Oct 2020 07:30:54 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/stringvariablearray/</guid>
+      <description>Inherits: Resource &amp;gt; Reference &amp;gt; Object
+Description Array of StringVariable that can be saved in disk like a custom resource. Used as [Shared Variables] so that the data it holds can be accessed and modified from multiple parts of the code. Based on the idea of Unity&amp;rsquo;s Scriptable Objects and Ryan Hipple&amp;rsquo;s Unite Talk.
+Properties    type property default value     Array value []    Methods    return type method signature     null push(Variant element)   null erase(StringVariable element)   Array get_string_array()    Signals  value_updated()  Signal emitted when the Variable&amp;rsquo;s value is updated.</description>
+    </item>
+    
+  </channel>
+</rss>

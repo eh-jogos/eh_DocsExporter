@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/eh_DocsExporter/images/favicon.png" type="image/png">
 
-    <title>eh_jogos Godot Docs Exporter :: eh_jogos Godot Docs Exporter</title>
+    <title>JsonIO :: eh_jogos Godot Docs Exporter</title>
 
     
     <link href="/eh_DocsExporter/css/nucleus.css?1601895505" rel="stylesheet">
@@ -39,7 +39,7 @@
 <link href="https://eh-jogos.github.io/eh_DocsExporter//css/theme-eh-gjapi.css" rel="stylesheet"> 
 
   </head>
-  <body class="" data-url="/eh_DocsExporter/">
+  <body class="" data-url="/eh_DocsExporter/reference/jsonio/">
     <nav id="sidebar" class="">
 
 
@@ -84,7 +84,7 @@
   
     
     <li data-nav-id="/eh_DocsExporter/reference/" title="Reference" class="dd-item
-        
+        parent
         
         
         ">
@@ -137,7 +137,7 @@
  
   
     
-      <li data-nav-id="/eh_DocsExporter/reference/jsonio/" title="JsonIO" class="dd-item ">
+      <li data-nav-id="/eh_DocsExporter/reference/jsonio/" title="JsonIO" class="dd-item active">
         <a href="/eh_DocsExporter/reference/jsonio/">
         JsonIO
         
@@ -695,32 +695,144 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/eh_DocsExporter/'>eh_jogos Godot Docs Exporter</a> > <a href='/eh_DocsExporter/reference/'>Reference</a> > JsonIO
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#description">Description</a></li>
+    <li><a href="#methods">Methods</a></li>
+    <li><a href="#method-descriptions">Method Descriptions</a>
+      <ul>
+        <li><a href="#push_reading_file_error">push_reading_file_error</a></li>
+        <li><a href="#push_parsing_file_error">push_parsing_file_error</a></li>
+        <li><a href="#get_dictionary_from_file">get_dictionary_from_file</a></li>
+        <li><a href="#write_dictionary_to_file">write_dictionary_to_file</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
         
         <div id="body-inner">
           
+            <h1>
+              
+              JsonIO
+            </h1>
+          
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
-           
+<p><strong>Inherits:</strong> <em><a href="https://docs.godotengine.org/en/stable/classes/class_reference.html" target="_blank">Reference</a> &gt; <a href="https://docs.godotengine.org/en/stable/classes/class_object.html" target="_blank">Object</a></em><br>
+<strong>Inherited by:</strong> <em><a href="/eh_DocsExporter/reference/markdowndocsexporter/">MarkdownDocsExporter</a>, <a href="/eh_DocsExporter/reference/referenceformatter/">ReferenceFormatter</a></em></p>
+<h2 id="description">Description</h2>
+<p>Helper Class to read and write JSON files.</p>
+<h2 id="methods">Methods</h2>
+<table>
+<thead>
+<tr>
+<th>return type</th>
+<th>method signature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://docs.godotengine.org/en/stable/classes/class_string.html" target="_blank">String</a></td>
+<td><strong><a href="/eh_DocsExporter/reference/jsonio/#push_reading_file_error">push_reading_file_error</a></strong>(<a href="https://docs.godotengine.org/en/stable/classes/class_variant.html" target="_blank">Variant</a> error, <a href="https://docs.godotengine.org/en/stable/classes/class_variant.html" target="_blank">Variant</a> p_file_path)</td>
+</tr>
+<tr>
+<td><a href="https://docs.godotengine.org/en/stable/classes/class_string.html" target="_blank">String</a></td>
+<td><strong><a href="/eh_DocsExporter/reference/jsonio/#push_parsing_file_error">push_parsing_file_error</a></strong>(<a href="https://docs.godotengine.org/en/stable/classes/class_variant.html" target="_blank">Variant</a> error, <a href="https://docs.godotengine.org/en/stable/classes/class_variant.html" target="_blank">Variant</a> p_file_path)</td>
+</tr>
+<tr>
+<td><a href="https://docs.godotengine.org/en/stable/classes/class_dictionary.html" target="_blank">Dictionary</a></td>
+<td><strong><a href="/eh_DocsExporter/reference/jsonio/#get_dictionary_from_file">get_dictionary_from_file</a></strong>(<a href="https://docs.godotengine.org/en/stable/classes/class_variant.html" target="_blank">Variant</a> p_file_path)</td>
+</tr>
+<tr>
+<td><a href="https://docs.godotengine.org/en/stable/classes/class_null.html" target="_blank">null</a></td>
+<td><strong><a href="/eh_DocsExporter/reference/jsonio/#write_dictionary_to_file">write_dictionary_to_file</a></strong>(<a href="https://docs.godotengine.org/en/stable/classes/class_dictionary.html" target="_blank">Dictionary</a> content, <a href="https://docs.godotengine.org/en/stable/classes/class_string.html" target="_blank">String</a> p_file_path)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="method-descriptions">Method Descriptions</h2>
+<h3 id="push_reading_file_error">push_reading_file_error</h3>
+<ul>
+<li><em><a href="https://docs.godotengine.org/en/stable/classes/class_string.html" target="_blank">String</a></em> <strong>push_reading_file_error</strong>(<a href="https://docs.godotengine.org/en/stable/classes/class_variant.html" target="_blank">Variant</a> error, <a href="https://docs.godotengine.org/en/stable/classes/class_variant.html" target="_blank">Variant</a> p_file_path)</li>
+</ul>
+<p>Pushes error to Godot&rsquo;s debugger when there&rsquo;s a file reading error.</p>
+<hr>
+<h3 id="push_parsing_file_error">push_parsing_file_error</h3>
+<ul>
+<li><em><a href="https://docs.godotengine.org/en/stable/classes/class_string.html" target="_blank">String</a></em> <strong>push_parsing_file_error</strong>(<a href="https://docs.godotengine.org/en/stable/classes/class_variant.html" target="_blank">Variant</a> error, <a href="https://docs.godotengine.org/en/stable/classes/class_variant.html" target="_blank">Variant</a> p_file_path)</li>
+</ul>
+<p>Pushes error to Godot&rsquo;s debugger when there&rsquo;s a file parsing error.</p>
+<hr>
+<h3 id="get_dictionary_from_file">get_dictionary_from_file</h3>
+<ul>
+<li><em><a href="https://docs.godotengine.org/en/stable/classes/class_dictionary.html" target="_blank">Dictionary</a></em> <strong>get_dictionary_from_file</strong>(<a href="https://docs.godotengine.org/en/stable/classes/class_variant.html" target="_blank">Variant</a> p_file_path)</li>
+</ul>
+<p>Reads json file and return a parsed dictionary</p>
+<hr>
+<h3 id="write_dictionary_to_file">write_dictionary_to_file</h3>
+<ul>
+<li><em>void</em> <strong>write_dictionary_to_file</strong>(<a href="https://docs.godotengine.org/en/stable/classes/class_dictionary.html" target="_blank">Dictionary</a> content, <a href="https://docs.godotengine.org/en/stable/classes/class_string.html" target="_blank">String</a> p_file_path)</li>
+</ul>
+<p>Writes dictionary into a json file.</p>
+<hr>
+
+
+<footer class="footline">
 	
-		<h1>Customize your own home page</h1>
-		<p>
-		  The site is working. Don't forget to customize this homepage with your own. You typically have 3 choices :
-		</p>
-		<ul>
-			<li><b>1. </b> Create an _index.md document in <b>content</b> folder and fill it with Markdown content</li>
-			<li><b>2. </b> Create an <b>index.html</b> file in the <b>static</b> folder and fill the file with HTML content</li>
-		  <li><b>3. </b> Configure your server to automatically redirect home page to one your documentation page</li>
-		</ul>
-	
-  
+</footer>
+
         
         </div>
         
@@ -752,8 +864,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -769,6 +879,26 @@
             
             
                 
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
                     
                 
                 
@@ -786,21 +916,8 @@
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
+                        
                     
                 
                 
@@ -1145,8 +1262,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/eh_DocsExporter/reference/hugomarkdowndocsexporter/" title="HugoMarkdownDocsExporter"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/eh_DocsExporter/reference/" title="Reference" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/eh_DocsExporter/reference/markdowndocsexporter/" title="MarkdownDocsExporter" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

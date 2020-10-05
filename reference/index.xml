@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reference on eh_jogos Godot Docs Exporter</title>
+    <link>https://eh-jogos.github.io/eh_DocsExporter/reference/</link>
+    <description>Recent content in Reference on eh_jogos Godot Docs Exporter</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 05 Oct 2020 07:30:54 -0300</lastBuildDate><atom:link href="https://eh-jogos.github.io/eh_DocsExporter/reference/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HugoMarkdownDocsExporter</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/reference/hugomarkdowndocsexporter/</link>
+      <pubDate>Mon, 05 Oct 2020 07:30:54 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/reference/hugomarkdowndocsexporter/</guid>
+      <description>Inherits: MarkdownDocsExporter &amp;gt; JsonIO &amp;gt; Reference &amp;gt; Object
+Description Exports md files configured to work with Hugo. It&amp;rsquo;s supposed to work with any theme, but it was only tested with hugo-theme-learn. It&amp;rsquo;s recommended to export the whole reference into a folder inside the &amp;ldquo;content&amp;rdquo; folder of your hugo site, but not directly in content, without any subfolder.
+In addition to that, if you use @category, a subfolder with it&amp;rsquo;s own _index.</description>
+    </item>
+    
+    <item>
+      <title>JsonIO</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/reference/jsonio/</link>
+      <pubDate>Mon, 05 Oct 2020 07:30:54 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/reference/jsonio/</guid>
+      <description>Inherits: Reference &amp;gt; Object
+Inherited by: MarkdownDocsExporter, ReferenceFormatter
+Description Helper Class to read and write JSON files.
+Methods    return type method signature     String push_reading_file_error(Variant error, Variant p_file_path)   String push_parsing_file_error(Variant error, Variant p_file_path)   Dictionary get_dictionary_from_file(Variant p_file_path)   null write_dictionary_to_file(Dictionary content, String p_file_path)    Method Descriptions push_reading_file_error  String push_reading_file_error(Variant error, Variant p_file_path)  Pushes error to Godot&amp;rsquo;s debugger when there&amp;rsquo;s a file reading error.</description>
+    </item>
+    
+    <item>
+      <title>MarkdownDocsExporter</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/reference/markdowndocsexporter/</link>
+      <pubDate>Mon, 05 Oct 2020 07:30:54 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/reference/markdowndocsexporter/</guid>
+      <description>Inherits: JsonIO &amp;gt; Reference &amp;gt; Object
+Inherited by: HugoMarkdownDocsExporter
+Description Main markdown exporter. It exports using github flavor markdown. These .md files can be used anywhere, but the links and the _Sidebar.md are configured to work best with github wiki format.
+Properties    type property default value     Dictionary links_db Null   Dictionary signatures_db Null   String key_to_use_for_link Null    Methods    return type method signature     Variant build_category_db(String reference_json_path, String export_path)   null export_github_wiki_pages(String reference_json_path, String export_path)    Constants  MD_BLOCK_INHERITANCE = &amp;quot; Inherits: {inheritance} &amp;ldquo; &amp;mdash; Defines the &amp;ldquo;inheritance&amp;rdquo; block content model and styling for the exported .</description>
+    </item>
+    
+    <item>
+      <title>ReferenceFormatter</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/reference/referenceformatter/</link>
+      <pubDate>Mon, 05 Oct 2020 07:30:54 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/reference/referenceformatter/</guid>
+      <description>Inherits: JsonIO &amp;gt; Reference &amp;gt; Object
+Description Sweepes the project and generates the json reference for the codebase. Started this based on ReferenceCollector.gd from GDQuest&amp;rsquo;s docs maker, but customized it to add to the json some more information I wanted to use.
+Methods    return type method signature     null export_formatted_reference_json(Array directories, Array patterns, bool is_recursive, String save_path)    Constants  METADATA = {category:@category:} &amp;mdash; Currently recognized metadata that you can use in the comments, while documenting your code.</description>
+    </item>
+    
+  </channel>
+</rss>

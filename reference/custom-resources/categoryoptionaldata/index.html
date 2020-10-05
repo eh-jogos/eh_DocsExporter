@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/eh_DocsExporter/images/favicon.png" type="image/png">
 
-    <title>eh_jogos Godot Docs Exporter :: eh_jogos Godot Docs Exporter</title>
+    <title>CategoryOptionalData :: eh_jogos Godot Docs Exporter</title>
 
     
     <link href="/eh_DocsExporter/css/nucleus.css?1601895505" rel="stylesheet">
@@ -39,7 +39,7 @@
 <link href="https://eh-jogos.github.io/eh_DocsExporter//css/theme-eh-gjapi.css" rel="stylesheet"> 
 
   </head>
-  <body class="" data-url="/eh_DocsExporter/">
+  <body class="" data-url="/eh_DocsExporter/reference/custom-resources/categoryoptionaldata/">
     <nav id="sidebar" class="">
 
 
@@ -84,7 +84,7 @@
   
     
     <li data-nav-id="/eh_DocsExporter/reference/" title="Reference" class="dd-item
-        
+        parent
         
         
         ">
@@ -201,7 +201,7 @@
   
     
     <li data-nav-id="/eh_DocsExporter/reference/custom-resources/" title="Custom Resources" class="dd-item
-        
+        parent
         
         
         ">
@@ -231,7 +231,7 @@
  
   
     
-      <li data-nav-id="/eh_DocsExporter/reference/custom-resources/categoryoptionaldata/" title="CategoryOptionalData" class="dd-item ">
+      <li data-nav-id="/eh_DocsExporter/reference/custom-resources/categoryoptionaldata/" title="CategoryOptionalData" class="dd-item active">
         <a href="/eh_DocsExporter/reference/custom-resources/categoryoptionaldata/">
         CategoryOptionalData
         
@@ -695,32 +695,179 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/eh_DocsExporter/'>eh_jogos Godot Docs Exporter</a> > <a href='/eh_DocsExporter/reference/'>Reference</a> > <a href='/eh_DocsExporter/reference/custom-resources/'>Custom Resources</a> > CategoryOptionalData
+          
+        
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#description">Description</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#signals">Signals</a></li>
+    <li><a href="#properties-descriptions">Properties Descriptions</a>
+      <ul>
+        <li><a href="#weight">weight</a></li>
+        <li><a href="#description-1">description</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
         
         <div id="body-inner">
           
+            <h1>
+              
+              CategoryOptionalData
+            </h1>
+          
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
-           
+<p><strong>Inherits:</strong> <em><a href="https://docs.godotengine.org/en/stable/classes/class_resource.html" target="_blank">Resource</a> &gt; <a href="https://docs.godotengine.org/en/stable/classes/class_reference.html" target="_blank">Reference</a> &gt; <a href="https://docs.godotengine.org/en/stable/classes/class_object.html" target="_blank">Object</a></em></p>
+<h2 id="description">Description</h2>
+<p>Struct to hold optional data for categories, like descriptions or weight to be used in HUGO</p>
+<h2 id="properties">Properties</h2>
+<table>
+<thead>
+<tr>
+<th>type</th>
+<th>property</th>
+<th>default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://docs.godotengine.org/en/stable/classes/class_int.html" target="_blank">int</a></td>
+<td><a href="/eh_DocsExporter/reference/custom-resources/categoryoptionaldata/#weight">weight</a></td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><a href="https://docs.godotengine.org/en/stable/classes/class_string.html" target="_blank">String</a></td>
+<td><a href="/eh_DocsExporter/reference/custom-resources/categoryoptionaldata/#description">description</a></td>
+<td><code>&quot;&quot;</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="signals">Signals</h2>
+<ul>
+<li><strong>struct_updated</strong>()</li>
+</ul>
+<p>Signal emitted whenever any struct variable is changed.</p>
+<hr>
+<h2 id="properties-descriptions">Properties Descriptions</h2>
+<h3 id="weight">weight</h3>
+<ul>
+<li><em><a href="https://docs.godotengine.org/en/stable/classes/class_int.html" target="_blank">int</a></em> <strong>weight</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Default</em></td>
+<td style="text-align:center"><code>0</code></td>
+</tr>
+<tr>
+<td><em>Setter</em></td>
+<td style="text-align:center">_set_weight</td>
+</tr>
+</tbody>
+</table>
+<p>Value hugo will use to order categories in the side menu. &ldquo;Heavier&rdquo; categories will appear to
+the bottom and &ldquo;lighter&rdquo; ones will appear towards the top. Be careful though that &ldquo;0&rdquo; means
+&ldquo;disabled&rdquo; so if you start setting weights for some categories set the ones you want to be on top
+with at least a value of &ldquo;1&rdquo;</p>
+<p>Can be filled in through the Docs exporter tab, in the Project Settings.</p>
+<hr>
+<h3 id="description-1">description</h3>
+<ul>
+<li><em><a href="https://docs.godotengine.org/en/stable/classes/class_string.html" target="_blank">String</a></em> <strong>description</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Default</em></td>
+<td style="text-align:center"><code>&quot;&quot;</code></td>
+</tr>
+<tr>
+<td><em>Setter</em></td>
+<td style="text-align:center">_set_description</td>
+</tr>
+</tbody>
+</table>
+<p>Each category page gets a TOC with all the links that are inside it. If you want this auto
+generated page to have a description as well, use this field.</p>
+<p>Can be filled in through the Docs exporter tab, in the Project Settings.</p>
+<hr>
+
+
+<footer class="footline">
 	
-		<h1>Customize your own home page</h1>
-		<p>
-		  The site is working. Don't forget to customize this homepage with your own. You typically have 3 choices :
-		</p>
-		<ul>
-			<li><b>1. </b> Create an _index.md document in <b>content</b> folder and fill it with Markdown content</li>
-			<li><b>2. </b> Create an <b>index.html</b> file in the <b>static</b> folder and fill the file with HTML content</li>
-		  <li><b>3. </b> Configure your server to automatically redirect home page to one your documentation page</li>
-		</ul>
-	
-  
+</footer>
+
         
         </div>
         
@@ -752,8 +899,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -769,6 +914,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -834,6 +982,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -846,6 +995,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -862,6 +1012,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1145,8 +1298,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/eh_DocsExporter/reference/custom-resources/" title="Custom Resources"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/eh_DocsExporter/reference/" title="Reference" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/eh_DocsExporter/reference/custom-resources/categoryoptionaldatadict/" title="CategoryOptionalDataDict" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

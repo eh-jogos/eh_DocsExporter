@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Custom Resources on eh_jogos Godot Docs Exporter</title>
+    <link>https://eh-jogos.github.io/eh_DocsExporter/reference/custom-resources/</link>
+    <description>Recent content in Custom Resources on eh_jogos Godot Docs Exporter</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 05 Oct 2020 07:30:54 -0300</lastBuildDate><atom:link href="https://eh-jogos.github.io/eh_DocsExporter/reference/custom-resources/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CategoryOptionalData</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/reference/custom-resources/categoryoptionaldata/</link>
+      <pubDate>Mon, 05 Oct 2020 07:30:54 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/reference/custom-resources/categoryoptionaldata/</guid>
+      <description>Inherits: Resource &amp;gt; Reference &amp;gt; Object
+Description Struct to hold optional data for categories, like descriptions or weight to be used in HUGO
+Properties    type property default value     int weight 0   String description &amp;quot;&amp;quot;    Signals  struct_updated()  Signal emitted whenever any struct variable is changed.
+ Properties Descriptions weight  int weight           Default 0   Setter _set_weight    Value hugo will use to order categories in the side menu.</description>
+    </item>
+    
+    <item>
+      <title>CategoryOptionalDataDict</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/reference/custom-resources/categoryoptionaldatadict/</link>
+      <pubDate>Mon, 05 Oct 2020 07:30:54 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/reference/custom-resources/categoryoptionaldatadict/</guid>
+      <description>Inherits: Resource &amp;gt; Reference &amp;gt; Object
+Description Dictionary of CategoryOptionalData, to be saved in disk and used somewhat like a database by the plugin. This is what allows it to show the relevant fields in the Docs Exporter tab.
+If you rename a category and the description disappears, look for the file in res://addons/eh_jogos.docs-exporter/shared_variables/dict_categories_optional_data.tres and it will still hold the description inside a key with the name of the old category.</description>
+    </item>
+    
+  </channel>
+</rss>

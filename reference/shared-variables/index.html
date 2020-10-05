@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/eh_DocsExporter/images/favicon.png" type="image/png">
 
-    <title>eh_jogos Godot Docs Exporter :: eh_jogos Godot Docs Exporter</title>
+    <title>Shared Variables :: eh_jogos Godot Docs Exporter</title>
 
     
     <link href="/eh_DocsExporter/css/nucleus.css?1601895505" rel="stylesheet">
@@ -39,7 +39,7 @@
 <link href="https://eh-jogos.github.io/eh_DocsExporter//css/theme-eh-gjapi.css" rel="stylesheet"> 
 
   </head>
-  <body class="" data-url="/eh_DocsExporter/">
+  <body class="" data-url="/eh_DocsExporter/reference/shared-variables/">
     <nav id="sidebar" class="">
 
 
@@ -84,7 +84,7 @@
   
     
     <li data-nav-id="/eh_DocsExporter/reference/" title="Reference" class="dd-item
-        
+        parent
         
         
         ">
@@ -510,8 +510,8 @@
   
     
     <li data-nav-id="/eh_DocsExporter/reference/shared-variables/" title="Shared Variables" class="dd-item
-        
-        
+        parent
+        active
         
         ">
         
@@ -695,32 +695,98 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/eh_DocsExporter/'>eh_jogos Godot Docs Exporter</a> > <a href='/eh_DocsExporter/reference/'>Reference</a> > Shared Variables
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents"></nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
         
         <div id="body-inner">
           
+            <h1>
+              
+              Shared Variables
+            </h1>
+          
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
-           
+
+	<p>Simple Custom Resources that can be saved to disk an represent only one variable of one type. Since Rsources are only loaded once and shared between all their references in code, it is used as some kind of shared variables so that the data it holds can be accessed and modified from multiple parts of the code and always stays in sync.</p>
+<p>This ones are saved in a separate folder because they&rsquo;re all custom resources that represent basic types and can be reused between projects and different plugins, so that If you already have this folder from another plugin, you won&rsquo;t have any class_name conflicts and will only have to import the scripts you don&rsquo;t have.</p>
+<p>In this plugin it is basically used so that you can edit data in the Docs Exporter Tab and have this data easily accessible by the code.</p>
+<p>It is based on the idea of Unity&rsquo;s Scriptable Objects and Ryan Hipple&rsquo;s Unite Talk about architeting games around scriptable objects.<br>
+Reference Links:</p>
+<ul>
+<li><a href="https://unity.com/how-to/architect-game-code-scriptable-objects#architect-other-systems" target="_blank">Text How To</a></li>
+<li><a href="https://www.youtube.com/watch?v=raQ3iHhE_Kk" target="_blank">Unite Talk Video</a></li>
+<li><a href="https://github.com/roboryantron/Unite2017" target="_blank">Ryans Example Repository</a></li>
+</ul>
+<p>TOC:</p>
+<ul>
+<li><a href="/eh_DocsExporter/reference/shared-variables/arrayvariable/">ArrayVariable</a></li>
+<li><a href="/eh_DocsExporter/reference/shared-variables/stringarrayvariable/">StringArrayVariable</a></li>
+<li><a href="/eh_DocsExporter/reference/shared-variables/boolvariable/">BoolVariable</a></li>
+<li><a href="/eh_DocsExporter/reference/shared-variables/dictionaryvariable/">DictionaryVariable</a></li>
+<li><a href="/eh_DocsExporter/reference/shared-variables/stringvariable/">StringVariable</a></li>
+<li><a href="/eh_DocsExporter/reference/shared-variables/stringvariablearray/">StringVariableArray</a></li>
+</ul>
+
+
+
+
+
+<footer class=" footline" >
 	
-		<h1>Customize your own home page</h1>
-		<p>
-		  The site is working. Don't forget to customize this homepage with your own. You typically have 3 choices :
-		</p>
-		<ul>
-			<li><b>1. </b> Create an _index.md document in <b>content</b> folder and fill it with Markdown content</li>
-			<li><b>2. </b> Create an <b>index.html</b> file in the <b>static</b> folder and fill the file with HTML content</li>
-		  <li><b>3. </b> Configure your server to automatically redirect home page to one your documentation page</li>
-		</ul>
-	
-  
+</footer>
+
         
         </div>
         
@@ -752,8 +818,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -769,6 +833,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1026,6 +1093,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1038,6 +1106,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1145,8 +1216,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/eh_DocsExporter/reference/components/collapsible/" title="Collapsible"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/eh_DocsExporter/reference/" title="Reference" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/eh_DocsExporter/reference/shared-variables/arrayvariable/" title="ArrayVariable" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1178,4 +1251,3 @@
 <script src="https://eh-jogos.github.io/eh_DocsExporter//js/collapsible.js"></script>
   </body>
 </html>
-

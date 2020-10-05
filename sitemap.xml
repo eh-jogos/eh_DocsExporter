@@ -3,11 +3,132 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://eh-jogos.github.io/eh_DocsExporter/categories/</loc>
+    <loc>https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/arrayvariable/</loc>
+    <lastmod>2020-10-05T07:30:54-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/boolvariable/</loc>
+    <lastmod>2020-10-05T07:30:54-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/boolvariablecheckbox/</loc>
+    <lastmod>2020-10-05T07:30:54-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eh-jogos.github.io/eh_DocsExporter/reference/custom-resources/categoryoptionaldata/</loc>
+    <lastmod>2020-10-05T07:30:54-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eh-jogos.github.io/eh_DocsExporter/reference/custom-resources/categoryoptionaldatadict/</loc>
+    <lastmod>2020-10-05T07:30:54-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/categoryoptions/</loc>
+    <lastmod>2020-10-05T07:30:54-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eh-jogos.github.io/eh_DocsExporter/reference/components/collapsible/</loc>
+    <lastmod>2020-10-05T07:30:54-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/dictionaryvariable/</loc>
+    <lastmod>2020-10-05T07:30:54-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/filepathlineedit/</loc>
+    <lastmod>2020-10-05T07:30:54-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eh-jogos.github.io/eh_DocsExporter/reference/hugomarkdowndocsexporter/</loc>
+    <lastmod>2020-10-05T07:30:54-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eh-jogos.github.io/eh_DocsExporter/reference/jsonio/</loc>
+    <lastmod>2020-10-05T07:30:54-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eh-jogos.github.io/eh_DocsExporter/reference/markdowndocsexporter/</loc>
+    <lastmod>2020-10-05T07:30:54-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/pathlineedit/</loc>
+    <lastmod>2020-10-05T07:30:54-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eh-jogos.github.io/eh_DocsExporter/reference/referenceformatter/</loc>
+    <lastmod>2020-10-05T07:30:54-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/resizabletextedit/</loc>
+    <lastmod>2020-10-05T07:30:54-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/stringarrayvariable/</loc>
+    <lastmod>2020-10-05T07:30:54-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/stringvariable/</loc>
+    <lastmod>2020-10-05T07:30:54-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/stringvariablearray/</loc>
+    <lastmod>2020-10-05T07:30:54-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/stringvariablelineedit/</loc>
+    <lastmod>2020-10-05T07:30:54-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eh-jogos.github.io/eh_DocsExporter/reference/custom-resources/</loc>
+    <lastmod>2020-10-05T07:30:54-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/</loc>
+    <lastmod>2020-10-05T07:30:54-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eh-jogos.github.io/eh_DocsExporter/reference/components/</loc>
+    <lastmod>2020-10-05T07:30:54-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/</loc>
+    <lastmod>2020-10-05T07:30:54-03:00</lastmod>
   </url>
   
   <url>
     <loc>https://eh-jogos.github.io/eh_DocsExporter/</loc>
+    <lastmod>2020-10-05T07:30:54-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eh-jogos.github.io/eh_DocsExporter/reference/</loc>
+    <lastmod>2020-10-05T07:30:54-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eh-jogos.github.io/eh_DocsExporter/categories/</loc>
   </url>
   
   <url>

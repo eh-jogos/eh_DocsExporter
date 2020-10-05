@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/eh_DocsExporter/images/favicon.png" type="image/png">
 
-    <title>eh_jogos Godot Docs Exporter :: eh_jogos Godot Docs Exporter</title>
+    <title>MarkdownDocsExporter :: eh_jogos Godot Docs Exporter</title>
 
     
     <link href="/eh_DocsExporter/css/nucleus.css?1601895505" rel="stylesheet">
@@ -39,7 +39,7 @@
 <link href="https://eh-jogos.github.io/eh_DocsExporter//css/theme-eh-gjapi.css" rel="stylesheet"> 
 
   </head>
-  <body class="" data-url="/eh_DocsExporter/">
+  <body class="" data-url="/eh_DocsExporter/reference/markdowndocsexporter/">
     <nav id="sidebar" class="">
 
 
@@ -84,7 +84,7 @@
   
     
     <li data-nav-id="/eh_DocsExporter/reference/" title="Reference" class="dd-item
-        
+        parent
         
         
         ">
@@ -158,7 +158,7 @@
  
   
     
-      <li data-nav-id="/eh_DocsExporter/reference/markdowndocsexporter/" title="MarkdownDocsExporter" class="dd-item ">
+      <li data-nav-id="/eh_DocsExporter/reference/markdowndocsexporter/" title="MarkdownDocsExporter" class="dd-item active">
         <a href="/eh_DocsExporter/reference/markdowndocsexporter/">
         MarkdownDocsExporter
         
@@ -695,32 +695,206 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/eh_DocsExporter/'>eh_jogos Godot Docs Exporter</a> > <a href='/eh_DocsExporter/reference/'>Reference</a> > MarkdownDocsExporter
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#description">Description</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+    <li><a href="#constants">Constants</a></li>
+    <li><a href="#properties-descriptions">Properties Descriptions</a>
+      <ul>
+        <li><a href="#links_db">links_db</a></li>
+        <li><a href="#signatures_db">signatures_db</a></li>
+        <li><a href="#key_to_use_for_link">key_to_use_for_link</a></li>
+      </ul>
+    </li>
+    <li><a href="#method-descriptions">Method Descriptions</a>
+      <ul>
+        <li><a href="#build_category_db">build_category_db</a></li>
+        <li><a href="#export_github_wiki_pages">export_github_wiki_pages</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
         
         <div id="body-inner">
           
+            <h1>
+              
+              MarkdownDocsExporter
+            </h1>
+          
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
-           
+<p><strong>Inherits:</strong> <em><a href="/eh_DocsExporter/reference/jsonio/">JsonIO</a> &gt; <a href="https://docs.godotengine.org/en/stable/classes/class_reference.html" target="_blank">Reference</a> &gt; <a href="https://docs.godotengine.org/en/stable/classes/class_object.html" target="_blank">Object</a></em><br>
+<strong>Inherited by:</strong> <em><a href="/eh_DocsExporter/reference/hugomarkdowndocsexporter/">HugoMarkdownDocsExporter</a></em></p>
+<h2 id="description">Description</h2>
+<p>Main markdown exporter. It exports using github flavor markdown. These .md files can be used
+anywhere, but the links and the _Sidebar.md are configured to work best with github wiki
+format.</p>
+<h2 id="properties">Properties</h2>
+<table>
+<thead>
+<tr>
+<th>type</th>
+<th>property</th>
+<th>default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://docs.godotengine.org/en/stable/classes/class_dictionary.html" target="_blank">Dictionary</a></td>
+<td><a href="/eh_DocsExporter/reference/markdowndocsexporter/#links_db">links_db</a></td>
+<td><code>Null</code></td>
+</tr>
+<tr>
+<td><a href="https://docs.godotengine.org/en/stable/classes/class_dictionary.html" target="_blank">Dictionary</a></td>
+<td><a href="/eh_DocsExporter/reference/markdowndocsexporter/#signatures_db">signatures_db</a></td>
+<td><code>Null</code></td>
+</tr>
+<tr>
+<td><a href="https://docs.godotengine.org/en/stable/classes/class_string.html" target="_blank">String</a></td>
+<td><a href="/eh_DocsExporter/reference/markdowndocsexporter/#key_to_use_for_link">key_to_use_for_link</a></td>
+<td><code>Null</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="methods">Methods</h2>
+<table>
+<thead>
+<tr>
+<th>return type</th>
+<th>method signature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://docs.godotengine.org/en/stable/classes/class_variant.html" target="_blank">Variant</a></td>
+<td><strong><a href="/eh_DocsExporter/reference/markdowndocsexporter/#build_category_db">build_category_db</a></strong>(<a href="https://docs.godotengine.org/en/stable/classes/class_string.html" target="_blank">String</a> reference_json_path, <a href="https://docs.godotengine.org/en/stable/classes/class_string.html" target="_blank">String</a> export_path)</td>
+</tr>
+<tr>
+<td><a href="https://docs.godotengine.org/en/stable/classes/class_null.html" target="_blank">null</a></td>
+<td><strong><a href="/eh_DocsExporter/reference/markdowndocsexporter/#export_github_wiki_pages">export_github_wiki_pages</a></strong>(<a href="https://docs.godotengine.org/en/stable/classes/class_string.html" target="_blank">String</a> reference_json_path, <a href="https://docs.godotengine.org/en/stable/classes/class_string.html" target="_blank">String</a> export_path)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="constants">Constants</h2>
+<ul>
+<li><strong>MD_BLOCK_INHERITANCE = &quot; <strong>Inherits:</strong> <em>{inheritance}</em>  &ldquo;</strong> &mdash; Defines the &ldquo;inheritance&rdquo; block content model and styling for the exported .md file.</li>
+<li><strong>MD_BLOCK_INHERITED_BY = &quot; <strong>Inherited by:</strong> <em>{inherited_by}</em>  &ldquo;</strong> &mdash; Defines the &ldquo;inherited by&rdquo; block content model and styling for the exported .md file.</li>
+<li><strong>MD_BLOCK_DESCRIPTION = &ldquo;## Description  {description}  &ldquo;</strong> &mdash; Defines the &ldquo;Description&rdquo; block content model and styling for the exported .md file.</li>
+<li><strong>MD_BLOCK_PROPERTIES_TABLE_TITLE = &ldquo;## Properties   | type | property | default value |  | &mdash;- | &mdash;&mdash;&ndash; | &mdash;&mdash;&mdash;&mdash;- |  &ldquo;</strong> &mdash; Defines the &ldquo;Properties&rdquo; table header content model and styling for the exported .md file.</li>
+<li><strong>MD_BLOCK_PROPERTIES_TABLE_LINE = &ldquo;| {type} | {name} | {default_value} |  &ldquo;</strong> &mdash; Defines the property table lines content model and styling for the exported .md file.</li>
+<li><strong>MD_BLOCK_METHODS_TABLE_TITLE = &ldquo;## Methods   | return type | method signature |  | &mdash;&mdash;&mdash;&ndash; | &mdash;&mdash;&mdash;&mdash;&mdash;- |  &ldquo;</strong> &mdash; Defines the &ldquo;Methods&rdquo; table header content model and styling for the exported .md file.</li>
+<li><strong>MD_BLOCK_METHOD_TABLE_LINE = &ldquo;| {type} | {siganture} |  &ldquo;</strong> &mdash; Defines the method table lines content model and styling for the exported .md file.</li>
+<li><strong>MD_BLOCK_SIGNALS_TITLE = &ldquo;## Signals    &ldquo;</strong> &mdash; Defines the &ldquo;Signals&rdquo; header content model and styling for the exported .md file.</li>
+<li><strong>MD_BLOCK_SIGNALS_LINE = &ldquo;- <strong>{name}</strong>({arguments})   {description}  &mdash;&mdash;&mdash; &ldquo;</strong> &mdash; Defines the individial signal content model and styling for the exported .md file.</li>
+<li><strong>MD_BLOCK_ENUMS_TITLE = &ldquo;## Enumerations    &ldquo;</strong> &mdash; Defines the &ldquo;Enumerations&rdquo; header content model and styling for the exported .md file.</li>
+<li><strong>MD_BLOCK_ENUM_NAME_LINE = &ldquo;enum <strong>{name}</strong>:   &ldquo;</strong> &mdash; Defines the individial enum name content model and styling for the exported .md file.</li>
+<li><strong>MD_BLOCK_ENUM_KEY_LINE = &ldquo;- <strong>{signature}</strong>  &ldquo;</strong> &mdash; Defines the individial enum keys content model and styling for the exported .md file.</li>
+<li><strong>MD_BLOCK_CONSTANTS_TITLE = &ldquo;## Constants    &ldquo;</strong> &mdash; Defines the &ldquo;Constants&rdquo; header content model and styling for the exported .md file.</li>
+<li><strong>MD_BLOCK_CONSTANTS_LINE = &ldquo;- <strong>{signature}</strong> &mdash; {description} \n&rdquo;</strong> &mdash; Defines the individial constant content model and styling for the exported .md file.</li>
+<li><strong>MD_BLOCK_PROPERTY = &ldquo;### {name} - {property_signature}    {table}  {description}  &mdash;&mdash;&mdash;</strong> &mdash; Defines the individial property definition content model and styling for the exported .md file.</li>
+<li><strong>MD_BLOCK_PROPERTIES_DESCRIPTION = &ldquo;## Properties Descriptions    &ldquo;</strong> &mdash; Defines the &ldquo;Properties Descriptions&rdquo; header content model and styling for the exported .md file.</li>
+<li><strong>MD_BLOCK_METHOD = &ldquo;### {name} - {method_signature}   {description}  &mdash;&mdash;&mdash;&quot;</strong> &mdash; Defines the individial method definition content model and styling for the exported .md file.</li>
+<li><strong>MD_BLOCK_METHOD_DESCRIPTION = &ldquo;## Method Descriptions    &ldquo;</strong> &mdash; Defines the &ldquo;Method Descriptions&rdquo; header content model and styling for the exported .md file.</li>
+<li><strong>GODOT_DOCS_BASE_URL = &ldquo;<a href="https://docs.godotengine.org/en/stable/classes/class_%25s.html%22">https://docs.godotengine.org/en/stable/classes/class_%s.html&quot;</a></strong> &mdash; Godot&rsquo;s Documentatiion base url for forming links.</li>
+</ul>
+<h2 id="properties-descriptions">Properties Descriptions</h2>
+<h3 id="links_db">links_db</h3>
+<ul>
+<li><em><a href="https://docs.godotengine.org/en/stable/classes/class_dictionary.html" target="_blank">Dictionary</a></em> <strong>links_db</strong></li>
+</ul>
+<p>Dictionary that serves as database for links and is built during the json export process</p>
+<hr>
+<h3 id="signatures_db">signatures_db</h3>
+<ul>
+<li><em><a href="https://docs.godotengine.org/en/stable/classes/class_dictionary.html" target="_blank">Dictionary</a></em> <strong>signatures_db</strong></li>
+</ul>
+<p>Dictionary that serves as database for properties and methods signatures and is built during
+the json export process</p>
+<hr>
+<h3 id="key_to_use_for_link">key_to_use_for_link</h3>
+<ul>
+<li><em><a href="https://docs.godotengine.org/en/stable/classes/class_string.html" target="_blank">String</a></em> <strong>key_to_use_for_link</strong></li>
+</ul>
+<p>If which key from the links database the exporter should use. Github exporter will use
+&ldquo;local_path&rdquo; which just consists of repeating the file name, without extesnion.
+Hugo exporter will use &ldquo;full_path&rdquo; which will take folder structure into account.</p>
+<hr>
+<h2 id="method-descriptions">Method Descriptions</h2>
+<h3 id="build_category_db">build_category_db</h3>
+<ul>
+<li><em><a href="https://docs.godotengine.org/en/stable/classes/class_variant.html" target="_blank">Variant</a></em> <strong>build_category_db</strong>(<a href="https://docs.godotengine.org/en/stable/classes/class_string.html" target="_blank">String</a> reference_json_path, <a href="https://docs.godotengine.org/en/stable/classes/class_string.html" target="_blank">String</a> export_path)</li>
+</ul>
+<p>Reads json reference and creates a category database with the current user defined categories
+in use.</p>
+<hr>
+<h3 id="export_github_wiki_pages">export_github_wiki_pages</h3>
+<ul>
+<li><em>void</em> <strong>export_github_wiki_pages</strong>(<a href="https://docs.godotengine.org/en/stable/classes/class_string.html" target="_blank">String</a> reference_json_path, <a href="https://docs.godotengine.org/en/stable/classes/class_string.html" target="_blank">String</a> export_path)</li>
+</ul>
+<p>Takes in the reference json file path and an export path and generates and exports github wiki
+formatted .md files.</p>
+<hr>
+
+
+<footer class="footline">
 	
-		<h1>Customize your own home page</h1>
-		<p>
-		  The site is working. Don't forget to customize this homepage with your own. You typically have 3 choices :
-		</p>
-		<ul>
-			<li><b>1. </b> Create an _index.md document in <b>content</b> folder and fill it with Markdown content</li>
-			<li><b>2. </b> Create an <b>index.html</b> file in the <b>static</b> folder and fill the file with HTML content</li>
-		  <li><b>3. </b> Configure your server to automatically redirect home page to one your documentation page</li>
-		</ul>
-	
-  
+</footer>
+
         
         </div>
         
@@ -752,8 +926,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -769,6 +941,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -802,6 +977,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -817,6 +993,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1145,8 +1324,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/eh_DocsExporter/reference/jsonio/" title="JsonIO"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/eh_DocsExporter/reference/" title="Reference" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/eh_DocsExporter/reference/referenceformatter/" title="ReferenceFormatter" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

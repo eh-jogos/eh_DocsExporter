@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/eh_DocsExporter/images/favicon.png" type="image/png">
 
-    <title>eh_jogos Godot Docs Exporter :: eh_jogos Godot Docs Exporter</title>
+    <title>Collapsible :: eh_jogos Godot Docs Exporter</title>
 
     
     <link href="/eh_DocsExporter/css/nucleus.css?1601895505" rel="stylesheet">
@@ -39,7 +39,7 @@
 <link href="https://eh-jogos.github.io/eh_DocsExporter//css/theme-eh-gjapi.css" rel="stylesheet"> 
 
   </head>
-  <body class="" data-url="/eh_DocsExporter/">
+  <body class="" data-url="/eh_DocsExporter/reference/components/collapsible/">
     <nav id="sidebar" class="">
 
 
@@ -84,7 +84,7 @@
   
     
     <li data-nav-id="/eh_DocsExporter/reference/" title="Reference" class="dd-item
-        
+        parent
         
         
         ">
@@ -449,7 +449,7 @@
   
     
     <li data-nav-id="/eh_DocsExporter/reference/components/" title="Components" class="dd-item
-        
+        parent
         
         
         ">
@@ -479,7 +479,7 @@
  
   
     
-      <li data-nav-id="/eh_DocsExporter/reference/components/collapsible/" title="Collapsible" class="dd-item ">
+      <li data-nav-id="/eh_DocsExporter/reference/components/collapsible/" title="Collapsible" class="dd-item active">
         <a href="/eh_DocsExporter/reference/components/collapsible/">
         Collapsible
         
@@ -695,32 +695,231 @@
         <div id="overlay"></div>
         <div class="padding highlightable">
               
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/eh_DocsExporter/'>eh_jogos Godot Docs Exporter</a> > <a href='/eh_DocsExporter/reference/'>Reference</a> > <a href='/eh_DocsExporter/reference/components/'>Components</a> > Collapsible
+          
+        
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#description">Description</a></li>
+    <li><a href="#properties">Properties</a></li>
+    <li><a href="#methods">Methods</a></li>
+    <li><a href="#properties-descriptions">Properties Descriptions</a>
+      <ul>
+        <li><a href="#text_element_path">text_element_path</a></li>
+        <li><a href="#collapsible_node_path">collapsible_node_path</a></li>
+        <li><a href="#should_auto_connect">should_auto_connect</a></li>
+      </ul>
+    </li>
+    <li><a href="#method-descriptions">Method Descriptions</a>
+      <ul>
+        <li><a href="#toggle_collapse">toggle_collapse</a></li>
+        <li><a href="#handle_text">handle_text</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
         <div id="head-tags">
         
         </div>
         
         <div id="body-inner">
           
+            <h1>
+              
+              Collapsible
+            </h1>
+          
 
         
 
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
-</span>
 
-           
+<p><strong>Inherits:</strong> <em><a href="https://docs.godotengine.org/en/stable/classes/class_node.html" target="_blank">Node</a> &gt; <a href="https://docs.godotengine.org/en/stable/classes/class_object.html" target="_blank">Object</a></em></p>
+<h2 id="description">Description</h2>
+<p>Component with collapsible behavior to easily be attached to any UI needs.
+It takes two variables, the NodePath for a text element which will be handled to give feedback
+for collapsible options or state, and a NodePath for the node that must be toggled when
+collapsed.</p>
+<p>If attached directly to a Button of any kind, it will auto connect with the &ldquo;pressed&rdquo; signal.
+If this behavior is not desirable, just uncheck the option <code>should_auto_connect</code></p>
+<h2 id="properties">Properties</h2>
+<table>
+<thead>
+<tr>
+<th>type</th>
+<th>property</th>
+<th>default value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://docs.godotengine.org/en/stable/classes/class_nodepath.html" target="_blank">NodePath</a></td>
+<td><a href="/eh_DocsExporter/reference/components/collapsible/#text_element_path">text_element_path</a></td>
+<td><code>&quot;&quot;</code></td>
+</tr>
+<tr>
+<td><a href="https://docs.godotengine.org/en/stable/classes/class_nodepath.html" target="_blank">NodePath</a></td>
+<td><a href="/eh_DocsExporter/reference/components/collapsible/#collapsible_node_path">collapsible_node_path</a></td>
+<td><code>&quot;&quot;</code></td>
+</tr>
+<tr>
+<td><a href="https://docs.godotengine.org/en/stable/classes/class_bool.html" target="_blank">bool</a></td>
+<td><a href="/eh_DocsExporter/reference/components/collapsible/#should_auto_connect">should_auto_connect</a></td>
+<td><code>True</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="methods">Methods</h2>
+<table>
+<thead>
+<tr>
+<th>return type</th>
+<th>method signature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://docs.godotengine.org/en/stable/classes/class_null.html" target="_blank">null</a></td>
+<td><strong><a href="/eh_DocsExporter/reference/components/collapsible/#toggle_collapse">toggle_collapse</a></strong>()</td>
+</tr>
+<tr>
+<td><a href="https://docs.godotengine.org/en/stable/classes/class_null.html" target="_blank">null</a></td>
+<td><strong><a href="/eh_DocsExporter/reference/components/collapsible/#handle_text">handle_text</a></strong>()</td>
+</tr>
+</tbody>
+</table>
+<h2 id="properties-descriptions">Properties Descriptions</h2>
+<h3 id="text_element_path">text_element_path</h3>
+<ul>
+<li><em><a href="https://docs.godotengine.org/en/stable/classes/class_nodepath.html" target="_blank">NodePath</a></em> <strong>text_element_path</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Default</em></td>
+<td style="text-align:center"><code>&quot;&quot;</code></td>
+</tr>
+</tbody>
+</table>
+<p>NodePath for the feedback text.</p>
+<hr>
+<h3 id="collapsible_node_path">collapsible_node_path</h3>
+<ul>
+<li><em><a href="https://docs.godotengine.org/en/stable/classes/class_nodepath.html" target="_blank">NodePath</a></em> <strong>collapsible_node_path</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Default</em></td>
+<td style="text-align:center"><code>&quot;&quot;</code></td>
+</tr>
+</tbody>
+</table>
+<p>NodePath for the node that must be toggled on/off when collapsed.</p>
+<hr>
+<h3 id="should_auto_connect">should_auto_connect</h3>
+<ul>
+<li><em><a href="https://docs.godotengine.org/en/stable/classes/class_bool.html" target="_blank">bool</a></em> <strong>should_auto_connect</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Default</em></td>
+<td style="text-align:center"><code>True</code></td>
+</tr>
+</tbody>
+</table>
+<p>Turn this off if you don&rsquo;t want the component to try to auto connect with the pressed signal
+of the parent, in case the parent is a Button.</p>
+<hr>
+<h2 id="method-descriptions">Method Descriptions</h2>
+<h3 id="toggle_collapse">toggle_collapse</h3>
+<ul>
+<li><em>void</em> <strong>toggle_collapse</strong>()</li>
+</ul>
+<p>Will collapse/expand the target node, and also trigger a change in the text as additional
+feedback</p>
+<hr>
+<h3 id="handle_text">handle_text</h3>
+<ul>
+<li><em>void</em> <strong>handle_text</strong>()</li>
+</ul>
+<p>Prepends a &ldquo;+&rdquo; to the text when the element is closed (collapsed) or a &ldquo;-&rdquo; when the element is
+visible (expanded).</p>
+<hr>
+
+
+<footer class="footline">
 	
-		<h1>Customize your own home page</h1>
-		<p>
-		  The site is working. Don't forget to customize this homepage with your own. You typically have 3 choices :
-		</p>
-		<ul>
-			<li><b>1. </b> Create an _index.md document in <b>content</b> folder and fill it with Markdown content</li>
-			<li><b>2. </b> Create an <b>index.html</b> file in the <b>static</b> folder and fill the file with HTML content</li>
-		  <li><b>3. </b> Configure your server to automatically redirect home page to one your documentation page</li>
-		</ul>
-	
-  
+</footer>
+
         
         </div>
         
@@ -752,8 +951,6 @@
             
                 
                     
-                        
-                        
                     
                 
                 
@@ -769,6 +966,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -994,6 +1194,7 @@
             
                 
                     
+                    
                 
                 
 
@@ -1006,6 +1207,7 @@
             
             
                 
+                    
                     
                 
                 
@@ -1025,6 +1227,9 @@
             
             
                 
+                    
+                        
+                        
                     
                 
                 
@@ -1145,8 +1350,10 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/eh_DocsExporter/reference/components/" title="Components"> <i class="fa fa-chevron-left"></i></a>
 		
-			<a class="nav nav-next" href="/eh_DocsExporter/reference/" title="Reference" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+			<a class="nav nav-next" href="/eh_DocsExporter/reference/shared-variables/" title="Shared Variables" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
