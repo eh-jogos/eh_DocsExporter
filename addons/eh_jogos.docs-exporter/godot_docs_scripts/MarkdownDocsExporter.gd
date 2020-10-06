@@ -89,14 +89,14 @@ const MD_BLOCK_CONSTANTS_TITLE = ""\
 const MD_BLOCK_CONSTANTS_LINE = ""\
 		+"- **{signature}** --- {description} \n"
 
-# Defines the "Properties Descriptions" header content model and styling for the exported
+# Defines the "Properties Descriptions" header content model and styling for the exported 
 # .md file.
 const MD_BLOCK_PROPERTIES_DESCRIPTION = ""\
 		+"  \n"\
 		+"## Properties Descriptions  \n"\
 		+"  \n"
 
-# Defines the individial property definition content model and styling for the exported
+# Defines the individial property definition content model and styling for the exported 
 # .md file.
 const MD_BLOCK_PROPERTY = ""\
 		+"### {name} \n"\
@@ -106,13 +106,13 @@ const MD_BLOCK_PROPERTY = ""\
 		+"{description}  \n"\
 		+"---------\n"
 
-# Defines the "Method Descriptions" header content model and styling for the exported
+# Defines the "Method Descriptions" header content model and styling for the exported 
 # .md file.
 const MD_BLOCK_METHOD_DESCRIPTION = ""\
 		+"## Method Descriptions  \n"\
 		+"  \n"
 
-# Defines the individial method definition content model and styling for the exported
+# Defines the individial method definition content model and styling for the exported 
 # .md file.
 const MD_BLOCK_METHOD = ""\
 		+"### {name} \n"\
