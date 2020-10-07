@@ -1,6 +1,7 @@
 baseURL = "https://eh-jogos.github.io/eh_DocsExporter/"
 languageCode = "en-us"
 title = "eh_jogos Godot Docs Exporter"
+canonifyURLs = true
 
 # Change the default theme to be use when building the site with Hugo
 theme = "hugo-theme-learn"

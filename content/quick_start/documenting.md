@@ -7,7 +7,7 @@ weight: 2
 
 So before you export any documentation, first your code needs to be documented! And that is simple and easy! Just add comments on the lines directly above any variable, constant, enum, signal or function declaration that you want to document! 
 
-![Image with examples](images/documenting_basic.png)
+![Image with examples](/images/documenting_basic.png)
 
 These comments will be gathered together with the signatures of these declarations and transformed into a documentation similar to what you see in the official docs. 
 
@@ -21,7 +21,7 @@ You can create links between your documentation pages by simply doing `[YourClas
 
 To add a "description" for a class, put the comments at the very top of the file, even above the tool keyword if you're using it.
 
-![Image with example](images/documenting_description_categories.png)
+![Image with example](/images/documenting_description_categories.png)
 
 Also in the "description" comments, you can use the `# @category: your_category` to organize the exported code into folders and group them. You can have subcategories by adding a slash like `# @category: your_category/your_subcategory`
 
