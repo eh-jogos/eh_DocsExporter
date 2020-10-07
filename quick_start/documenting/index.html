@@ -9,7 +9,7 @@
 
     <link rel="icon" href="/eh_DocsExporter/images/favicon.png" type="image/png">
 
-    <title>ArrayVariable :: eh_jogos Godot Docs Exporter</title>
+    <title>Documenting your Code :: eh_jogos Godot Docs Exporter</title>
 
     
     <link href="/eh_DocsExporter/css/nucleus.css?1602064890" rel="stylesheet">
@@ -39,7 +39,7 @@
 <link href="https://eh-jogos.github.io/eh_DocsExporter//css/theme-eh-gjapi.css" rel="stylesheet"> 
 
   </head>
-  <body class="" data-url="/eh_DocsExporter/reference/shared-variables/arrayvariable/">
+  <body class="" data-url="/eh_DocsExporter/quick_start/documenting/">
     <nav id="sidebar" class="">
 
 
@@ -84,7 +84,7 @@
   
     
     <li data-nav-id="/eh_DocsExporter/quick_start/" title="Quick_start" class="dd-item
-        
+        parent
         
         
         ">
@@ -135,7 +135,7 @@
  
   
     
-      <li data-nav-id="/eh_DocsExporter/quick_start/documenting/" title="Documenting your Code" class="dd-item ">
+      <li data-nav-id="/eh_DocsExporter/quick_start/documenting/" title="Documenting your Code" class="dd-item active">
         <a href="/eh_DocsExporter/quick_start/documenting/">
         Documenting your Code
         
@@ -206,7 +206,7 @@
   
     
     <li data-nav-id="/eh_DocsExporter/reference/" title="Reference" class="dd-item
-        parent
+        
         
         
         ">
@@ -632,7 +632,7 @@
   
     
     <li data-nav-id="/eh_DocsExporter/reference/shared-variables/" title="Shared Variables" class="dd-item
-        parent
+        
         
         
         ">
@@ -662,7 +662,7 @@
  
   
     
-      <li data-nav-id="/eh_DocsExporter/reference/shared-variables/arrayvariable/" title="ArrayVariable" class="dd-item active">
+      <li data-nav-id="/eh_DocsExporter/reference/shared-variables/arrayvariable/" title="ArrayVariable" class="dd-item ">
         <a href="/eh_DocsExporter/reference/shared-variables/arrayvariable/">
         ArrayVariable
         
@@ -844,13 +844,7 @@
             
           
           
-            
-            
-          
-          
-            <a href='/eh_DocsExporter/'>eh_DocsExporter</a> > <a href='/eh_DocsExporter/reference/'>Reference</a> > <a href='/eh_DocsExporter/reference/shared-variables/'>Shared Variables</a> > ArrayVariable
-          
-        
+            <a href='/eh_DocsExporter/'>eh_DocsExporter</a> > <a href='/eh_DocsExporter/quick_start/'>Quick_start</a> > Documenting your Code
           
         
           
@@ -865,12 +859,10 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#description">Description</a></li>
-    <li><a href="#properties">Properties</a></li>
-    <li><a href="#signals">Signals</a></li>
-    <li><a href="#properties-descriptions">Properties Descriptions</a>
+    <li>
       <ul>
-        <li><a href="#value">value</a></li>
+        <li><a href="#links">Links</a></li>
+        <li><a href="#file-description-and-categories">File description and Categories</a></li>
       </ul>
     </li>
   </ul>
@@ -890,66 +882,26 @@
           
             <h1>
               
-              ArrayVariable
+              Documenting your Code
             </h1>
           
 
         
 
 
-<p><strong>Inherits:</strong> <em><a href="https://docs.godotengine.org/en/stable/classes/class_resource.html" target="_blank">Resource</a> &gt; <a href="https://docs.godotengine.org/en/stable/classes/class_reference.html" target="_blank">Reference</a> &gt; <a href="https://docs.godotengine.org/en/stable/classes/class_object.html" target="_blank">Object</a></em></p>
-<h2 id="description">Description</h2>
-<p>Array that can be saved in disk like a custom resource. Used as [Shared Variables] so that
-the data it holds can be accessed and modified from multiple parts of the code. Based on the idea
-of Unity&rsquo;s Scriptable Objects and Ryan Hipple&rsquo;s Unite Talk.</p>
-<h2 id="properties">Properties</h2>
-<table>
-<thead>
-<tr>
-<th>type</th>
-<th>property</th>
-<th>default value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://docs.godotengine.org/en/stable/classes/class_array.html" target="_blank">Array</a></td>
-<td><a href="/eh_DocsExporter/reference/shared-variables/arrayvariable/#value">value</a></td>
-<td><code>[]</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="signals">Signals</h2>
-<ul>
-<li><strong>value_updated</strong>()</li>
-</ul>
-<p>Signal emitted when the Variable&rsquo;s value is updated.</p>
-<hr>
-<h2 id="properties-descriptions">Properties Descriptions</h2>
-<h3 id="value">value</h3>
-<ul>
-<li><em><a href="https://docs.godotengine.org/en/stable/classes/class_array.html" target="_blank">Array</a></em> <strong>value</strong></li>
-</ul>
-<table>
-<thead>
-<tr>
-<th></th>
-<th style="text-align:center"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><em>Default</em></td>
-<td style="text-align:center"><code>[]</code></td>
-</tr>
-<tr>
-<td><em>Setter</em></td>
-<td style="text-align:center">_set_value</td>
-</tr>
-</tbody>
-</table>
-<p>Shared Variable value</p>
-<hr>
+<p>So before you export any documentation, first your code needs to be documented! And that is simple and easy! Just add comments on the lines directly above any variable, constant, enum, signal or function declaration that you want to document!</p>
+<p><img src="images/documenting_basic.png" alt="Image with examples"></p>
+<p>These comments will be gathered together with the signatures of these declarations and transformed into a documentation similar to what you see in the official docs.</p>
+<p>It&rsquo;s important to note though that <strong>only scripts with a class_name defined gets their documentation generated and exported</strong>.</p>
+<h3 id="links">Links</h3>
+<p>You can create links between your documentation pages by simply doing <code>[YourClassName]</code> or links to Godot&rsquo;s official documentation by doing for example <code>[AnimationSprite]</code>. You can also link to any point inside the same file by doing for example <code>[function_name]</code> or to any point in another file by doing <code>[YourClassName.function_name]</code>.</p>
+<h3 id="file-description-and-categories">File description and Categories</h3>
+<p>To add a &ldquo;description&rdquo; for a class, put the comments at the very top of the file, even above the tool keyword if you&rsquo;re using it.</p>
+<p><img src="images/documenting_description_categories.png" alt="Image with example"></p>
+<p>Also in the &ldquo;description&rdquo; comments, you can use the <code># @category: your_category</code> to organize the exported code into folders and group them. You can have subcategories by adding a slash like <code># @category: your_category/your_subcategory</code></p>
+<p>When exporting to GitHub wikis, these categories will only be used to organize the links in the sidebar</p>
+<p>But when exporting to Hugo, each category will get it&rsquo;s own page, with it&rsquo;s own description and table of contents, and you&rsquo;ll also have the option to order them in the navigation menu, using the Docs Exporter tab and the weight options.</p>
+<p>But how do you use the Docs Exporter Tab? That&rsquo;s easy too, and it&rsquo;s next!</p>
 
 
 <footer class="footline">
@@ -987,96 +939,11 @@ of Unity&rsquo;s Scriptable Objects and Ryan Hipple&rsquo;s Unite Talk.</p>
             
                 
                     
-                        
-                        
                     
                 
                 
 
                     
-                    
-                    
-
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                    
-                
-                
-
-                    
-                    
-                        
                     
                     
 
@@ -1105,21 +972,6 @@ of Unity&rsquo;s Scriptable Objects and Ryan Hipple&rsquo;s Unite Talk.</p>
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
                     
                 
                 
@@ -1137,34 +989,8 @@ of Unity&rsquo;s Scriptable Objects and Ryan Hipple&rsquo;s Unite Talk.</p>
             
                 
                     
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
                         
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
                         
-            
-            
-                
                     
                 
                 
@@ -1205,6 +1031,8 @@ of Unity&rsquo;s Scriptable Objects and Ryan Hipple&rsquo;s Unite Talk.</p>
                 
 
                     
+                    
+                        
                     
                     
 
@@ -1286,6 +1114,131 @@ of Unity&rsquo;s Scriptable Objects and Ryan Hipple&rsquo;s Unite Talk.</p>
                     
 
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
             
         
                     
@@ -1345,7 +1298,6 @@ of Unity&rsquo;s Scriptable Objects and Ryan Hipple&rsquo;s Unite Talk.</p>
             
                 
                     
-                    
                 
                 
 
@@ -1358,7 +1310,6 @@ of Unity&rsquo;s Scriptable Objects and Ryan Hipple&rsquo;s Unite Talk.</p>
             
             
                 
-                    
                     
                 
                 
@@ -1375,9 +1326,6 @@ of Unity&rsquo;s Scriptable Objects and Ryan Hipple&rsquo;s Unite Talk.</p>
             
             
                 
-                    
-                        
-                        
                     
                 
                 
@@ -1469,10 +1417,10 @@ of Unity&rsquo;s Scriptable Objects and Ryan Hipple&rsquo;s Unite Talk.</p>
 	 
 	 
 		
-			<a class="nav nav-prev" href="/eh_DocsExporter/reference/shared-variables/" title="Shared Variables"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/eh_DocsExporter/quick_start/installation/" title="Installation"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/eh_DocsExporter/reference/shared-variables/boolvariable/" title="BoolVariable" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/eh_DocsExporter/quick_start/exporting/" title="Exporting your Documentation" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>

@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>eh_jogos Godot Docs Exporter</title>
+    <title>eh_DocsExporter on eh_jogos Godot Docs Exporter</title>
     <link>https://eh-jogos.github.io/eh_DocsExporter/</link>
-    <description>Recent content on eh_jogos Godot Docs Exporter</description>
+    <description>Recent content in eh_DocsExporter on eh_jogos Godot Docs Exporter</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Oct 2020 07:30:54 -0300</lastBuildDate><atom:link href="https://eh-jogos.github.io/eh_DocsExporter/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Oct 2020 06:25:30 -0300</lastBuildDate><atom:link href="https://eh-jogos.github.io/eh_DocsExporter/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Installation</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/quick_start/installation/</link>
+      <pubDate>Wed, 07 Oct 2020 06:36:52 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/quick_start/installation/</guid>
+      <description>There are some different ways of installing the plugin. The easiest one is downloading it from Godot&amp;rsquo;s Asset Library directly from your project.
+Click the Asset Library button inside the editor and in the search field begin typing eh_DocsExporter to find it.
+After clicking on it, click on the download button and a bar with the downloading plugin will appear at the bottom of the AssetLib
+After it finishes downloading click install.</description>
+    </item>
+    
     <item>
       <title>ArrayVariable</title>
       <link>https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/arrayvariable/</link>
@@ -216,6 +228,36 @@ Properties    type property default value     Array value []    Methods    retur
       <description>Inherits: LineEdit &amp;gt; Control &amp;gt; CanvasItem &amp;gt; Node &amp;gt; Object
 Description LineEdit Field for simple StringVariables.
 Properties    type property default value     bool is_removable False    Methods    return type method signature     null set_string_variable(StringVariable resource)    Signals  remove_string_variable(string_variable)   Properties Descriptions is_removable  bool is_removable           Default False   Setter _set_is_removable     Method Descriptions set_string_variable  void set_string_variable(StringVariable resource)  Sets the StringVariable this field will be attached to and populates the LineEdit with its value.</description>
+    </item>
+    
+    <item>
+      <title>Documenting your Code</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/quick_start/documenting/</link>
+      <pubDate>Wed, 07 Oct 2020 06:36:52 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/quick_start/documenting/</guid>
+      <description>So before you export any documentation, first your code needs to be documented! And that is simple and easy! Just add comments on the lines directly above any variable, constant, enum, signal or function declaration that you want to document!
+These comments will be gathered together with the signatures of these declarations and transformed into a documentation similar to what you see in the official docs.
+It&amp;rsquo;s important to note though that only scripts with a class_name defined gets their documentation generated and exported.</description>
+    </item>
+    
+    <item>
+      <title>Exporting your Documentation</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/quick_start/exporting/</link>
+      <pubDate>Wed, 07 Oct 2020 06:36:52 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/quick_start/exporting/</guid>
+      <description>The Docs Exporter tab has three sections, the first one will look inside your project and generate a json file with your code reference. The other two will take this json, format it into many markdown pages, creating links between the pages, and also links back to Godot&amp;rsquo;s official documentation when applicable, organize the files into categories if you&amp;rsquo;re using them and export them to a destination of your choosing.</description>
+    </item>
+    
+    <item>
+      <title>Help and Support</title>
+      <link>https://eh-jogos.github.io/eh_DocsExporter/quick_start/help/</link>
+      <pubDate>Wed, 07 Oct 2020 06:36:52 -0300</pubDate>
+      
+      <guid>https://eh-jogos.github.io/eh_DocsExporter/quick_start/help/</guid>
+      <description>I hope this plugin is useful and helps you out in any way. If you encounter any bugs, or need help with something in the plugin, please open an issue on GitHub!
+If you liked the project and want to contribute to it, feel free to send me a message or send in a pull request! Also this project is under MIT License, so use it however you want, in any commercial projects, and if possible, link back to this page or to it&amp;rsquo;s GitHub project page.</description>
     </item>
     
   </channel>

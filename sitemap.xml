@@ -3,6 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://eh-jogos.github.io/eh_DocsExporter/quick_start/installation/</loc>
+    <lastmod>2020-10-07T06:36:52-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eh-jogos.github.io/eh_DocsExporter/quick_start/</loc>
+    <lastmod>2020-10-07T06:32:06-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eh-jogos.github.io/eh_DocsExporter/</loc>
+    <lastmod>2020-10-07T06:25:30-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/arrayvariable/</loc>
     <lastmod>2020-10-05T07:30:54-03:00</lastmod>
   </url>
@@ -98,13 +113,28 @@
   </url>
   
   <url>
+    <loc>https://eh-jogos.github.io/eh_DocsExporter/quick_start/documenting/</loc>
+    <lastmod>2020-10-07T06:36:52-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://eh-jogos.github.io/eh_DocsExporter/reference/custom-resources/</loc>
     <lastmod>2020-10-05T07:30:54-03:00</lastmod>
   </url>
   
   <url>
+    <loc>https://eh-jogos.github.io/eh_DocsExporter/quick_start/exporting/</loc>
+    <lastmod>2020-10-07T06:36:52-03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/</loc>
     <lastmod>2020-10-05T07:30:54-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eh-jogos.github.io/eh_DocsExporter/quick_start/help/</loc>
+    <lastmod>2020-10-07T06:36:52-03:00</lastmod>
   </url>
   
   <url>
@@ -114,11 +144,6 @@
   
   <url>
     <loc>https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/</loc>
-    <lastmod>2020-10-05T07:30:54-03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://eh-jogos.github.io/eh_DocsExporter/</loc>
     <lastmod>2020-10-05T07:30:54-03:00</lastmod>
   </url>
   

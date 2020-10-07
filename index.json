@@ -1,5 +1,26 @@
 [
 {
+	"uri": "https://eh-jogos.github.io/eh_DocsExporter/quick_start/installation/",
+	"title": "Installation",
+	"tags": [],
+	"description": "",
+	"content": "There are some different ways of installing the plugin. The easiest one is downloading it from Godot\u0026rsquo;s Asset Library directly from your project.\nClick the Asset Library button inside the editor and in the search field begin typing eh_DocsExporter to find it.\nAfter clicking on it, click on the download button and a bar with the downloading plugin will appear at the bottom of the AssetLib\nAfter it finishes downloading click install. It will bring up a list of files it will import. You don\u0026rsquo;t need to import the files outside of the \u0026ldquo;addons\u0026rdquo; folder, your project should already have it\u0026rsquo;s own and README and LICENSE files.\nAlso if you downloaded any other plugin by me chances are you already have a eh_jogos.shared_variables folder (at the bottom of the list). These are scripts for Custom Resources I reuse in projects and you can ignore any conflicts in this folder, and just import the files that are new to this plugin, if there are any. Or if you\u0026rsquo;re in doubt you can safely overwrite all the files in it by importing them again\nAfter installation go to Project \u0026gt; Project Settings \u0026gt; Plugin and enable the plugin\nAfter you enable it, a new tab will appear named Docs Exporter and that\u0026rsquo;s it for installation!\nAlternatively, you can just download this repository as a zip, and extract it and copy the addons folder into your project, or clone this repository into your project as a sub-module.\nAfter either, go to Project \u0026gt; Project Settings \u0026gt; Plugin and enable the plugin\n"
+},
+{
+	"uri": "https://eh-jogos.github.io/eh_DocsExporter/quick_start/",
+	"title": "Quick_start",
+	"tags": [],
+	"description": "",
+	"content": "Quick Start Here you\u0026rsquo;ll find some quick guides to get you up and running with the plugin.\n Installation Documenting your code Exporting your Documentation Help and Support  "
+},
+{
+	"uri": "https://eh-jogos.github.io/eh_DocsExporter/",
+	"title": "eh_DocsExporter",
+	"tags": [],
+	"description": "",
+	"content": "Docs Exporter is a Godot plugin compatible with Godot 3.2.x aimed at building and exporting documentation directly from your code to a GitHub wiki and/or a Hugo site.\nIt is inspired by and partly based on GDQuest\u0026#39;s docs maker but works entirely inside Godot, and tries to follow Godot\u0026rsquo;s official docs styling for exported pages.\nThe \u0026ldquo;Reference\u0026rdquo; section of this wiki was generated and exported using this plugin. To see an example of the GitHUb wiki export you can go to the github wiki of the project repository.\n"
+},
+{
 	"uri": "https://eh-jogos.github.io/eh_DocsExporter/reference/shared-variables/arrayvariable/",
 	"title": "ArrayVariable",
 	"tags": [],
@@ -133,6 +154,13 @@
 	"content": "Inherits: LineEdit \u0026gt; Control \u0026gt; CanvasItem \u0026gt; Node \u0026gt; Object\nDescription LineEdit Field for simple StringVariables.\nProperties    type property default value     bool is_removable False    Methods    return type method signature     null set_string_variable(StringVariable resource)    Signals  remove_string_variable(string_variable)   Properties Descriptions is_removable  bool is_removable           Default False   Setter _set_is_removable     Method Descriptions set_string_variable  void set_string_variable(StringVariable resource)  Sets the StringVariable this field will be attached to and populates the LineEdit with its value.\n "
 },
 {
+	"uri": "https://eh-jogos.github.io/eh_DocsExporter/quick_start/documenting/",
+	"title": "Documenting your Code",
+	"tags": [],
+	"description": "",
+	"content": "So before you export any documentation, first your code needs to be documented! And that is simple and easy! Just add comments on the lines directly above any variable, constant, enum, signal or function declaration that you want to document!\nThese comments will be gathered together with the signatures of these declarations and transformed into a documentation similar to what you see in the official docs.\nIt\u0026rsquo;s important to note though that only scripts with a class_name defined gets their documentation generated and exported.\nLinks You can create links between your documentation pages by simply doing [YourClassName] or links to Godot\u0026rsquo;s official documentation by doing for example [AnimationSprite]. You can also link to any point inside the same file by doing for example [function_name] or to any point in another file by doing [YourClassName.function_name].\nFile description and Categories To add a \u0026ldquo;description\u0026rdquo; for a class, put the comments at the very top of the file, even above the tool keyword if you\u0026rsquo;re using it.\nAlso in the \u0026ldquo;description\u0026rdquo; comments, you can use the # @category: your_category to organize the exported code into folders and group them. You can have subcategories by adding a slash like # @category: your_category/your_subcategory\nWhen exporting to GitHub wikis, these categories will only be used to organize the links in the sidebar\nBut when exporting to Hugo, each category will get it\u0026rsquo;s own page, with it\u0026rsquo;s own description and table of contents, and you\u0026rsquo;ll also have the option to order them in the navigation menu, using the Docs Exporter tab and the weight options.\nBut how do you use the Docs Exporter Tab? That\u0026rsquo;s easy too, and it\u0026rsquo;s next!\n"
+},
+{
 	"uri": "https://eh-jogos.github.io/eh_DocsExporter/reference/custom-resources/",
 	"title": "Custom Resources",
 	"tags": [],
@@ -140,11 +168,25 @@
 	"content": "Custom Resources used by the plugin.\n CategoryOptionalData CategoryOptionalDataDict  "
 },
 {
+	"uri": "https://eh-jogos.github.io/eh_DocsExporter/quick_start/exporting/",
+	"title": "Exporting your Documentation",
+	"tags": [],
+	"description": "",
+	"content": "The Docs Exporter tab has three sections, the first one will look inside your project and generate a json file with your code reference. The other two will take this json, format it into many markdown pages, creating links between the pages, and also links back to Godot\u0026rsquo;s official documentation when applicable, organize the files into categories if you\u0026rsquo;re using them and export them to a destination of your choosing.\nGenerating the json For the first one, the json Section, you need to choose which folder or folders of your project you want to scan, then which kind of files you want to filter for, if the scan should be recursive (scan subfolders) or not, and finally, where to save the result.\nIf you\u0026rsquo;re using git, the addon folder already has a .gitignore to ignore a reference.json file, so you can save there if you want.\nAfter setting all that, click on \u0026ldquo;Generate Json Reference\u0026rdquo; button.\nExporting to GiHub Wiki After generating the Json, if you want to export to a GitHub Wiki, just choose to which folder you want to export the markdown files, and press \u0026ldquo;Export GitHub Wiki Docs Pages\u0026rdquo;.\nI usually include at least a \u0026ldquo;Home\u0026rdquo; page in the GitHub wiki besides the code reference, so I use the \u0026ldquo;Prepend to Sidebar\u0026rdquo; field to link all the pages in the GitHub wiki that are not auto-generated by the plugin.\nWhenever you update your code or your comments, generate the json again and export the documentation again. That\u0026rsquo;s it!\nIf you need help with setting up GitHub wiki or cloning it locally take a look at the official documentation\nExporting to Hugo After generating the Json, if you want to export to Hugo, just choose to which folder you want to export the markdown files, and press \u0026ldquo;Export Hugo Docs Pages\u0026rdquo; button. For hugo it\u0026rsquo;s best if you don\u0026rsquo;t simply export directly into the \u0026ldquo;content\u0026rdquo; folder, but rather in a sub-folder in there, like \u0026ldquo;content/reference\u0026rdquo; or something of the like.\nAlso if you\u0026rsquo;re using categories in your documentation, you can click \u0026ldquo;Build Categories Db\u0026rdquo; button before exporting, and all the categories you\u0026rsquo;re currently using will appear for you to customize their weights and descriptions.\nWhenever you update your code or your comments, generate the json again and export the documentation again. That\u0026rsquo;s it!\nSome useful links if you need help setting up a Hugo site:\n Hugo Docs - Quick Start Hugo Docs - Setting up Github pages Hugo Learn Theme - a good theme for documentation  "
+},
+{
 	"uri": "https://eh-jogos.github.io/eh_DocsExporter/reference/ui-elements/",
 	"title": "UI Elements",
 	"tags": [],
 	"description": "",
 	"content": "UI Elements used in the Docs Exporter tab.\n ResizableTextEdit StringVariableLineEdit BoolVariableCheckbox CategoryOptions PathLineEdit FilePathLineEdit  "
+},
+{
+	"uri": "https://eh-jogos.github.io/eh_DocsExporter/quick_start/help/",
+	"title": "Help and Support",
+	"tags": [],
+	"description": "",
+	"content": "I hope this plugin is useful and helps you out in any way. If you encounter any bugs, or need help with something in the plugin, please open an issue on GitHub!\nIf you liked the project and want to contribute to it, feel free to send me a message or send in a pull request! Also this project is under MIT License, so use it however you want, in any commercial projects, and if possible, link back to this page or to it\u0026rsquo;s GitHub project page.\nIf you liked the project and want to support it, consider tweeting about it or recommending it to friends who might find this plugin useful!\nAlso, just a message saying thanks or showing off the cool docs you exported with this plugin does a great deal to make me know this is useful to someone else, which do makes me happy!\nBut if you want to support it with small donations, you can buy my game on steam, send me a tip on ko-fi or take a look at my patreon!\n"
 },
 {
 	"uri": "https://eh-jogos.github.io/eh_DocsExporter/reference/components/",
@@ -159,13 +201,6 @@
 	"tags": [],
 	"description": "",
 	"content": "Simple Custom Resources that can be saved to disk an represent only one variable of one type. Since Rsources are only loaded once and shared between all their references in code, it is used as some kind of shared variables so that the data it holds can be accessed and modified from multiple parts of the code and always stays in sync.\nThis ones are saved in a separate folder because they\u0026rsquo;re all custom resources that represent basic types and can be reused between projects and different plugins, so that If you already have this folder from another plugin, you won\u0026rsquo;t have any class_name conflicts and will only have to import the scripts you don\u0026rsquo;t have.\nIn this plugin it is basically used so that you can edit data in the Docs Exporter Tab and have this data easily accessible by the code.\nIt is based on the idea of Unity\u0026rsquo;s Scriptable Objects and Ryan Hipple\u0026rsquo;s Unite Talk about architeting games around scriptable objects.\nReference Links:\n Text How To Unite Talk Video Ryans Example Repository  TOC:\n ArrayVariable StringArrayVariable BoolVariable DictionaryVariable StringVariable StringVariableArray  "
-},
-{
-	"uri": "https://eh-jogos.github.io/eh_DocsExporter/",
-	"title": "eh_jogos Godot Docs Exporter",
-	"tags": [],
-	"description": "",
-	"content": ""
 },
 {
 	"uri": "https://eh-jogos.github.io/eh_DocsExporter/reference/",
