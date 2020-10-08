@@ -19,7 +19,7 @@ After setting all that, click on "Generate Json Reference" button.
 
 ![Image of Docs exporter with Json tab filled up](/images/docs_exporter_tab_json.png)
 
-## Exporting to GiHub Wiki
+## Exporting to GitHub Wiki
 
 After generating the Json, if you want to export to a GitHub Wiki, just choose to which folder you want to export the markdown files, and press "Export GitHub Wiki Docs Pages". 
 
