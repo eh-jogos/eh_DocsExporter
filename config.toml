@@ -8,11 +8,28 @@ theme = "hugo-theme-learn"
 
 # hugo-theme-learn prameters
 [params]
+	dewcription = "Documentation for eh_DocsEporter Godot Plugin"
 	themeVariant = "eh-docs-exporter"
-	#themeVariant = "green"
-	disableShortcutsTitle = true
 
 # For search functionality
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
+
+[[menu.shortcuts]]
+name = "<i class='fab fa-github'></i>&nbsp;GitHub Repository"
+identifier = "github"
+url = "https://github.com/eh-jogos/eh_DocsExporter"
+weight = 1
+
+[[menu.shortcuts]]
+name = "<i class='fas fa-coffee'></i>&nbsp;Send a tip on Ko-fi"
+identifier = "ko-fi.com/eh_jogos"
+url = "https://ko-fi.com/eh_jogos"
+weight = 2
+
+[[menu.shortcuts]]
+name = "<i class='fab fa-gratipay'></i>&nbsp;Take a look at my Patreon"
+identifier = "patreon.com/eh_jogos"
+url = "https://www.patreon.com/eh_jogos"
+weight = 3
 
