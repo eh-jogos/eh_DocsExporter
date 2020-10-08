@@ -8,7 +8,8 @@ theme = "hugo-theme-learn"
 
 # hugo-theme-learn prameters
 [params]
-	dewcription = "Documentation for eh_DocsEporter Godot Plugin"
+	description = "Documentation for eh_DocsEporter Godot Plugin"
+	images = ["docs_exporter_itchio.png"]
 	themeVariant = "eh-docs-exporter"
 
 # For search functionality
