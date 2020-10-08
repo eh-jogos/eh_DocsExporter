@@ -6,11 +6,12 @@ Godot Plugin to export documentation directly from comments in your code to Gith
 
 It's partly based on GDQuest's docs maker, but works entirely inside Godot, and tries to follow godot's official docs styling for exported pages.
 
-To use, install and activate the plugin and a new tab will appear in the Project Settings window. From there you can configure paths and generate the json with the code reference, and then export it for Github wiki and/or Hugo sites.
-
-To create documentation, just add comments on the line directly above anything you want to add a "description" to. (function definitions, variables, signals, class_name etc...)
-
-You can also organize your exported pages in "categories" by adding "@category: your_category_name" or "@category: your_category_name/your_subcategory_name" in the comments description for the file's class_name. 
+For instructions on hot to install and use it, or examples of exported Code Reference, checkout the [wiki](https://github.com/eh-jogos/eh_DocsExporter/wiki) or the [docs site](https://eh-jogos.github.io/eh_DocsExporter/)!
 
 ## License
 This is Licensed under MIT as you and see in the LICENSE file, so use it however you want, in any comercial projects or not, just link this repository or this readme in the credits or somewhere.
+
+## Support
+If you like this project and want to support it, any improvements pull request is welcomed!
+
+Or if you prefer, you can also send a tip through [ko-fi](https://ko-fi.com/eh_jogos) or take a look at my [patreon](https://www.patreon.com/eh_jogos)!
