@@ -1,25 +1,18 @@
-# Dictionary that can be saved in disk like a custom resource. 
-# Used as [Shared Variables] so that the data it holds can be accessed and modified from multiple 
-# parts of the code. Based on the idea of Unity's Scriptable Objects and Ryan Hipple's Unite Talk.
-# @category: Shared Variables
+# LineEdit for receiving file or folder paths. Has a small customization just to scroll the text
+# to the end whenever a file or folder is selected through the File Explorer instead of typed in.
+# @category: UI Elements
 tool
-class_name DictionaryVariable
-extends Resource
+class_name PathLineEdit
+extends LineEdit
 
 ### Member Variables and Dependencies -------------------------------------------------------------
 #--- signals --------------------------------------------------------------------------------------
-
-# Signal emitted when the Variable's value is updated.
-signal value_updated
 
 #--- enums ----------------------------------------------------------------------------------------
 
 #--- constants ------------------------------------------------------------------------------------
 
 #--- public variables - order: export > normal var > onready --------------------------------------
-
-# Shared Variable value
-export var value: Dictionary = {} setget _set_value
 
 #--- private variables - order: export > normal var > onready -------------------------------------
 
@@ -30,17 +23,23 @@ export var value: Dictionary = {} setget _set_value
 
 ### -----------------------------------------------------------------------------------------------
 
-
 ### Public Methods --------------------------------------------------------------------------------
+
+# Sets the text and scrolls it to the end position.
+func set_text(string: String) -> void:
+	text = string
+	var total_chars = text.length()
+	caret_position = total_chars-1
 
 ### -----------------------------------------------------------------------------------------------
 
-
 ### Private Methods -------------------------------------------------------------------------------
 
-func _set_value(p_value: Dictionary) -> void:
-	value = p_value
-	ResourceSaver.save(resource_path, self)
-	emit_signal("value_updated")
+func _on_FileDialog_file_selected(path):
+	set_text(path)
+
+
+func _on_FileDialog_dir_selected(dir):
+	set_text(dir)
 
 ### -----------------------------------------------------------------------------------------------

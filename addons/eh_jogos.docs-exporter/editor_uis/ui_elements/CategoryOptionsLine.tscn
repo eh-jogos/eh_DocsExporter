@@ -27,19 +27,16 @@ bg_color = Color( 0.145098, 0.12549, 0.180392, 0.6 )
 margin_right = 988.0
 margin_bottom = 184.0
 script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="CategoryName" type="Button" parent="."]
 margin_right = 988.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 250, 0 )
+custom_colors/font_color_hover = Color( 0, 0.811765, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.117647, 0.109804, 0.129412, 1 )
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
-custom_colors/font_color_hover = Color( 0, 0.811765, 1, 1 )
-custom_colors/font_color_pressed = Color( 0.117647, 0.109804, 0.129412, 1 )
 text = "- CategoryName"
 align = 0
 script = ExtResource( 4 )
@@ -87,11 +84,11 @@ margin_top = 28.0
 margin_right = 958.0
 margin_bottom = 52.0
 rect_min_size = Vector2( 250, 0 )
+custom_colors/font_color_hover = Color( 0, 0.811765, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.117647, 0.109804, 0.129412, 1 )
 custom_styles/hover = SubResource( 1 )
 custom_styles/pressed = SubResource( 2 )
 custom_styles/normal = SubResource( 3 )
-custom_colors/font_color_hover = Color( 0, 0.811765, 1, 1 )
-custom_colors/font_color_pressed = Color( 0.117647, 0.109804, 0.129412, 1 )
 text = "- Description"
 align = 0
 

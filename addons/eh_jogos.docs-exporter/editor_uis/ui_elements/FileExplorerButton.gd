@@ -1,16 +1,9 @@
-# Array of Strings that can be saved in disk like a custom resource. 
-# Used as [Shared Variables] so that the data it holds can be accessed and modified from multiple 
-# parts of the code. Based on the idea of Unity's Scriptable Objects and Ryan Hipple's Unite Talk.
-# @category: Shared Variables
+# Button to open the file explorer, needs a FileDialog node as a child.
 tool
-class_name StringArrayVariable
-extends Resource
+extends Button
 
 ### Member Variables and Dependencies -------------------------------------------------------------
 #--- signals --------------------------------------------------------------------------------------
-
-# Signal emitted when the Variable's value is updated.
-signal value_updated
 
 #--- enums ----------------------------------------------------------------------------------------
 
@@ -18,15 +11,25 @@ signal value_updated
 
 #--- public variables - order: export > normal var > onready --------------------------------------
 
-# Shared Variable value
-export(Array, String) var value: Array = [] setget _set_value
+# Title that should appear in the File Explorer Window
+export var window_title: = ""
 
 #--- private variables - order: export > normal var > onready -------------------------------------
+
+onready var _file_dialog: FileDialog = get_node("FileDialog")
 
 ### -----------------------------------------------------------------------------------------------
 
 
 ### Built in Engine Methods -----------------------------------------------------------------------
+
+func _ready():
+	if window_title != "":
+		_file_dialog.window_title = window_title
+
+
+func _pressed() -> void:
+	_file_dialog.popup_centered()
 
 ### -----------------------------------------------------------------------------------------------
 
@@ -37,10 +40,5 @@ export(Array, String) var value: Array = [] setget _set_value
 
 
 ### Private Methods -------------------------------------------------------------------------------
-
-func _set_value(p_value: Array) -> void:
-	value = p_value
-	ResourceSaver.save(resource_path, self)
-	emit_signal("value_updated")
 
 ### -----------------------------------------------------------------------------------------------

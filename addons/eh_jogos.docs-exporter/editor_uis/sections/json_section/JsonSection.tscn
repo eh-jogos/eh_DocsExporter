@@ -1,29 +1,18 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/sections/json_section/JsonSection.gd" type="Script" id=1]
-[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/bool_checkbox/BoolVariableCheckbox.tscn" type="PackedScene" id=2]
-[ext_resource path="res://addons/eh_jogos.docs-exporter/shared_variables/string_array_directories.tres" type="Resource" id=3]
-[ext_resource path="res://addons/eh_jogos.docs-exporter/shared_variables/string_json_export_path.tres" type="Resource" id=4]
-[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/sections/json_section/StringVariableColum.gd" type="Script" id=5]
-[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/path_line_edit/FilePathLineEdit.tscn" type="PackedScene" id=6]
-[ext_resource path="res://addons/eh_jogos.docs-exporter/shared_variables/string_array_filters.tres" type="Resource" id=7]
-[ext_resource path="res://addons/eh_jogos.docs-exporter/shared_variables/bool_is_recursive_scan.tres" type="Resource" id=8]
-[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/path_line_edit/DirectoryPathLineEdit.tscn" type="PackedScene" id=9]
-[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/icons/icon_add.svg" type="Texture" id=10]
-[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/string_line_edit/StringVariableLineEdit.tscn" type="PackedScene" id=11]
+[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/settings_editors/SettingsBoolUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/string_line_edit/StringLineEdit.tscn" type="PackedScene" id=5]
+[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/settings_editors/SettingsPathSystemFile.tscn" type="PackedScene" id=6]
+[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/string_line_edit/PathDirectoryLineEdit.tscn" type="PackedScene" id=9]
 [ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/editor_button_theme.tres" type="Theme" id=12]
+[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/settings_editors/SettingsStringArrayUi.tscn" type="PackedScene" id=13]
 
 [node name="JsonSection" type="VBoxContainer"]
 margin_right = 1018.0
 margin_bottom = 216.0
 custom_constants/separation = 8
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ResourcePreloader" type="ResourcePreloader" parent="."]
-resources = [ PoolStringArray( "directories", "filters", "is_recursive", "save_path" ), [ ExtResource( 3 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 4 ) ] ]
 
 [node name="SectionTitle" type="Label" parent="."]
 margin_right = 1018.0
@@ -47,7 +36,7 @@ __meta__ = {
 [node name="DirectoriesRow" type="HBoxContainer" parent="."]
 margin_top = 22.0
 margin_right = 1018.0
-margin_bottom = 105.0
+margin_bottom = 57.0
 
 [node name="Label" type="Label" parent="DirectoriesRow"]
 margin_right = 507.0
@@ -58,35 +47,13 @@ size_flags_vertical = 0
 text = "Directories to scan"
 valign = 1
 
-[node name="DirectoriesColum" type="VBoxContainer" parent="DirectoriesRow"]
-margin_left = 511.0
-margin_right = 1018.0
-margin_bottom = 83.0
-size_flags_horizontal = 3
-script = ExtResource( 5 )
-
-[node name="ResourcePreloader" type="ResourcePreloader" parent="DirectoriesRow/DirectoriesColum"]
-resources = [ PoolStringArray( "editor_field" ), [ ExtResource( 9 ) ] ]
-
-[node name="Fields" type="VBoxContainer" parent="DirectoriesRow/DirectoriesColum"]
-margin_right = 507.0
-margin_bottom = 48.0
-
-[node name="AddMore" type="Button" parent="DirectoriesRow/DirectoriesColum"]
-margin_left = 405.0
-margin_top = 52.0
-margin_right = 507.0
-margin_bottom = 83.0
-size_flags_horizontal = 8
-theme = ExtResource( 12 )
-custom_constants/hseparation = 10
-text = "Add folder"
-icon = ExtResource( 10 )
+[node name="DirectoriesColum" parent="DirectoriesRow" instance=ExtResource( 13 )]
+_editor_field_packed_scene = ExtResource( 9 )
 
 [node name="FiltersRow" type="HBoxContainer" parent="."]
-margin_top = 113.0
+margin_top = 65.0
 margin_right = 1018.0
-margin_bottom = 170.0
+margin_bottom = 100.0
 
 [node name="Label" type="Label" parent="FiltersRow"]
 margin_right = 507.0
@@ -97,38 +64,14 @@ size_flags_vertical = 0
 text = "Patterns to filter files"
 valign = 1
 
-[node name="FilterColumn" type="VBoxContainer" parent="FiltersRow"]
-margin_left = 511.0
-margin_right = 1018.0
-margin_bottom = 57.0
-size_flags_horizontal = 3
-script = ExtResource( 5 )
-
-[node name="ResourcePreloader" type="ResourcePreloader" parent="FiltersRow/FilterColumn"]
-resources = [ PoolStringArray( "editor_field" ), [ ExtResource( 11 ) ] ]
-
-[node name="Fields" type="VBoxContainer" parent="FiltersRow/FilterColumn"]
-margin_right = 507.0
-margin_bottom = 22.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AddMore" type="Button" parent="FiltersRow/FilterColumn"]
-margin_left = 412.0
-margin_top = 26.0
-margin_right = 507.0
-margin_bottom = 57.0
-size_flags_horizontal = 8
-theme = ExtResource( 12 )
-custom_constants/hseparation = 10
-text = "Add filter"
-icon = ExtResource( 10 )
+[node name="FilterColumn" parent="FiltersRow" instance=ExtResource( 13 )]
+_editor_field_packed_scene = ExtResource( 5 )
+property = "filters"
 
 [node name="RecursiveRow" type="HBoxContainer" parent="."]
-margin_top = 178.0
+margin_top = 108.0
 margin_right = 1018.0
-margin_bottom = 202.0
+margin_bottom = 132.0
 
 [node name="Label" type="Label" parent="RecursiveRow"]
 margin_right = 507.0
@@ -141,12 +84,11 @@ valign = 1
 
 [node name="IsRecursive" parent="RecursiveRow" instance=ExtResource( 2 )]
 text = "On"
-_bool_variable = ExtResource( 8 )
 
 [node name="JsonReferenceRow" type="HBoxContainer" parent="."]
-margin_top = 210.0
+margin_top = 140.0
 margin_right = 1018.0
-margin_bottom = 232.0
+margin_bottom = 162.0
 
 [node name="Label" type="Label" parent="JsonReferenceRow"]
 margin_right = 507.0
@@ -156,20 +98,16 @@ size_flags_horizontal = 3
 text = "Json reference export file path"
 valign = 1
 
-[node name="JsonPathSelector" parent="JsonReferenceRow" instance=ExtResource( 6 )]
-file_dialog_filter = "*.json"
+[node name="SettingsPathSystemFile" parent="JsonReferenceRow" instance=ExtResource( 6 )]
 
 [node name="ExportJson" type="Button" parent="."]
 margin_left = 768.0
-margin_top = 240.0
+margin_top = 170.0
 margin_right = 1018.0
-margin_bottom = 269.0
+margin_bottom = 199.0
 rect_min_size = Vector2( 250, 0 )
 size_flags_horizontal = 8
 theme = ExtResource( 12 )
 text = "Generate Json Reference"
-[connection signal="pressed" from="DirectoriesRow/DirectoriesColum/AddMore" to="DirectoriesRow/DirectoriesColum" method="_on_AddMore_pressed"]
-[connection signal="text_changed" from="FiltersRow/FilterColumn/Fields/StringVariableLineEdit" to="FiltersRow/FilterColumn/Fields/StringVariableLineEdit" method="_on_StringVariableLineEdit_text_changed"]
-[connection signal="text_entered" from="FiltersRow/FilterColumn/Fields/StringVariableLineEdit" to="FiltersRow/FilterColumn/Fields/StringVariableLineEdit" method="_on_StringVariableLineEdit_text_entered"]
-[connection signal="pressed" from="FiltersRow/FilterColumn/AddMore" to="FiltersRow/FilterColumn" method="_on_AddMore_pressed"]
+
 [connection signal="pressed" from="ExportJson" to="." method="_on_ExportJson_pressed"]

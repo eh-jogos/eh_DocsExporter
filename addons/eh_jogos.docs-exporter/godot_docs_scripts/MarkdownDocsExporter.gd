@@ -12,6 +12,37 @@ extends JsonIO
 
 #--- constants ------------------------------------------------------------------------------------
 
+const BUILT_IN_TYPES = [
+	"null", 				# 0
+	"bool", 				# 1
+	"int",  				# 2
+	"float",				# 3
+	"String",				# 4
+	"Vector2",				# 5
+	"Rect2",				# 6
+	"Vector3",				# 7
+	"Transform2D",			# 8
+	"Plane",				# 9
+	"Quat",					# 10
+	"AABB",					# 11
+	"Basis",				# 12
+	"Transform",			# 13
+	"Color",				# 14
+	"NodePath",				# 15
+	"RID",					# 16
+	"Object",				# 17
+	"Dictionary",			# 18
+	"Array",				# 19
+	"PoolByteArray",		# 20
+	"PoolIntArray",			# 21
+	"PoolRealArray",		# 22
+	"PoolStringArray",		# 23
+	"PoolVector2gArray",	# 24
+	"PoolVector3gArray",	# 25
+	"PoolColorgArray",		# 26
+	"Variant",				# 27
+]
+
 # Defines the "ineritance" block content model and styling for the exported .md file.
 const MD_BLOCK_INHERITANCE = ""\
 		+"**Inherits:** _{inheritance}_  \n"
@@ -140,13 +171,7 @@ var key_to_use_for_link: String
 
 #--- private variables - order: export > normal var > onready -------------------------------------
 
-var _shared_variables_path = "res://addons/eh_jogos.docs-exporter/shared_variables/"
-var _custom_class_db : DictionaryVariable
-var _custom_inheritance_db : DictionaryVariable
-var _built_in_type_db : StringArrayVariable
-var _category_optional_data: CategoryOptionalDataDict
-var _category_db: DictionaryVariable
-var _sidebar_prepend: StringVariable
+var _settings: eh_DocsSettings = eh_DocsExporterPlugin.get_doc_settings()
 
 ### -----------------------------------------------------------------------------------------------
 
@@ -154,13 +179,6 @@ var _sidebar_prepend: StringVariable
 ### Built in Engine Methods -----------------------------------------------------------------------
 
 func _init():
-	_custom_class_db = load(_shared_variables_path + "dict_custom_class_db.tres")
-	_custom_inheritance_db = load(_shared_variables_path + "dict_custom_inheritance_db.tres")
-	_category_db = load(_shared_variables_path + "dict_category_db.tres")
-	_built_in_type_db = load(_shared_variables_path + "array_built_in_type_db.tres")
-	_category_optional_data = load(_shared_variables_path + "dict_categories_optional_data.tres")
-	_sidebar_prepend = load(_shared_variables_path + "string_sidebar_prepend_content.tres")
-	
 	key_to_use_for_link = "local_path"
 
 ### -----------------------------------------------------------------------------------------------
@@ -171,7 +189,7 @@ func _init():
 # Reads json reference and creates a category database with the current user defined categories 
 # in use.
 func build_category_db(reference_json_path: String, export_path: String):
-	var keys_start = _category_db.value.keys()
+	var keys_start = _settings.db_categories.keys()
 	var keys_end: = []
 	var reference_dict : = get_dictionary_from_file(reference_json_path)
 	if reference_dict.has("error"):
@@ -184,9 +202,9 @@ func build_category_db(reference_json_path: String, export_path: String):
 	
 	for key in keys_start:
 		if not keys_end.has(key):
-			_category_db.value.erase(key)
+			_settings.db_categories.erase(key)
 	
-#	print("PRINTING _category_db: %s"%[JSON.print(_category_db.value, "  ")])
+#	print("PRINTING _category_db: %s"%[JSON.print(_settings.db_categories, "  ")])
 
 
 # Takes in the reference json file path and an export path and generates and exports github wiki 
@@ -386,7 +404,7 @@ func _get_md_content(docs_entry: Dictionary) -> String:
 
 func _add_to_category_db(category: String, page_title: String, export_path: String) -> Array:
 	var base_dir_categories = []
-	var category_db = _category_db.value
+	var category_db = _settings.db_categories
 	if category == "":
 		return base_dir_categories
 	
@@ -429,28 +447,28 @@ func _split_category_into_base_dirs(full_category: String) -> Array:
 
 
 func _create_category_entry_if_needed(id: String) -> void:
-	if not _category_db.value.has(id):
-		_category_db.value[id] = {
+	if not _settings.db_categories.has(id):
+		_settings.db_categories[id] = {
 			full_path = "",
 			description = "",
-			weight = "",
+			weight = 0,
 			is_root = false,
 			children = [],
 			page_titles = [],
 		}
 	
-	if not _category_db.value[id].has("children"):
-		_category_db.value[id]["children"] = []
+	if not _settings.db_categories[id].has("children"):
+		_settings.db_categories[id]["children"] = []
 	
-	if _category_optional_data.value.has(id):
-		_category_db.value[id].description = _category_optional_data.value[id].description
-		_category_db.value[id].weight = _category_optional_data.value[id].weight
+	if _settings.hugo_optional_data.has(id):
+		_settings.db_categories[id].description = _settings.hugo_optional_data[id].description
+		_settings.db_categories[id].weight = _settings.hugo_optional_data[id].weight
 	else:
 		var optional_data: CategoryOptionalData = CategoryOptionalData.new()
-		optional_data.weight = _category_db.value[id].weight
-		optional_data.description = _category_db.value[id].description
+		optional_data.weight = _settings.db_categories[id].weight
+		optional_data.description = _settings.db_categories[id].description
 		
-		_category_optional_data.value[id] = optional_data
+		_settings.hugo_optional_data[id] = optional_data
 
 
 func _write_documentation_file(p_content: String, p_file_path: String) -> void:
@@ -473,7 +491,7 @@ func _build_and_save_sidebar(export_path: String) -> void:
 	
 	var sidebar_content: = _get_export_full_toc_dict()
 	
-	var md_content = _sidebar_prepend.value
+	var md_content = _settings.hugo_optional_data
 	md_content += _get_toc(sidebar_content)
 	
 	_write_documentation_file(md_content, md_file_path)
@@ -486,14 +504,14 @@ func _get_export_full_toc_dict() -> Dictionary:
 	}
 	
 	var root_pages = links_db.keys()
-	for key in _category_db.value.keys():
-		var pages: Array = _category_db.value[key].page_titles
+	for key in _settings.db_categories.keys():
+		var pages: Array = _settings.db_categories[key].page_titles
 		
 		for page in pages:
 			if root_pages.has(page):
 				root_pages.erase(page)
 		
-		if _category_db.value[key].is_root:
+		if _settings.db_categories[key].is_root:
 			sidebar_content.children.append(key)
 	
 	sidebar_content.page_titles = root_pages
@@ -507,7 +525,7 @@ func _get_toc(starting_category: Dictionary, identation = "") -> String:
 	
 	if starting_category.has("children") and not starting_category.children.empty():
 		for category_name in starting_category.children:
-			var category: Dictionary = _category_db.value[category_name]
+			var category: Dictionary = _settings.db_categories[category_name]
 			content += "%s- **%s**  \n"%[identation, category_name.get_file()]
 			content += _get_toc(category, identation + "  ")
 	
@@ -639,7 +657,7 @@ func _add_link_to_keyword_section(text: String, split_index: int,
 
 func _handle_links_in_text(text: String, split_index: int, 
 		keyword: String, nested_link: Array, page_name: String) -> String:
-	if ClassDB.class_exists(keyword) or _built_in_type_db.value.has(keyword):
+	if ClassDB.class_exists(keyword) or BUILT_IN_TYPES.has(keyword):
 		var link = GODOT_DOCS_BASE_URL%[keyword.to_lower()]
 		text = _add_external_link_to_keyword(text, split_index, link)
 	elif links_db.has(keyword):

@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/string_line_edit/StringLineEdit.gd" type="Script" id=1]
+[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/icons/icon_close.svg" type="Texture" id=3]
+[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/string_line_edit/PathLineEdit.gd" type="Script" id=4]
+[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/stylebox_editable_panel.tres" type="StyleBox" id=6]
+
+[node name="StringLineEdit" type="HBoxContainer"]
+margin_left = 511.0
+margin_right = 1018.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+custom_constants/separation = 5
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DeleteButton" type="Button" parent="."]
+visible = false
+margin_right = 28.0
+margin_bottom = 22.0
+icon = ExtResource( 3 )
+
+[node name="ValueLineEdit" type="LineEdit" parent="."]
+margin_right = 507.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+custom_styles/focus = ExtResource( 6 )
+custom_styles/normal = ExtResource( 6 )
+clear_button_enabled = true
+script = ExtResource( 4 )
+
+[connection signal="pressed" from="DeleteButton" to="." method="_on_DeleteButton_pressed"]
+[connection signal="text_changed" from="ValueLineEdit" to="." method="_on_ValueLineEdit_text_changed"]
+[connection signal="text_entered" from="ValueLineEdit" to="." method="_on_ValueLineEdit_text_entered"]

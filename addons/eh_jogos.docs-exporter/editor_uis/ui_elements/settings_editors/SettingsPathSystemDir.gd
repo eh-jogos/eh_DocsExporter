@@ -1,16 +1,9 @@
-# Boolean that can be saved in disk like a custom resource. 
-# Used as [Shared Variables] so that the data it holds can be accessed and modified from multiple 
-# parts of the code. Based on the idea of Unity's Scriptable Objects and Ryan Hipple's Unite Talk.
-# @category: Shared Variables
+# Write your doc string for this file here
 tool
-class_name BoolVariable
-extends Resource
+extends "res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/settings_editors/SettingsPathSystemFile.gd"
 
 ### Member Variables and Dependencies -------------------------------------------------------------
 #--- signals --------------------------------------------------------------------------------------
-
-# Signal emitted when the Variable's value is updated.
-signal value_updated
 
 #--- enums ----------------------------------------------------------------------------------------
 
@@ -18,15 +11,15 @@ signal value_updated
 
 #--- public variables - order: export > normal var > onready --------------------------------------
 
-# Shared Variable value
-export var value: bool = true setget _set_value
-
 #--- private variables - order: export > normal var > onready -------------------------------------
 
 ### -----------------------------------------------------------------------------------------------
 
 
 ### Built in Engine Methods -----------------------------------------------------------------------
+
+func _ready():
+	pass
 
 ### -----------------------------------------------------------------------------------------------
 
@@ -38,9 +31,17 @@ export var value: bool = true setget _set_value
 
 ### Private Methods -------------------------------------------------------------------------------
 
-func _set_value(p_value: bool) -> void:
-	value = p_value
-	ResourceSaver.save(resource_path, self)
-	emit_signal("value_updated")
+func _get_possible_string_properties() -> PoolStringArray:
+	var value: = PoolStringArray()
+	
+	var settings_properties: = _settings.get_property_list()
+	for property_dict in settings_properties:
+		if property_dict.name in EXCLUDED_PROPERTIES:
+			continue
+		
+		if property_dict.type == TYPE_STRING and property_dict.hint == PROPERTY_HINT_GLOBAL_DIR:
+			value.append(property_dict.name)
+	
+	return value
 
 ### -----------------------------------------------------------------------------------------------

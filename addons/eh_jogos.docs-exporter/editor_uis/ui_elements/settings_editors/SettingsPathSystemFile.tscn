@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/FileExplorerButton.gd" type="Script" id=1]
+[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/icons/icon_folder.svg" type="Texture" id=2]
+[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/string_line_edit/PathLineEdit.gd" type="Script" id=3]
+[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/stylebox_editable_panel.tres" type="StyleBox" id=4]
+[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/settings_editors/SettingsPathSystemFile.gd" type="Script" id=5]
+
+[node name="SettingsPathSystemFile" type="HBoxContainer"]
+margin_left = 511.0
+margin_right = 1018.0
+margin_bottom = 22.0
+rect_pivot_offset = Vector2( 939, 97 )
+size_flags_horizontal = 3
+custom_constants/separation = 5
+script = ExtResource( 5 )
+property = "save_path"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+margin_right = 474.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+custom_styles/focus = ExtResource( 4 )
+custom_styles/normal = ExtResource( 4 )
+clear_button_enabled = true
+script = ExtResource( 3 )
+
+[node name="FileExplorerButton" type="Button" parent="."]
+margin_left = 479.0
+margin_right = 507.0
+margin_bottom = 22.0
+icon = ExtResource( 2 )
+script = ExtResource( 1 )
+window_title = "Select where to save json reference"
+
+[node name="ColorRect" type="ColorRect" parent="FileExplorerButton"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -5.0
+mouse_filter = 2
+color = Color( 0.396078, 0.584314, 0.784314, 0.239216 )
+
+[node name="FileDialog" type="FileDialog" parent="FileExplorerButton"]
+margin_left = -993.0
+margin_top = -24.0
+margin_right = -76.0
+margin_bottom = 451.0
+window_title = "Select where to save json reference"
+mode_overrides_title = false
+access = 2
+filters = PoolStringArray( "" )
+show_hidden_files = true
+current_dir = "/mnt/WORK_SSD/eh_jogos/ProjetosGames/_00_MyToolsAndLibraries/eh_DocsExporter/DemoProject"
+current_path = "/mnt/WORK_SSD/eh_jogos/ProjetosGames/_00_MyToolsAndLibraries/eh_DocsExporter/DemoProject/"
+
+[connection signal="text_changed" from="LineEdit" to="." method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="LineEdit" to="." method="_on_LineEdit_text_entered"]
+[connection signal="file_selected" from="FileExplorerButton/FileDialog" to="." method="_on_FileDialog_file_selected"]
