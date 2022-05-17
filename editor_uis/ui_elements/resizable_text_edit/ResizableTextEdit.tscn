@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/resizable_text_edit/ResizableTextEdit.gd" type="Script" id=1]
+[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/resizable_text_edit/pngs/dragable_corner_pressed.png" type="Texture" id=2]
+[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/resizable_text_edit/pngs/dragable_corner_hover.png" type="Texture" id=3]
+[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/resizable_text_edit/pngs/dragable_corner_normal.png" type="Texture" id=4]
+[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/stylebox_editable_panel.tres" type="StyleBox" id=5]
+
+[node name="ResizableTextEdit" type="TextEdit"]
+margin_left = 30.0
+margin_right = 958.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 0, 100 )
+custom_styles/focus = ExtResource( 5 )
+custom_styles/normal = ExtResource( 5 )
+smooth_scrolling = true
+wrap_enabled = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -21.0
+margin_top = -21.0
+mouse_filter = 1
+keep_pressed_outside = true
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 2 )
+texture_hover = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_down" from="TextureButton" to="." method="_on_TextureButton_button_down"]
+[connection signal="button_up" from="TextureButton" to="." method="_on_TextureButton_button_up"]

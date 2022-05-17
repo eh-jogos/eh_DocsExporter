@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/settings_editors/SettingsStringUI.gd" type="Script" id=1]
+
+[node name="SettingsStringUI" type="LineEdit"]
+margin_right = 58.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+text = "/mnt/WORK_SSD/eh_jogos/ProjetosGames/_00_MyToolsAndLibraries/eh_DocsExporter/DemoProject/addons/eh_jogos.docs-exporter/reference.json"
+script = ExtResource( 1 )
+property = "save_path"
+
+[connection signal="text_changed" from="." to="." method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="." to="." method="_on_LineEdit_text_entered"]

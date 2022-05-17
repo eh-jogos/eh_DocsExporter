@@ -1,0 +1,75 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/DocsExporterProjectSettingsTab.gd" type="Script" id=1]
+[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/sections/github_section/GihubSection.tscn" type="PackedScene" id=2]
+[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/sections/hugo_section/HugoSection.tscn" type="PackedScene" id=3]
+[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/sections/json_section/JsonSection.tscn" type="PackedScene" id=11]
+
+[sub_resource type="StyleBoxFlat" id=1]
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+
+[node name="DocsExporter" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = 1.0
+margin_right = -1.0
+margin_bottom = -1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+follow_focus = true
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ContentList" type="VBoxContainer" parent="Panel/ScrollContainer"]
+margin_right = 1010.0
+margin_bottom = 1212.0
+size_flags_horizontal = 3
+custom_constants/separation = 25
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="JsonSection" parent="Panel/ScrollContainer/ContentList" instance=ExtResource( 11 )]
+margin_right = 1010.0
+margin_bottom = 237.0
+
+[node name="GithubSection" parent="Panel/ScrollContainer/ContentList" instance=ExtResource( 2 )]
+margin_top = 262.0
+margin_right = 1010.0
+margin_bottom = 469.0
+
+[node name="HugoSection" parent="Panel/ScrollContainer/ContentList" instance=ExtResource( 3 )]
+margin_top = 494.0
+margin_right = 1010.0
+margin_bottom = 1212.0
+
+[node name="Outline" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.70709
+margin_top = 1.0
+margin_right = -0.292908
+margin_bottom = -1.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

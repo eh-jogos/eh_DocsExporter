@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/resizable_text_edit/ResizableTextEdit.tscn" type="PackedScene" id=1]
+[ext_resource path="res://addons/eh_jogos.docs-exporter/editor_uis/ui_elements/settings_editors/SettingsResizableTextEdit.gd" type="Script" id=2]
+
+[node name="SettingsResizableTextEdit" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+property = "sidebar_prepend_content"
+
+[connection signal="text_changed" from="." to="." method="_on_SettingsResizableTextEdit_text_changed"]

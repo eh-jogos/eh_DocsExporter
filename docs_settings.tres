@@ -1,0 +1,95 @@
+[gd_resource type="Resource" load_steps=6 format=2]
+
+[ext_resource path="res://addons/eh_jogos.docs-exporter/custom_resources/DocsSettings.gd" type="Script" id=1]
+[ext_resource path="res://addons/eh_jogos.docs-exporter/custom_resources/CategoryOptionalData.gd" type="Script" id=2]
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 2 )
+weight = 3
+description = "Custom compenents with logic that can be shared between different kinds of nodes."
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 2 )
+weight = 1
+description = "Custom Resources used by the plugin."
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 2 )
+weight = 2
+description = "Custom Resources used by the plugin."
+
+[resource]
+script = ExtResource( 1 )
+_directories = [ "res://addons/eh_jogos.docs-exporter" ]
+_filters = [ "*.gd" ]
+_is_recursive = true
+_save_path = "/mnt/WORK_SSD/eh_jogos/ProjetosGames/_00_MyToolsAndLibraries/eh_DocsExporter/DemoProject/addons/eh_jogos.docs-exporter/reference.json"
+_github_export_path = "/mnt/WORK_SSD/eh_jogos/ProjetosGames/_00_MyToolsAndLibraries/eh_DocsExporter/GithubWiki"
+_github_sidebar_prepend = "[Home](Home)  
+[Installation](Installation)  
+[Documenting your code](Documenting)  
+[Exporting your documentation](Exporting)  
+[Help and Support](Help)  
+  
+**Quick Reference**  
+"
+_hugo_export_path = "/mnt/WORK_SSD/eh_jogos/ProjetosGames/_00_MyToolsAndLibraries/eh_DocsExporter/DocsSite/content/reference"
+_hugo_optional_data = {
+"Components": SubResource( 3 ),
+"Custom Resources": SubResource( 1 ),
+"UI Elements": SubResource( 2 )
+}
+_db_custom_classes = {
+"ArrayVariable": "Resource",
+"BoolVariable": "Resource",
+"BoolVariableCheckbox": "CheckBox",
+"CategoryOptionalData": "Resource",
+"CategoryOptionalDataDict": "Resource",
+"CategoryOptions": "VBoxContainer",
+"Collapsible": "Node",
+"DictionaryVariable": "Resource",
+"FilePathLineEdit": "StringLineEdit",
+"HugoMarkdownDocsExporter": "MarkdownDocsExporter",
+"JsonIO": "Reference",
+"MarkdownDocsExporter": "JsonIO",
+"PathLineEdit": "Reference",
+"ReferenceFormatter": "JsonIO",
+"ResizableTextEdit": "TextEdit",
+"StringArrayVariable": "Resource",
+"StringLineEdit": "HBoxContainer",
+"StringVariable": "Resource",
+"StringVariableArray": "Resource",
+"eh_DocsExporterPlugin": "EditorPlugin",
+"eh_DocsSettings": "Resource"
+}
+_db_custom_inheritance = {
+"JsonIO": [ "MarkdownDocsExporter", "ReferenceFormatter" ],
+"MarkdownDocsExporter": [ "HugoMarkdownDocsExporter" ],
+"StringLineEdit": [ "FilePathLineEdit" ]
+}
+_db_categories = {
+"Components": {
+"children": [  ],
+"description": "",
+"full_path": "/reference/components",
+"is_root": true,
+"page_titles": [ "Collapsible" ],
+"weight": 0
+},
+"Custom Resources": {
+"children": [  ],
+"description": "",
+"full_path": "/reference/custom resources",
+"is_root": true,
+"page_titles": [ "CategoryOptionalData", "CategoryOptionalDataDict" ],
+"weight": 0
+},
+"UI Elements": {
+"children": [  ],
+"description": "",
+"full_path": "/reference/ui elements",
+"is_root": true,
+"page_titles": [ "CategoryOptions", "ResizableTextEdit", "BoolVariableCheckbox", "FilePathLineEdit", "PathLineEdit", "StringLineEdit" ],
+"weight": 0
+}
+}
